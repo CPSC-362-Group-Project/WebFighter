@@ -1,24 +1,29 @@
 const canvas = document.querySelector("canvas")
 const c = canvas.getContext("2d")
 
+// variables for the width and height of the canvas
 canvas.width = 1024
 canvas.height = 576
 
+// fill the canvas and delimit its size
 c.fillRect(0, 0, canvas.width, canvas.height)
 
 const gravity = 0.2
 class Sprite {
+    // basic parameters for the character
     constructor({position, velocity}){
         this.position = position
         this.velocity = velocity
         this.height = 150
     }
 
+    // display the character
     draw(){
         c.fillStyle = 'red'
         c.fillRect(this.position.x, this.position.y, 50, this.height)
     }
 
+    // update the player's position
     update(){
         this.draw()
         this.position.x += this.velocity.x
@@ -32,6 +37,7 @@ class Sprite {
     }
 }
 
+// create the main player sprite instance
 const player = new Sprite({
     position: {
         x: 100,
@@ -43,6 +49,7 @@ const player = new Sprite({
     }
 })
 
+// create an enemy sprite instance
 const enemy = new Sprite({
     position: {
         x: 700,
@@ -58,35 +65,66 @@ const enemy = new Sprite({
 //enemy.draw()
 console.log(player)
 
+// constant to define the different input keys
+const keys = {
+    a:{
+        pressed: false
+    },
+    d:{
+        pressed: false
+    }
+}
+let lastKey
+
+// loop to run the program and refresh the position of the players
 function animate(){
     window.requestAnimationFrame(animate)
     c.fillStyle = "black"
     c.fillRect(0, 0, canvas.width, canvas.height)
     player.update()
     enemy.update()
+
+    player.velocity.x = 0
+    if (keys.a.pressed && lastKey === 'a'){
+        player.velocity.x = -1
+    }
+    else if (keys.d.pressed && lastKey === 'd'){
+        player.velocity.x = 1
+    }
 }
 
 animate()
 
+// event listener for when user press movement keys (WASD)
 window.addEventListener('keydown', (event) => {
     switch(event.key){
         case 'd':
-            player.velocity.x = 1
+            keys.d.pressed = true
+            lastKey = 'd'
             break
         case 'a':
-            player.velocity.x = -1
+            keys.a.pressed = true
+            lastKey = 'a'
+            break
+        case 'w':
+            keys.w.pressed = true
+            lastKey = 'w'
             break
     }    
     console.log(event.key)
 })
 
+// event listener for when user stops pressing movement key
 window.addEventListener('keyup', (event) => {
     switch(event.key){
         case 'd':
-            player.velocity.x = 0
+            keys.d.pressed = false
             break
         case 'a':
-            player.velocity.x = 0
+            keys.a.pressed = false
+            break
+        case 'w':
+            keys.w.pressed = false
             break
     }    
     console.log(event.key)
