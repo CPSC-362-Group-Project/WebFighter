@@ -18,3 +18,5 @@ const player = new Sprite({
 })
 
 console.log(player)
+
+test
