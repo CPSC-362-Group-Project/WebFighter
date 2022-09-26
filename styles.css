@@ -1,0 +1,16 @@
+body {
+    background-color: lightblue;
+    margin: 0;
+}
+h1 {
+    background-color: greenyellow;
+    text-align: center;
+    border: 3px solid black;
+}
+/*  style="background-color: lightblue;"  */
+
+canvas {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
