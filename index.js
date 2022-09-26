@@ -1,20 +1,53 @@
-const canvas = document.querySelector("canvas")
-const c = canvas.getContext("2d")
+const startBtn = document.getElementById('startBtn')
 
-canvas.width = 1024
-canvas.height = 576
-
-c.fillRect(0, 0, canvas.width, canvas.height)
-
-class Sprite {
-    constructor(position){
-        this.position = position
-    }
+//on start click go to the canvas page window
+function gotoCanvasPage(){
+    window.location.href = "./canvas.html"
 }
 
-const player = new Sprite({
-    x: 0,
-    y: 0
-})
+//go back button will allow the user to go back to main home screen to
+//start a new game
+function goBack(){
+    window.location.href = "./index.html"
+}
 
-console.log(player)
+
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('youtube-video', {
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+}
+
+function onPlayerReady() {
+  console.log("hey Im ready");
+  //do whatever you want here. Like, player.playVideo();
+
+  player.playVideo();
+
+}
+
+function onPlayerStateChange() {
+  console.log("my state changed");
+}
+
+
+document.getElementById("mute").addEventListener('click', function(event) {
+  console.log(player);
+
+  //check if mute button is muted or not
+  if (player.isMuted()) {
+    player.unMute();
+  } else {
+    player.mute();
+  }
+});
