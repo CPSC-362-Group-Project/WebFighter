@@ -68,4 +68,14 @@ visibility: hidden;
     font-size: 30px;
     font-weight: 700;
     cursor: pointer
+
+div.health_bar_style{
+    width:10 px;
+    height: 100px;
+    border-radius: 
+    6px 12px 18px 24px;
+
+    background-color:  red;  
+    height: 30px; 
+    width: 200px
 }
