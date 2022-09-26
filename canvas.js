@@ -53,7 +53,7 @@ const player = new Sprite({
 // create an enemy sprite instance
 const enemy = new Sprite({
     position: {
-        x: 700,
+        x: 900,
         y: 100
     },
     velocity: {
