@@ -55,8 +55,9 @@ visibility: hidden;
     font-weight: 900;
     font-size: 120px;
     font-style: italic;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /*font-family: Verdana, Geneva, Tahoma, sans-serif;
     /* font-size: large; */
+    font-family: 'Road Rage', cursive;
 }
 
 #main h2{
