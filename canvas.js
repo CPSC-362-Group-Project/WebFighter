@@ -8,7 +8,7 @@ canvas.height = 576
 // fill the canvas and delimit its size
 c.fillRect(0, 0, canvas.width, canvas.height)
 
-const gravity = 0.2
+const gravity = 0.3
 class Sprite {
     // basic parameters for the character
     constructor({position, velocity, color = 'red', offset}){
@@ -140,7 +140,7 @@ function rectangularCollision({rectangle1, rectangle2}){
 // loop to run the program and refresh the position of the players
 function animate(){
     window.requestAnimationFrame(animate)
-    c.fillStyle = "black"
+    c.fillStyle = "gray"
     c.fillRect(0, 0, canvas.width, canvas.height)
     player.update()
     enemy.update()
@@ -188,6 +188,10 @@ function animate(){
 
 }
 
+// idea for pause button
+// while(!pause){
+//      animate()   
+//}
 animate()
 
 // event listener for when user press movement keys (WASD)

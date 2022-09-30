@@ -25,6 +25,8 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 var musicPlayer;
 
+
+//play yourtube video embedded in Iframe tag in the background
 function onYouTubeIframeAPIReady() {
   musicPlayer = new YT.Player('youtube-video', {
     events: {
@@ -42,11 +44,13 @@ function onPlayerReady() {
 
 }
 
+//function will change music on player change
 function onPlayerStateChange() {
-  console.log("my state changed");
+  console.log("my  player state changed");
 }
 
 
+//on start button even click to switch to the canvas view music will play
 document.getElementById("mute").addEventListener('click', function(event) {
   console.log(musicPlayer);
 
