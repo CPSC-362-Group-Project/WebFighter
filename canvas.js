@@ -9,6 +9,25 @@ canvas.height = 576
 c.fillRect(0, 0, canvas.width, canvas.height)
 
 const gravity = 0.3
+
+class Asset {
+    constructor({position, imageSrc}) {
+        this.position = position
+        this.width = 50
+        this.height = 100
+        this.image = new Image()
+        this.image.src = imageSrc
+    }
+
+    draw() {
+        c.drawImage(this.image, this.position.x, this.position.y)
+    }
+
+    update() {
+        this.draw()
+    }
+}
+
 class Sprite {
     // basic parameters for the character
     constructor({position, velocity, color = 'red', offset}){
@@ -72,6 +91,14 @@ class Sprite {
 
     }
 }
+
+const background = new Asset({
+    position: {
+        x: 0,
+        y: 0
+    },
+    imageSrc: './assets/background.jpg'
+})
 
 // create the main player sprite instance
 const player = new Sprite({
@@ -142,6 +169,7 @@ function animate(){
     window.requestAnimationFrame(animate)
     c.fillStyle = "gray"
     c.fillRect(0, 0, canvas.width, canvas.height)
+    background.update()
     player.update()
     enemy.update()
 
