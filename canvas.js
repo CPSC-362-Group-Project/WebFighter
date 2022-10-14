@@ -1,3 +1,4 @@
+
 const canvas = document.querySelector("canvas")
 const c = canvas.getContext("2d")
 
@@ -29,8 +30,10 @@ class Sprite {
             height: 50,
             offset
         }
-
+       this.color = color
         this.isAttacking
+        this.health = 100
+       
     }
 
     // display the character
@@ -71,6 +74,8 @@ class Sprite {
         }, 200)
 
     }
+
+    
 }
 
 // create the main player sprite instance
@@ -129,6 +134,8 @@ const keys = {
     }
 }
 
+// decreaseTimer()
+
 function rectangularCollision({rectangle1, rectangle2}){
     // check if the two sprites are colliding
     return (rectangle1.attackBox.position.x + rectangle1.attackBox.width  >= rectangle2.position.x && 
@@ -163,7 +170,7 @@ function animate(){
         enemy.velocity.x = 5
     }
 
-    // Collision detection
+//     // Collision detection
     if (
         rectangularCollision({
             rectangle1: player, 
@@ -172,7 +179,9 @@ function animate(){
         player.isAttacking
     ) {
         player.isAttacking = false
-        console.log('collision')
+        // console.log('collision')
+        enemy.health -= 20 
+        document.querySelector('#enemyHealth').style.width = enemy.health + "%"
     }
 
     if (
@@ -183,17 +192,51 @@ function animate(){
         enemy.isAttacking
     ) {
         enemy.isAttacking = false
-        console.log('Enemy launches an attack')
+        // console.log('Enemy launches an attack')
+        player.health -= 20 
+        document.querySelector('#playerHealth').style.width = player.health + "%"
+   
     }
+
+    // end game based on health
+  if (enemy.health <= 0 || player.health <= 0) {
+    determineWinner({ player, enemy, timerId })
+  }
 
 }
 
-// idea for pause button
-// while(!pause){
-//      animate()   
-//}
 animate()
 
+// this function will calculate the winner state based on health bar 
+//checks to see which health is lower and then choose the 
+//appropriate winner in any case
+function determineWinner({ player, enemy, timerId }) {
+    clearTimeout(timerId)
+    document.querySelector('#displayText').style.display = 'flex'
+    if (player.health === enemy.health) {
+      document.querySelector('#displayText').innerHTML = 'Tie'
+    } else if (player.health > enemy.health) {
+      document.querySelector('#displayText').innerHTML = 'Player 1 Wins'
+    } else if (player.health < enemy.health) {
+      document.querySelector('#displayText').innerHTML = 'Player 2 Wins'
+    }
+  }
+  
+  let timer = 60
+  let timerId
+  function decreaseTimer() {
+    if (timer > 0) {
+      timerId = setTimeout(decreaseTimer, 1000)
+      timer--
+      document.querySelector('#timer').innerHTML = timer
+    }
+  
+    if (timer === 0) {
+      determineWinner({ player, enemy, timerId })
+    }
+  }
+
+  decreaseTimer()
 // event listener for when user press movement keys (WASD)
 window.addEventListener('keydown', (event) => {
     switch(event.key){
