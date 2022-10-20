@@ -87,55 +87,55 @@ visibility: hidden;
 #musicIcon
 {
     border-radius: 6px;
-    position: absolute;
+    position: relative;
     background-color:  rgb(255, 255, 255);  
     color: rgb(255, 255, 255);
-    bottom: 35%;
-    right: 8%;
+    top: -40px;
+    left: 1250px;
     cursor: pointer; 
 }
 
 #prevSong
 {
     border-radius: 6px;
-    position: absolute;
+    position: relative;
     background-color:  rgb(255, 255, 255);  
     color: white;
-    bottom: 28%;
-    right: 18%;
+    top: -40px;
+    left: 1100px;
     cursor: pointer; 
 }
 
 #playSong
 {
     border-radius: 6px;
-    position: absolute;
+    position: relative;
     background-color:  rgb(255, 255, 255);  
     color: white;
-    bottom: 28%;
-    right: 13%;
+    top: -80px;
+    left: 1200px;
     cursor: pointer; 
 }
 
 #pauseSong
 {
     border-radius: 6px;
-    position: absolute;
+    position: relative;
     background-color:  rgb(255, 255, 255);  
     color: white;
-    bottom: 28%;
-    right: 10%;
+    top: -120px;
+    left: 1300px;
     cursor: pointer; 
 }
 
 #nextSong
 {
     border-radius: 6px;
-    position: absolute;
+    position: relative;
     background-color:  rgb(255, 255, 255);  
     color: white;
-    bottom: 28%;
-    right: 6%;
+    top: -160px;
+    left: 1400px;
     cursor: pointer; 
 }
 canvas{
