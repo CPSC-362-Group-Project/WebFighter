@@ -31,7 +31,7 @@ class Asset {
 
 class Sprite {
     // basic parameters for the character
-    constructor({position, velocity, color = 'red', offset}){
+    constructor({position, velocity, color = 'red', attackBoxOffset, scabbardOffset }){
         this.position = position
         this.velocity = velocity
         this.width = 50
@@ -47,11 +47,25 @@ class Sprite {
             },
             width: 100,
             height: 50,
-            offset
+            offset: attackBoxOffset
         }
-       this.color = color
+
+         //scabbard for the character
+         this.scabbard = {
+            position: {
+                x: this.position.x,
+                y: this.position.y + 50
+            },
+            width: 100,
+            height: 50,
+            offset: scabbardOffset
+        }
+
+        this.color = color
         this.isAttacking
+        this.isUsingMagic
         this.health = 100
+        this.magic = 100
        
     }
 
@@ -62,8 +76,17 @@ class Sprite {
 
         // display the attackBox only when the character is attacking
         if (this.isAttacking){
-            c.fillStyle = 'blue'
+            if (this.color == 'red') {
+                c.fillStyle = 'blue'
+            }
+            else {
+                c.fillStyle = 'orange'
+            }
             c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height)
+        }
+        if (this.isUsingMagic){
+            c.fillStyle = 'yellow'
+            c.fillRect(this.scabbard.position.x, this.scabbard.position.y, this.scabbard.width, this.scabbard.height)
         }
     }
 
@@ -76,6 +99,10 @@ class Sprite {
         // update the attackBox position to follow the character
         this.attackBox.position.x = this.position.x + this.attackBox.offset.x
         this.attackBox.position.y = this.position.y 
+
+         // update the scabbard position to follow the character
+         this.scabbard.position.x = this.position.x + this.scabbard.offset.x
+         this.scabbard.position.y = this.position.y + 50
 
         if (this.position.y + this.height + this.velocity.y >= canvas.height){
             this.velocity.y = 0
@@ -90,6 +117,15 @@ class Sprite {
         //attack for only a small period of time (100ms)
         setTimeout(() => {
             this.isAttacking = false
+        }, 200)
+
+    }
+
+    useMagic() {
+        this.isUsingMagic = true
+        //attack for only a small period of time (100ms)
+        setTimeout(() => {
+            this.isUsingMagic = false
         }, 200)
 
     }
@@ -116,8 +152,13 @@ const player = new Sprite({
         y: 0
     }, 
     color: 'red',
-    offset: {
+    
+    attackBoxOffset: {
         x: 0,
+        y: 0
+    },
+    scabbardOffset: {
+        x: -50,
         y: 0
     }
 
@@ -135,8 +176,12 @@ const enemy = new Sprite({
     },
     color: 'green',
     //enemy facing left initially, attackBox is offset to the left
-    offset: {
+    attackBoxOffset: {
         x: -50,
+        y: 0
+    },
+    scabbardOffset: {
+        x: 0,
         y: 0
     }
 })
@@ -198,7 +243,7 @@ function animate(){
         enemy.velocity.x = 5
     }
 
-//     // Collision detection
+    // Collision detection
     if (
         rectangularCollision({
             rectangle1: player, 
@@ -224,6 +269,34 @@ function animate(){
         player.health -= 20 
         document.querySelector('#playerHealth').style.width = player.health + "%"
    
+    }
+
+    if(player.isUsingMagic && player.magic >= 20) {
+        player.isUsingMagic = false
+        if (player.health < 50) {
+            player.health += 50
+        }
+        else {
+            player.health = 100
+        }
+        player.magic -=20
+        document.querySelector('#playerMagic').style.width = player.magic + "%"
+        document.querySelector('#playerHealth').style.width = player.health + "%"
+        
+        
+    }
+
+    if(enemy.isUsingMagic && enemy.magic >= 20) {
+        enemy.isUsingMagic = false
+        if (enemy.health < 50) {
+            enemy.health += 50
+        }
+        else {
+            enemy.health = 100
+        }
+        enemy.magic -=20
+        document.querySelector('#enemyMagic').style.width = enemy.magic + "%"
+        document.querySelector('#enemyHealth').style.width = enemy.health + "%"
     }
 
     // end game based on health
@@ -282,8 +355,12 @@ window.addEventListener('keydown', (event) => {
         case 'W':
             player.velocity.y = -12
             break
+        
         case ' ':
             player.attack()
+            break
+        case 'x':
+            player.useMagic()
             break
 
 
@@ -299,8 +376,13 @@ window.addEventListener('keydown', (event) => {
         case 'ArrowUp':
             enemy.velocity.y = -12
             break 
+
         case 'Enter':
             enemy.attack()
+            break
+        case 'ArrowDown':
+            enemy.useMagic()
+            break
     }    
     console.log(event.key)
 })
