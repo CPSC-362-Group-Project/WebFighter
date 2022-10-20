@@ -40,7 +40,7 @@ function onPlayerReady() {
   console.log("hey Im ready");
   //do whatever you want here. Like, player.playVideo();
 
- musicPlayer.playVideo();
+ musicPlayer.loadPlaylist(['p56XUPetIAQ', '7FPjMy6crU8', 'aTuE4BROrjA']);
 
 }
 
@@ -72,19 +72,19 @@ document.getElementById("prevSong").addEventListener('click', function(event){
 });
 
 document.getElementById("playSong").addEventListener('click', function(event){
-  // if music player is paused, play
-  //if(musicPlayer.getPlayerState() == 2)
-  //{
+  //if music player is paused, play
+  if(musicPlayer.getPlayerState() == 2)
+  {
     musicPlayer.playVideo();
-  //}
+  }
 });
 
 document.getElementById("pauseSong").addEventListener('click', function(event){
-  // if the music player is playing, pause
-  //if(musicPlayer.getPlayerState() == 2)
-  //{
+  //if the music player is playing, pause
+  if(musicPlayer.getPlayerState() == 1)
+  {
     musicPlayer.pauseVideo();
-  //}
+  }
 });
 
 document.getElementById("nextSong").addEventListener('click', function(event){

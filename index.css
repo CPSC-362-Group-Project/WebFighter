@@ -91,7 +91,7 @@ visibility: hidden;
     background-color:  rgb(255, 255, 255);  
     color: rgb(255, 255, 255);
     top: -40px;
-    left: 1250px;
+    left: 1450px;
     cursor: pointer; 
 }
 
@@ -102,7 +102,7 @@ visibility: hidden;
     background-color:  rgb(255, 255, 255);  
     color: white;
     top: -40px;
-    left: 1100px;
+    left: 1300px;
     cursor: pointer; 
 }
 
@@ -113,7 +113,7 @@ visibility: hidden;
     background-color:  rgb(255, 255, 255);  
     color: white;
     top: -80px;
-    left: 1200px;
+    left: 1400px;
     cursor: pointer; 
 }
 
@@ -124,7 +124,7 @@ visibility: hidden;
     background-color:  rgb(255, 255, 255);  
     color: white;
     top: -120px;
-    left: 1300px;
+    left: 1500px;
     cursor: pointer; 
 }
 
@@ -135,9 +135,10 @@ visibility: hidden;
     background-color:  rgb(255, 255, 255);  
     color: white;
     top: -160px;
-    left: 1400px;
+    left: 1600px;
     cursor: pointer; 
 }
-canvas{
+
+#canvas{
     /* position: relative !important; */
 }
