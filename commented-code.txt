@@ -1,0 +1,16 @@
+<!-- <div class =  "health_bar_style"></div> -->
+
+<!--script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script --->
+
+<!-- <div id="mute"> <img src="https://static.thenounproject.com/png/2038006-200.png"  height=50 width=60/></div> -->
+
+<!--<div class="health_bar_style"></div>-->
+
+ <!-- <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+    integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script> -->
+
+  <!--<div id="mute"> <img src="https://www.pngitem.com/pimgs/m/81-811082_mute-and-unmute-icon-png-transparent-png.png"  height=40 width=50/></div>  -->
