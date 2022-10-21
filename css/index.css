@@ -6,8 +6,18 @@
     
 }
 
+
+
+main {
+    min-height: calc(100vh - 274px)
+}
+
+.container {
+    overflow: auto;
+    padding-bottom:100px;
+}
+
 body {
-    background-color: white;
     text-align: center;
 }
 
@@ -16,7 +26,7 @@ h1 {
     font-family: 'Road Rage', cursive;
     margin-bottom: 0;
     /* adjust this later*/
-    margin-top: 10rem;
+    margin-top: 5rem;
 }
 
 h2 {
@@ -33,7 +43,7 @@ button {
     font-weight: 700;
     border-radius: 4px;
     /* adjust this later */
-    margin-bottom:5rem;
+    
 }
 
 button:hover {
@@ -44,14 +54,13 @@ button:hover {
 }
 
 footer {
-    background: #111;
-    height: auto;
-    width: 100vw;
+    background-color: #111;
     padding-top: 40px;
     color: white;
 }
 
 .content {
+    background-color: #111;
     display: flex;
     align-items: center;
     justify-content: center;
