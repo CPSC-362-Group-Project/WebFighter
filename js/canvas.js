@@ -1,3 +1,8 @@
+// make it so you cant scroll with space bar
+// we do this because we use space bar in game
+window.onkeydown = function(e) { 
+    return !(e.keyCode == 32 && e.target == document.body);
+  }; 
 
 const canvas = document.querySelector("canvas")
 const c = canvas.getContext("2d")
