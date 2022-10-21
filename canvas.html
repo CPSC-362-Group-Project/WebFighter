@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hiken | Web Brawler</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
     href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
     rel="stylesheet"
-  />
+    />
   
   <style>
     * {
@@ -19,48 +19,52 @@
       font-family: 'Press Start 2P', cursive;
     }
   </style>
-   
 </head>
 <body>
-  <div id="outer">
-        <!-- smaller red container div -->
-        <div id ="container">
-          <!-- player health -->
-          <div class="player_health_bar">
-            <div class="health_background"></div>
-            <div id="playerHealth"></div>
-            <div class="magic_background"></div>
-            <div id="playerMagic"></div>
-          </div>
+    <main>
+        <div id="outer">
+            <!-- smaller red container div -->
+            <div id ="container">
+                <!-- player health -->
+                <div class="player_health_bar">
+                    <div class="health_background"></div>
+                    <div id="playerHealth"></div>
+                    <div class="magic_background"></div>
+                    <div id="playerMagic"></div>
+                </div>
     
-          <!-- timer -->
-          <div id="timer">10</div>
-          <!-- enemy health -->
-          <div class="enemy_health_bar">
-            <div class="health_background"></div>
-            <div id="enemyHealth"></div>
-            <div class="magic_background"></div>
-            <div id="enemyMagic"></div>
-          </div>
+                <!-- timer -->
+                <div id="timer">10</div>
+                
+                <!-- enemy health -->
+                <div class="enemy_health_bar">
+                    <div class="health_background"></div>
+                    <div id="enemyHealth"></div>
+                    <div class="magic_background"></div>
+                    <div id="enemyMagic"></div>
+                </div>
           
-        </div>
-        <div id="displayText"> Tie </div>
-   <!-- </div> -->
-    <canvas><iframe id="youtube-video" width="360" height="200" src="https://www.youtube.com/embed/p56XUPetIAQ?enablejsapi=1&
-        autoplay=1
-        &disablekb=1
-        &enablejsapi=1
-        &loop=1
-        &controls=0
-        &mute=0" frameborder="0" enablejsapi="1" allow="autoplay" allowfullscreen ></iframe><br>
-    </canvas>
-  </div>
-  <div style="text-align: center; display: fixed; bottom: 0; right: 0">
-   
-        <button id="back" onclick="return goBack()">Go back</button>
-  
-        <div id="mute"> <img src="https://www.pngitem.com/pimgs/m/81-811082_mute-and-unmute-icon-png-transparent-png.png" height=40 width=50/></div>
+            </div>
 
+        <div id="displayText"> Tie </div>
+   
+        <canvas>
+            <iframe id="youtube-video" width="360" height="200" src="https://www.youtube.com/embed/p56XUPetIAQ?enablejsapi=1&
+            autoplay=1
+            &disablekb=1
+            &enablejsapi=1
+            &loop=1
+            &controls=0
+            &mute=0" frameborder="0" enablejsapi="1" allow="autoplay" allowfullscreen >
+            </iframe>
+        </canvas>
+
+        </div>
+
+   
+        <!-- removing mute button since we have music player-->
+        <!-- <div id="mute"> <img src="https://www.pngitem.com/pimgs/m/81-811082_mute-and-unmute-icon-png-transparent-png.png" height=40 width=50/></div> -->
+        
         <!-- Music controller graphics -->
         <div id="musicIcon"><img src="https://cdn2.iconfinder.com/data/icons/music-player-black/32/music_player_black-14-512.png" height=120 width=150/></div>
 
@@ -72,11 +76,11 @@
 
         <div id="nextSong"><img src="https://cdn2.iconfinder.com/data/icons/music-player-black/32/music_player_black-05-512.png" height=40 width=50/></div>
 
-  </div>
 
-  <script src="js/canvas.js"></script>
-  <script src="js/index.js"></script>
-
+    <a href="index.html"><button id="back">Go back</button></a>
+    <script src="js/canvas.js"></script>
+    <script src="js/index.js"></script>
+    </main>
 </body>
 </html>
 

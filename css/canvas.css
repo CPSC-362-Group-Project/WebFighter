@@ -138,29 +138,6 @@ visibility: hidden;
     right: 1.5%;
     cursor: pointer; 
 }
-#main{
-    text-align: center;
-}
-#main h1{
-    font-weight: 900;
-    font-size: 120px;
-    font-style: italic;
-    /*font-family: Verdana, Geneva, Tahoma, sans-serif;
-    /* font-size: large; */
-    font-family: 'Road Rage', cursive;
-}
-
-#main h2{
-    font-size: 30px;
-}
-#main button{
-    color: white;
-    background-color: black;
-    padding: 10px 40px;
-    font-size: 30px;
-    font-weight: 700;
-    cursor: pointer
-}
 
 #div health_bar_style{
     width:10 px;
@@ -227,7 +204,4 @@ visibility: hidden;
     bottom: 28%;
     right: 6%;
     cursor: pointer; 
-}
-canvas {
-   /* position: relative !important;  */
 }

@@ -1,22 +1,3 @@
-const startBtn = document.getElementById('startBtn')
-
-
-//on start click go to the canvas page window
-function gotoCanvasPage(){
-    window.location.href = "./canvas.html"
-}
-
-//go back button will allow the user to go back to main home screen to
-//start a new game
-function goBack(){
-    window.location.href = "./index.html"
-}
-
-canvas.width = 1024
-canvas.height = 576
-//canvas.style = "position: absolute; top: 10px; left: 0px; right: 0px; bottom: 200px; margin: auto; border:4px solid blue";
-
-
 
 var tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
