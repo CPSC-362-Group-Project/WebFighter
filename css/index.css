@@ -58,6 +58,7 @@ footer {
     color: white;
     position: absolute;
     bottom: 0;
+    min-width: 100%;
     
 }
 
@@ -112,7 +113,7 @@ footer {
 
 .copyright {
     background: black;
-    width: 100vw;
+    min-width: 100%;
     padding: 20px 0;
     text-align: center;
 }
