@@ -1,7 +1,18 @@
 * {
+    margin: 0;
+    padding: 0;
+    /*background: #25252a;*/
     box-sizing: border-box;
     font-family: 'Press Start 2P', cursive;
   }
+  
+body {
+    text-align: center;
+    position: relative;
+    padding-bottom: 274px;
+    
+}
+
 
 div.health_bar_style {
     height: 100px;
@@ -22,10 +33,6 @@ div.health_bar_style {
     height: 576px;
     background-color: black;
     /* z-index: 20; */
-}
-
-canvas {
-    border-color: green;
 }
 
 div#outer {
@@ -149,78 +156,152 @@ iframe {
     cursor: pointer; 
 }
 
-/* music controller */
-#musicIcon {
-    border-radius: 6px;
-    position: absolute;
-    background-color:  rgb(255, 255, 255);  
-    color: rgb(255, 255, 255);
-    bottom: 15%;
-    right: 45%;
-    cursor: pointer; 
-}
-
-#prevSong {
-    border-radius: 6px;
-    position: absolute;
-    background-color:  rgb(255, 255, 255);  
-    color: white;
-    bottom: 10%;
-    right: 53%;
-    cursor: pointer; 
-}
-
-#playSong {
-    border-radius: 6px;
-    position: absolute;
-    background-color:  rgb(255, 255, 255);  
-    color: white;
-    bottom: 10%;
-    right: 49%;
-    cursor: pointer; 
-}
-
-#pauseSong {
-    border-radius: 6px;
-    position: absolute;
-    background-color:  rgb(255, 255, 255);  
-    color: white;
-    bottom: 10%;
-    right: 46%;
-    cursor: pointer; 
-}
-
-#nextSong {
-    border-radius: 6px;
-    position: absolute;
-    background-color:  rgb(255, 255, 255);  
-    color: white;
-    bottom: 10%;
-    right: 42%;
-    cursor: pointer; 
-}
-
 .everything {
+    position: relative;
     align-items: center;
     justify-items: center;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 10px;
+    width: 100%;
 }
 
 /* experimenting with layout */
 .left-aside {
     grid-column: 1;
     grid-row: 1;
-    background-color: red;
-    height: 576px;
-    width: 400px;
+    background-color: yellowgreen;
+    height: 100%;
+    width: 100%;
+}
+
+canvas {
+    width: 1024;
+    border-color: green;
 }
 
 .right-aside {
     grid-column: 3;
     grid-row: 1;
-    background-color: blue;
-    height: 576px;
-    width: 400px;
+    background-color: burlywood;
+    height: 100%;
+    width: 100%;
 }
+
+.music-player {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 40px;
+    padding: 20px;
+    border: 20px;
+    border-color: black;
+    align-items: center;
+    justify-items: center;
+    max-width: 100%;
+}
+
+
+/* music controller */
+#musicIcon {
+    display: flex;
+    cursor: pointer; 
+}
+
+#prevSong {
+    cursor: pointer;
+    grid-column: 1;
+    grid-row: 1; 
+}
+
+#playSong {
+    cursor: pointer; 
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#pauseSong {
+    cursor: pointer; 
+    grid-column: 3;
+    grid-row: 1;
+}
+
+#nextSong {
+    cursor: pointer; 
+    grid-column: 4;
+    grid-row: 1;
+}
+
+/* add footer to this page */
+footer {
+    background-color: #111;
+    padding-top: 40px;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    min-width: 100%;
+    
+}
+
+.content {
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.content h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+}
+
+.content p {
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+.socials {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+
+.socials li {
+    margin: 0 10px;
+}
+
+.socials a {
+    text-decoration: none;
+    color: white;
+}
+
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+}
+
+.socials a:hover i{
+    color: aqua;
+}
+
+.copyright {
+    background: black;
+    min-width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.copyright p {
+    font-size: 10px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+/* end of footer */
