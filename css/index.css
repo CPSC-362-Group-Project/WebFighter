@@ -6,12 +6,10 @@
     
 }
 
-
-
-main {
+/*main {
     min-height: calc(100vh - 274px)
 }
-
+*/
 .container {
     overflow: auto;
     padding-bottom:100px;
@@ -19,6 +17,9 @@ main {
 
 body {
     text-align: center;
+    position: relative;
+    padding-bottom: 274px;
+    min-height: 100vh;
 }
 
 h1 {
@@ -26,7 +27,7 @@ h1 {
     font-family: 'Road Rage', cursive;
     margin-bottom: 0;
     /* adjust this later*/
-    margin-top: 5rem;
+    margin-top: 10rem;
 }
 
 h2 {
@@ -42,8 +43,6 @@ button {
     font-size: 30px;
     font-weight: 700;
     border-radius: 4px;
-    /* adjust this later */
-    
 }
 
 button:hover {
@@ -57,6 +56,9 @@ footer {
     background-color: #111;
     padding-top: 40px;
     color: white;
+    position: absolute;
+    bottom: 0;
+    
 }
 
 .content {
