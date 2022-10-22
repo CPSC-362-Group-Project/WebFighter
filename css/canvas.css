@@ -208,24 +208,36 @@ canvas {
 
 
 #prevSong {
+    height: 50px;
+    width: 50px;
+    position: relative;
     cursor: pointer;
     grid-column: 1;
     grid-row: 1; 
 }
 
 #playSong {
+    height: 50px;
+    width: 50px;
+    position: relative;
     cursor: pointer; 
     grid-column: 2;
     grid-row: 1;
 }
 
 #pauseSong {
+    height: 50px;
+    width: 50px;
+    position: relative;
     cursor: pointer; 
     grid-column: 3;
     grid-row: 1;
 }
 
 #nextSong {
+    height: 50px;
+    width: 50px;
+    position: relative;
     cursor: pointer; 
     grid-column: 4;
     grid-row: 1;

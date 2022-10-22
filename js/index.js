@@ -75,3 +75,4 @@ document.getElementById("nextSong").addEventListener('click', function(event){
     musicPlayer.nextVideo();
   }
 });
+//test
