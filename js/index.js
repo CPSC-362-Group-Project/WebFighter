@@ -32,16 +32,16 @@ function onPlayerStateChange() {
 
 
 //on start button even click to switch to the canvas view music will play
-document.getElementById("mute").addEventListener('click', function(event) {
-  console.log(musicPlayer);
+// document.getElementById("mute").addEventListener('click', function(event) {
+//   console.log(musicPlayer);
 
-  //check if mute button is muted or not
-  if (musicPlayer.isMuted()) {
-    musicPlayer.unMute();
-  } else {
-    musicPlayer.mute();
-  }
-});
+//   //check if mute button is muted or not
+//   if (musicPlayer.isMuted()) {
+//     musicPlayer.unMute();
+//   } else {
+//     musicPlayer.mute();
+//   }
+// });
 
 // code for the music controller
 document.getElementById("prevSong").addEventListener('click', function(event){
