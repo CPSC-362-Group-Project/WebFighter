@@ -9,7 +9,7 @@
 body {
     text-align: center;
     position: relative;
-    padding-bottom: 121px;
+    padding-bottom: 95px;
 }
 
 
@@ -150,7 +150,7 @@ iframe {
     width: 200px;
     font-size: 20px;
     color: white;
-    top: 5%;
+    top: 15%;
     right: 5.5%;
     cursor: pointer; 
 }
@@ -255,3 +255,53 @@ footer {
     text-transform: capitalize;
 }
 /* end of footer */
+
+/* nav bar */
+li, a {
+    font-weight: 500;
+    font-size: 16px;
+    color: #111;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    background-color: #f8b981;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.navigation {
+    list-style: none;
+}
+
+.navigation li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.navigation li a {
+    transition: all 0.3s ease 0s;
+}
+
+.navigation li a:hover {
+    color: #0088a9;
+}
+
+.link {
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.link:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+}
