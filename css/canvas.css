@@ -9,7 +9,7 @@
 body {
     text-align: center;
     position: relative;
-    padding-bottom: 95px;
+    padding-bottom: 161px;
 }
 
 
@@ -176,13 +176,13 @@ iframe {
 
 canvas {
     width: 1024;
-    border-color: green;
+    
 }
 
 .right-aside {
     grid-column: 3;
     grid-row: 1;
-    background-color: burlywood;
+    background-color: lightseagreen;
     height: 100%;
     width: 100%;
 }
@@ -202,10 +202,7 @@ canvas {
 
 
 /* music controller */
-#musicIcon {
-    display: flex;
-    cursor: pointer; 
-}
+
 
 #prevSong {
     cursor: pointer;
@@ -298,7 +295,7 @@ header {
 
 .link {
     padding: 9px 25px;
-    background-color: rgba(0, 136, 169, 1);
+    background-color: red;
     border: none;
     border-radius: 50px;
     cursor: pointer;
