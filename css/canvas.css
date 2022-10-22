@@ -132,7 +132,7 @@ iframe {
     visibility: hidden;
 }
 
-/* commenting out since we are using music player
+/* commenting out since we are using music player */
 #mute{
     background-color: aqua;
     cursor: pointer; 
@@ -140,7 +140,7 @@ iframe {
     width: 60px;
     height: 40px;
     
-} */
+}
 
 /* Red back button */
 #back {
