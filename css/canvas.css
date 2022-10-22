@@ -9,8 +9,7 @@
 body {
     text-align: center;
     position: relative;
-    padding-bottom: 274px;
-    
+    padding-bottom: 121px;
 }
 
 
@@ -235,7 +234,6 @@ canvas {
 /* add footer to this page */
 footer {
     background-color: #111;
-    padding-top: 40px;
     color: white;
     position: absolute;
     bottom: 0;
@@ -243,54 +241,6 @@ footer {
     
 }
 
-.content {
-    background-color: #111;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-.content h3 {
-    font-size: 1.8rem;
-    font-weight: 400;
-    text-transform: capitalize;
-    line-height: 3rem;
-}
-
-.content p {
-    max-width: 500px;
-    margin: 10px auto;
-    line-height: 28px;
-    font-size: 14px;
-}
-
-.socials {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem 0 3rem 0;
-}
-
-.socials li {
-    margin: 0 10px;
-}
-
-.socials a {
-    text-decoration: none;
-    color: white;
-}
-
-.socials a i{
-    font-size: 1.1rem;
-    transition: color .4s ease;
-}
-
-.socials a:hover i{
-    color: aqua;
-}
 
 .copyright {
     background: black;
