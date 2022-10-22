@@ -133,14 +133,14 @@ iframe {
 }
 
 /* commenting out since we are using music player */
-#mute{
+/* #mute{
     background-color: aqua;
     cursor: pointer; 
     float: right;
     width: 60px;
     height: 40px;
     
-}
+} */
 
 /* Red back button */
 #back {
