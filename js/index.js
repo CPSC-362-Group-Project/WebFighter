@@ -21,7 +21,7 @@ function onPlayerReady() {
   console.log("hey Im ready");
   //do whatever you want here. Like, player.playVideo();
 
- musicPlayer.playVideo();
+  musicPlayer.loadPlaylist(['p56XUPetIAQ', '7FPjMy6crU8', 'aTuE4BROrjA']);
 
 }
 
