@@ -9,7 +9,8 @@
 body {
     text-align: center;
     position: relative;
-    padding-bottom: 161px;
+    padding-bottom: 98px;
+    background-color: #4e4e4e;
 }
 
 
@@ -156,6 +157,7 @@ iframe {
 }
 
 .everything {
+    padding-top: 60px;
     position: relative;
     align-items: center;
     justify-items: center;
@@ -169,20 +171,21 @@ iframe {
 .left-aside {
     grid-column: 1;
     grid-row: 1;
-    background-color: yellowgreen;
+    background-color: #4e4e4e;
     height: 100%;
     width: 100%;
 }
 
 canvas {
     width: 1024;
+    border: 1px solid red;
     
 }
 
 .right-aside {
     grid-column: 3;
     grid-row: 1;
-    background-color: lightseagreen;
+    background-color: #4e4e4e;
     height: 100%;
     width: 100%;
 }
@@ -257,13 +260,13 @@ footer {
 li, a {
     font-weight: 500;
     font-size: 16px;
-    color: #111;
+    color: white;
     text-decoration: none;
 }
 
 header {
     display: flex;
-    background-color: #f8b981;
+    background-color: #1b1b1b;
     justify-content: space-between;
     align-items: center;
     padding: 30px 10%;
