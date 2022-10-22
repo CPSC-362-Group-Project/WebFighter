@@ -49,6 +49,7 @@ document.getElementById("prevSong").addEventListener('click', function(event){
   if(musicPlayer.getPlaylistIndex() > 0)
   {
     musicPlayer.previousVideo();
+    console.log("Previous Song");
   }
 });
 
@@ -57,6 +58,7 @@ document.getElementById("playSong").addEventListener('click', function(event){
   //if(musicPlayer.getPlayerState() == 2)
   //{
     musicPlayer.playVideo();
+    console.log("Play Song");
   //}
 });
 
@@ -65,6 +67,7 @@ document.getElementById("pauseSong").addEventListener('click', function(event){
   //if(musicPlayer.getPlayerState() == 2)
   //{
     musicPlayer.pauseVideo();
+    console.log("Pause Song");
   //}
 });
 
@@ -73,6 +76,7 @@ document.getElementById("nextSong").addEventListener('click', function(event){
   if(musicPlayer.getPlaylistIndex() < musicPlayer.getPlaylist().length)
   {
     musicPlayer.nextVideo();
+    console.log("Next Song");
   }
 });
 //test
