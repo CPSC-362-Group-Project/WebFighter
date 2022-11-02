@@ -16,129 +16,26 @@ c.fillRect(0, 0, canvas.width, canvas.height)
 
 const gravity = 0.3
 
-class Asset {
-    constructor({position, imageSrc}) {
-        this.position = position
-        this.width = 50
-        this.height = 100
-        this.image = new Image()
-        this.image.src = imageSrc
-    }
+// class Asset {
+//     constructor({position, imageSrc}) {
+//         this.position = position
+//         this.width = 50
+//         this.height = 100
+//         this.image = new Image()
+//         this.image.src = imageSrc
+//     }
 
-    draw() {
-        c.drawImage(this.image, this.position.x, this.position.y)
-    }
+//     draw() {
+//         c.drawImage(this.image, this.position.x, this.position.y)
+//     }
 
-    update() {
-        this.draw()
-    }
-}
+//     update() {
+//         this.draw()
+//     }
+// }
 
-class Sprite {
-    // basic parameters for the character
-    constructor({position, velocity, color = 'red', attackBoxOffset, scabbardOffset }){
-        this.position = position
-        this.velocity = velocity
-        this.width = 50
-        this.height = 150
-        this.lastKey
-        this.color = color
-         
-        //attackBox for the character
-        this.attackBox = {
-            position: {
-                x: this.position.x,
-                y: this.position.y
-            },
-            width: 100,
-            height: 50,
-            offset: attackBoxOffset
-        }
 
-         //scabbard for the character
-         this.scabbard = {
-            position: {
-                x: this.position.x,
-                y: this.position.y + 50
-            },
-            width: 100,
-            height: 50,
-            offset: scabbardOffset
-        }
-
-        this.color = color
-        this.isAttacking
-        this.isUsingMagic
-        this.health = 100
-        this.magic = 100
-       
-    }
-
-    // display the character
-    draw(){
-        c.fillStyle = this.color
-        c.fillRect(this.position.x, this.position.y, this.width, this.height)
-
-        // display the attackBox only when the character is attacking
-        if (this.isAttacking){
-            if (this.color == 'red') {
-                c.fillStyle = 'blue'
-            }
-            else {
-                c.fillStyle = 'orange'
-            }
-            c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height)
-        }
-        if (this.isUsingMagic){
-            c.fillStyle = 'yellow'
-            c.fillRect(this.scabbard.position.x, this.scabbard.position.y, this.scabbard.width, this.scabbard.height)
-        }
-    }
-
-    // update the player's position
-    update(){
-        this.draw()
-        this.position.x += this.velocity.x
-        this.position.y += this.velocity.y
-
-        // update the attackBox position to follow the character
-        this.attackBox.position.x = this.position.x + this.attackBox.offset.x
-        this.attackBox.position.y = this.position.y 
-
-         // update the scabbard position to follow the character
-         this.scabbard.position.x = this.position.x + this.scabbard.offset.x
-         this.scabbard.position.y = this.position.y + 50
-
-        if (this.position.y + this.height + this.velocity.y >= canvas.height){
-            this.velocity.y = 0
-        }
-        else{
-            this.velocity.y += gravity
-        }
-    }
-
-    attack() {
-        this.isAttacking = true
-        //attack for only a small period of time (100ms)
-        setTimeout(() => {
-            this.isAttacking = false
-        }, 200)
-
-    }
-
-    useMagic() {
-        this.isUsingMagic = true
-        //attack for only a small period of time (100ms)
-        setTimeout(() => {
-            this.isUsingMagic = false
-        }, 200)
-
-    }
-
-    
-}
-
-const background = new Asset({
+const background = new Sprite({
     position: {
         x: 0,
         y: 0
@@ -146,8 +43,19 @@ const background = new Asset({
     imageSrc: './assets/background.jpg'
 })
 
+const fire = new Sprite({
+    position: {
+        x: 10,
+        y: 420
+    },
+    imageSrc: './assets/fire_fx_v1.0/png/orange/loops/burning_loop_1.png',
+    scale: 4,
+    framesMax: 8
+})
+
+
 // create the main player sprite instance
-const player = new Sprite({
+const player = new Fighter({
     position: {
         x: 100,
         y: 100
@@ -170,7 +78,7 @@ const player = new Sprite({
 })
 
 // create an enemy sprite instance
-const enemy = new Sprite({
+const enemy = new Fighter({
     position: {
         x: 900,
         y: 100
@@ -227,6 +135,7 @@ function animate(){
     c.fillStyle = "gray"
     c.fillRect(0, 0, canvas.width, canvas.height)
     background.update()
+    fire.update()
     player.update()
     enemy.update()
 
