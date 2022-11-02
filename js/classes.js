@@ -49,10 +49,17 @@ class Sprite {
 }
 
 //copy of sprite class
-class Fighter {
+class Fighter extends Sprite {
     // basic parameters for the character
-    constructor({position, velocity, color = 'red', attackBoxOffset, scabbardOffset }){
-        this.position = position
+    constructor({position, velocity, color = 'red', attackBoxOffset, scabbardOffset,
+     imageSrc, scale = 1, framesMax = 1 }){
+        super({
+            position,
+            imageSrc,
+            scale,
+            framesMax
+        })
+
         this.velocity = velocity
         this.width = 50
         this.height = 150
@@ -86,29 +93,15 @@ class Fighter {
         this.isUsingMagic
         this.health = 100
         this.magic = 100
+        this.framesCurrent = 0
+        this.framesElapsed = 0
+        // adjust framesHold to adjust speed of sprite. 
+        // if necessary pass argument for different sprite speeds
+        // The lower the value the faster it goes
+        this.framesHold = 20
        
     }
-
-    // display the character
-    draw(){
-        c.fillStyle = this.color
-        c.fillRect(this.position.x, this.position.y, this.width, this.height)
-
-        // display the attackBox only when the character is attacking
-        if (this.isAttacking){
-            if (this.color == 'red') {
-                c.fillStyle = 'blue'
-            }
-            else {
-                c.fillStyle = 'orange'
-            }
-            c.fillRect(this.attackBox.position.x, this.attackBox.position.y, this.attackBox.width, this.attackBox.height)
-        }
-        if (this.isUsingMagic){
-            c.fillStyle = 'yellow'
-            c.fillRect(this.scabbard.position.x, this.scabbard.position.y, this.scabbard.width, this.scabbard.height)
-        }
-    }
+ 
 
     // update the player's position
     update(){

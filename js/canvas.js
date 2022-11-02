@@ -64,7 +64,6 @@ const player = new Fighter({
         x: 0,
         y: 0
     }, 
-    color: 'red',
     
     attackBoxOffset: {
         x: 0,
@@ -73,7 +72,8 @@ const player = new Fighter({
     scabbardOffset: {
         x: -50,
         y: 0
-    }
+    },
+    imageSrc: './img/Martial/Sprites/idle.png'
 
 })
 
