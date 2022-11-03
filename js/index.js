@@ -1,34 +1,26 @@
 
-var tag = document.createElement('script');
+let tag = document.createElement('script');
 tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
+let firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-var musicPlayer;
+let musicPlayer;
 
 
-//play yourtube video embedded in Iframe tag in the background
+//play youtube video embedded in Iframe tag in the background
 function onYouTubeIframeAPIReady() {
   musicPlayer = new YT.Player('youtube-video', {
     events: {
       'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
     }
   });
 }
 
 function onPlayerReady() {
-  console.log("hey Im ready");
-  //do whatever you want here. Like, player.playVideo();
-
   musicPlayer.loadPlaylist(['p56XUPetIAQ', '7FPjMy6crU8', 'aTuE4BROrjA']);
-
 }
 
-//function will change music on player change
-function onPlayerStateChange() {
-  console.log("my  player state changed");
-}
+
 
 
 //on start button even click to switch to the canvas view music will play
