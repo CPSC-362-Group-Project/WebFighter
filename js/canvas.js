@@ -57,8 +57,8 @@ const fire = new Sprite({
 // create the main player sprite instance
 const player = new Fighter({
     position: {
-        x: 0,
-        y: 0
+        x: 120,
+        y: 100
     },
     velocity: {
         x: 0,
@@ -104,14 +104,22 @@ const player = new Fighter({
           imageSrc: './img/Martial-Hero/Sprites/Death.png',
           framesMax: 6
         }
-    }
+    },
+    attackBox: {
+        offset: {
+          x: 100,
+          y: 50
+        },
+        width: 160,
+        height: 50
+      }
 
 })
 
 // create an enemy sprite instance
 const enemy = new Fighter({
     position: {
-        x: 900,
+        x: 850,
         y: 100
     },
     velocity: {
@@ -151,14 +159,23 @@ const enemy = new Fighter({
           framesMax: 4
         },
         takeHit: {
-          imageSrc: './img/Martial-Hero2/Sprites/Take Hit - white silhouette.png',
+          imageSrc: './img/Martial-Hero2/Sprites/Take Hit.png',
           framesMax: 3
         },
         death: {
           imageSrc: './img/Martial-Hero2/Sprites/Death.png',
           framesMax: 7
         }
-    }
+    },
+    attackBox: {
+        // offset and height and width should be the same
+        offset: {
+          x: -171,
+          y: 50
+        },
+        width: 171,
+        height: 50
+      }
 })
 
 //player.draw()
@@ -254,14 +271,21 @@ function animate(){
             rectangle1: player, 
             rectangle2: enemy
         }) &&
-        player.isAttacking
+        player.isAttacking && player.framesCurrent === 4
     ) {
+        enemy.takeHit()
         player.isAttacking = false
         // console.log('collision')
-        enemy.health -= 20 
+        
         document.querySelector('#enemyHealth').style.width = enemy.health + "%"
     }
 
+    // if player misses
+    if (player.isAttacking && player.framesCurrent === 4) {
+        player.isAttacking = false
+    }
+
+    // this is where player gets hit
     if (
         rectangularCollision({
             rectangle1: enemy, 
@@ -269,11 +293,19 @@ function animate(){
         }) &&
         enemy.isAttacking
     ) {
+        player.takeHit()
         enemy.isAttacking = false
         // console.log('Enemy launches an attack')
-        player.health -= 20 
+     
         document.querySelector('#playerHealth').style.width = player.health + "%"
    
+    }
+
+    // TODO: framesCurrent is the frame where the animation occurs
+    // we can use a variable to change this for multiple characters
+    // if player misses
+    if (enemy.isAttacking && enemy.framesCurrent === 2) {
+        enemy.isAttacking = false
     }
 
     if(player.isUsingMagic && player.magic >= 20) {
@@ -345,6 +377,7 @@ function determineWinner({ player, enemy, timerId }) {
   decreaseTimer()
 // event listener for when user press movement keys (WASD)
 window.addEventListener('keydown', (event) => {
+    if (!player.dead) {
     switch(event.key){
         case 'd':
         case 'D':
@@ -367,9 +400,11 @@ window.addEventListener('keydown', (event) => {
         case 'x':
             player.useMagic()
             break
-
-
+    }   
+    }
         // These are the enemies keys
+    if (!enemy.dead) {
+    switch(event.key) {
         case 'ArrowRight':
             keys.ArrowRight.pressed = true
             enemy.lastKey = 'ArrowRight'
@@ -389,6 +424,7 @@ window.addEventListener('keydown', (event) => {
             enemy.useMagic()
             break
     }    
+    }
     console.log(event.key)
 })
 
