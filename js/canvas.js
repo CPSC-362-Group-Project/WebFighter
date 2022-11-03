@@ -53,6 +53,15 @@ const fire = new Sprite({
     framesMax: 8
 })
 
+const white_fire = new Sprite({
+    position: {
+        x: 920,
+        y: 420
+    },
+    imageSrc: './assets/fire_fx_v1.0/png/white/loops/burning_loop_1.png',
+    scale: 4,
+    framesMax: 8
+})
 
 // create the main player sprite instance
 const player = new Fighter({
@@ -215,6 +224,7 @@ function animate(){
     c.fillRect(0, 0, canvas.width, canvas.height)
     background.update()
     fire.update()
+    white_fire.update()
     player.update()
     enemy.update()
 
