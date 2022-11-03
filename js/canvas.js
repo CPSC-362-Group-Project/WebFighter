@@ -14,7 +14,7 @@ canvas.height = 576
 // fill the canvas and delimit its size
 c.fillRect(0, 0, canvas.width, canvas.height)
 
-const gravity = 0.3
+const gravity = 0.2
 
 // class Asset {
 //     constructor({position, imageSrc}) {
@@ -57,23 +57,54 @@ const fire = new Sprite({
 // create the main player sprite instance
 const player = new Fighter({
     position: {
-        x: 100,
-        y: 100
+        x: 0,
+        y: 0
     },
     velocity: {
         x: 0,
         y: 0
-    }, 
-    
-    attackBoxOffset: {
+    },
+    offset: {
         x: 0,
         y: 0
+    } ,
+    imageSrc: './img/Martial-Hero/Sprites/Idle.png',
+    framesMax: 8,
+    scale: 2.5,
+    offset: {
+        x: 215,
+        y:160
     },
-    scabbardOffset: {
-        x: -50,
-        y: 0
-    },
-    imageSrc: './img/Martial/Sprites/idle.png'
+    sprites: {
+        idle: {
+            imageSrc: './img/Martial-Hero/Sprites/Idle.png',
+            framesMax: 8,
+        },
+        run: {
+            imageSrc: './img/Martial-Hero/Sprites/Run.png',
+            framesMax: 8
+        },
+        jump: {
+          imageSrc: './img/Martial-Hero/Sprites/Jump.png',
+          framesMax: 2
+        },
+        fall: {
+          imageSrc: './img/Martial-Hero/Sprites/Fall.png',
+          framesMax: 2
+        },
+        attack1: {
+          imageSrc: './img/Martial-Hero/Sprites/Attack1.png',
+          framesMax: 6
+        },
+        takeHit: {
+          imageSrc: './img/Martial-Hero/Sprites/Take Hit - white silhouette.png',
+          framesMax: 4
+        },
+        death: {
+          imageSrc: './img/Martial-Hero/Sprites/Death.png',
+          framesMax: 6
+        }
+    }
 
 })
 
@@ -87,15 +118,46 @@ const enemy = new Fighter({
         x: 0,
         y: 0
     },
-    color: 'green',
-    //enemy facing left initially, attackBox is offset to the left
-    attackBoxOffset: {
+    offset: {
         x: -50,
         y: 0
+    } ,
+    imageSrc: './img/Martial-Hero2/Sprites/Idle.png',
+    framesMax: 4,
+    scale: 2.5,
+    offset: {
+        x: 215,
+        y:175
     },
-    scabbardOffset: {
-        x: 0,
-        y: 0
+    sprites: {
+        idle: {
+            imageSrc: './img/Martial-Hero2/Sprites/Idle.png',
+            framesMax: 4,
+        },
+        run: {
+            imageSrc: './img/Martial-Hero2/Sprites/Run.png',
+            framesMax: 8
+        },
+        jump: {
+          imageSrc: './img/Martial-Hero2/Sprites/Jump.png',
+          framesMax: 2
+        },
+        fall: {
+          imageSrc: './img/Martial-Hero2/Sprites/Fall.png',
+          framesMax: 2
+        },
+        attack1: {
+          imageSrc: './img/Martial-Hero2/Sprites/Attack1.png',
+          framesMax: 4
+        },
+        takeHit: {
+          imageSrc: './img/Martial-Hero2/Sprites/Take Hit - white silhouette.png',
+          framesMax: 3
+        },
+        death: {
+          imageSrc: './img/Martial-Hero2/Sprites/Death.png',
+          framesMax: 7
+        }
     }
 })
 
@@ -142,19 +204,48 @@ function animate(){
     // player movement
     player.velocity.x = 0
     if (keys.a.pressed && player.lastKey === 'a'){
-        player.velocity.x = -5
+        player.velocity.x = -3
+        player.switchSprite('run')
     }
     else if (keys.d.pressed && player.lastKey === 'd'){
-        player.velocity.x = 5
+        player.velocity.x = 3
+        player.switchSprite('run')
+    } 
+    // return to idle if no other animation is being performed
+    else {
+        player.switchSprite('idle')
     }
+
+    // control animation for player jump and fall
+    if (player.velocity.y < 0) {
+        player.switchSprite('jump')
+    }
+    else if (player.velocity.y > 0) {
+        player.switchSprite('fall')
+    }
+
 
     // Enemy movement
     enemy.velocity.x = 0
     if (keys.ArrowLeft.pressed && enemy.lastKey === 'ArrowLeft'){
-        enemy.velocity.x = -5
+        enemy.velocity.x = -3
+        enemy.switchSprite('run')
     }
     else if (keys.ArrowRight.pressed && enemy.lastKey === 'ArrowRight'){
-        enemy.velocity.x = 5
+        enemy.velocity.x = 3
+        enemy.switchSprite('run')
+    }
+    // return to idle if no other animation is being performed
+    else {
+        enemy.switchSprite('idle')
+    }
+
+    // control animation for enemy jump and fall
+    if (enemy.velocity.y < 0) {
+        enemy.switchSprite('jump')
+    }
+    else if (enemy.velocity.y > 0) {
+        enemy.switchSprite('fall')
     }
 
     // Collision detection
