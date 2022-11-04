@@ -168,7 +168,7 @@ const enemy = new Fighter({
           framesMax: 4
         },
         takeHit: {
-          imageSrc: './img/Martial-Hero2/Sprites/Take Hit.png',
+          imageSrc: './img/Martial-Hero2/Sprites/Take hit.png',
           framesMax: 3
         },
         death: {
