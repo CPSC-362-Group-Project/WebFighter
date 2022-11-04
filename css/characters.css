@@ -1,0 +1,109 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    /*background: #25252a;*/
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* main body */
+h1 {
+    font-size: 100px;
+    font-family: 'Road Rage', cursive;
+    margin-bottom: 0;
+    /* adjust this later*/
+    margin-top: -1rem;
+}
+
+body {
+    text-align: center;
+    position: relative;
+    padding-bottom: 274px;
+    min-height: 100vh;
+    background-color: #4e4e4e;
+}
+
+
+/* end of main body */
+
+/* nav bar */
+li, a {
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    background-color: #1b1b1b;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+.logo {
+    cursor: pointer;
+    width: 281px;
+    height: 100px;
+
+}
+
+.navigation {
+    list-style: none;
+}
+
+.navigation li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.navigation li a {
+    transition: all 0.3s ease 0s;
+}
+
+.navigation li a:hover {
+    color: #0088a9;
+}
+
+.link {
+    padding: 9px 25px;
+    background-color: red;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.link:hover {
+    background-color: rgba(0, 136, 169, 0.8);
+    border: red;
+}
+
+/* end of nav bar */
+
+/* add footer to this page */
+footer {
+    background-color: #111;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    min-width: 100%;
+    
+}
+
+
+.copyright {
+    background: black;
+    min-width: 100%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.copyright p {
+    font-size: 10px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+/* end of footer */
