@@ -5,7 +5,8 @@
     box-sizing: border-box;
     font-family: 'Press Start 2P', cursive;
   }
-  
+
+/* main body */
 body {
     text-align: center;
     position: relative;
@@ -13,7 +14,7 @@ body {
     background-color: #4e4e4e;
 }
 
-
+/* game stats */
 div.health_bar_style {
     height: 100px;
     border-radius: 6px 12px 18px 24px;
@@ -132,6 +133,8 @@ iframe {
     visibility: hidden;
 }
 
+/* end of game stats */
+
 /* commenting out since we are using music player */
 /* #mute{
     background-color: aqua;
@@ -243,6 +246,8 @@ canvas {
     grid-row: 1;
 }
 
+/* end of music controller */
+
 /* add footer to this page */
 footer {
     background-color: #111;
@@ -321,3 +326,5 @@ header {
     background-color: rgba(0, 136, 169, 0.8);
     border: red;
 }
+
+/* end of nav bar */
