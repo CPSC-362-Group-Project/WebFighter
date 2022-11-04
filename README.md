@@ -12,7 +12,17 @@ This app will allow users to play a browser based 2d fighting game.
 # Controls
 User will use a standard qwerty keyboard to control the movement and attacks of
 the characters. The 'W' 'A' 'S' 'D' keys will control the players movement in
-the arena. 'Space Bar' to attack, to be continued...
+the arena. Currently,
+- For player (left),
+[x] healing effect (key x)
+[x] waterball (range)/ waterball (melee) (key c)
+[x] whirpool (key z)
+
+- For enemy (right),
+[x] healing effect (arrow down)
+[x] fireball (key p)
+
+'Space Bar' to attack, to be continued...
 
 ![Start_Image](./for-later/Start_Screen_White_BG.png)
 
