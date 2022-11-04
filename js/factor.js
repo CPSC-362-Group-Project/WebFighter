@@ -1,37 +1,36 @@
 
-//Example class for testing automation with mocha
+// Example class for testing automation with mocha
 class Todos {
-  constructor() {
-      this.todos = [];
+  constructor () {
+    this.todos = []
   }
-  
-  list() {
-      return [...this.todos];
-  }
-  
-  add(title) {
-      let todo = {
-          title: title,
-          completed: false,
-      }
-      
-      this.todos.push(todo);
-  }
-  
-  complete(title) {
-      let todoFound = false;
-      this.todos.forEach((todo) => {
-          if (todo.title === title) {
-              todo.completed = true;
-              todoFound = true;
-              return;
-            }
-        });
 
-        if (!todoFound) {
-            throw new Error(`No TODO was found with the title: "${title}"`);
-        }
+  list () {
+    return [...this.todos]
+  }
+
+  add (title) {
+    const todo = {
+      title,
+      completed: false
     }
+
+    this.todos.push(todo)
+  }
+
+  complete (title) {
+    let todoFound = false
+    this.todos.forEach((todo) => {
+      if (todo.title === title) {
+        todo.completed = true
+        todoFound = true
+      }
+    })
+
+    if (!todoFound) {
+      throw new Error(`No TODO was found with the title: "${title}"`)
+    }
+  }
 }
 
 // testing decrease timer function with mocha
@@ -48,4 +47,4 @@ function decreaseTimer () {
   }
 }
 
-module.exports = {Todos, decreaseTimer};
+module.exports = { Todos, decreaseTimer }
