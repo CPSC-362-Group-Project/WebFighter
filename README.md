@@ -14,9 +14,9 @@ User will use a standard qwerty keyboard to control the movement and attacks of
 the characters. The 'W' 'A' 'S' 'D' keys will control the players movement in
 the arena. 'Space Bar' to attack, to be continued...
 
-![Start_Image](Start_Screen_White_BG.png)
+![Start_Image](./for-later/Start_Screen_White_BG.png)
 
-![Fight_Screen_Mockup](Mockup_1.jpeg)
+![Fight_Screen_Mockup](./for-later/Mockup_1.jpeg)
 
-![Fight_Screen_Notes](Mockup_w-Notes.jpeg)
+![Fight_Screen_Notes](./for-later/Mockup_w-Notes.jpeg)
 
