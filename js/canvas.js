@@ -63,130 +63,6 @@ const white_fire = new Sprite({
     framesMax: 8
 })
 
-// create the main player sprite instance
-const player = new Fighter({
-    position: {
-        x: 120,
-        y: 100
-    },
-    velocity: {
-        x: 0,
-        y: 0
-    },
-    offset: {
-        x: 0,
-        y: 0
-    } ,
-    imageSrc: './img/Martial-Hero/Sprites/Idle.png',
-    framesMax: 8,
-    scale: 2.5,
-    offset: {
-        x: 215,
-        y:160
-    },
-    sprites: {
-        idle: {
-            imageSrc: './img/Martial-Hero/Sprites/Idle.png',
-            framesMax: 8,
-        },
-        run: {
-            imageSrc: './img/Martial-Hero/Sprites/Run.png',
-            framesMax: 8
-        },
-        jump: {
-          imageSrc: './img/Martial-Hero/Sprites/Jump.png',
-          framesMax: 2
-        },
-        fall: {
-          imageSrc: './img/Martial-Hero/Sprites/Fall.png',
-          framesMax: 2
-        },
-        attack1: {
-          imageSrc: './img/Martial-Hero/Sprites/Attack1.png',
-          framesMax: 6
-        },
-        takeHit: {
-          imageSrc: './img/Martial-Hero/Sprites/Take Hit - white silhouette.png',
-          framesMax: 4
-        },
-        death: {
-          imageSrc: './img/Martial-Hero/Sprites/Death.png',
-          framesMax: 6
-        }
-    },
-    attackBox: {
-        offset: {
-          x: 100,
-          y: 50
-        },
-        width: 160,
-        height: 50
-      }
-
-})
-
-// create an enemy sprite instance
-const enemy = new Fighter({
-    position: {
-        x: 850,
-        y: 100
-    },
-    velocity: {
-        x: 0,
-        y: 0
-    },
-    offset: {
-        x: -50,
-        y: 0
-    } ,
-    imageSrc: './img/Martial-Hero2/Sprites/Idle.png',
-    framesMax: 4,
-    scale: 2.5,
-    offset: {
-        x: 215,
-        y:175
-    },
-    sprites: {
-        idle: {
-            imageSrc: './img/Martial-Hero2/Sprites/Idle.png',
-            framesMax: 4,
-        },
-        run: {
-            imageSrc: './img/Martial-Hero2/Sprites/Run.png',
-            framesMax: 8
-        },
-        jump: {
-          imageSrc: './img/Martial-Hero2/Sprites/Jump.png',
-          framesMax: 2
-        },
-        fall: {
-          imageSrc: './img/Martial-Hero2/Sprites/Fall.png',
-          framesMax: 2
-        },
-        attack1: {
-          imageSrc: './img/Martial-Hero2/Sprites/Attack1.png',
-          framesMax: 4
-        },
-        takeHit: {
-          imageSrc: './img/Martial-Hero2/Sprites/Take hit.png',
-          framesMax: 3
-        },
-        death: {
-          imageSrc: './img/Martial-Hero2/Sprites/Death.png',
-          framesMax: 7
-        }
-    },
-    attackBox: {
-        // offset and height and width should be the same
-        offset: {
-          x: -171,
-          y: 50
-        },
-        width: 171,
-        height: 50
-      }
-})
-
 //player.draw()
 //enemy.draw()
 console.log(player)
@@ -225,8 +101,10 @@ function animate(){
     background.update()
     fire.update()
     white_fire.update()
+
     player.update()
     enemy.update()
+
 
     // player movement
     player.velocity.x = 0
@@ -318,7 +196,87 @@ function animate(){
         enemy.isAttacking = false
     }
 
-    if(player.isUsingMagic && player.magic >= 20) {
+
+    if (playerUsedSpecial1 === true) {
+        waterEffect.position = enemy.position
+        waterEffect.offset = {x:80, y:80}
+        waterEffectEnd.position = enemy.position
+        waterEffectEnd.offset = {x:80, y:80}
+        waterEffect.update()
+        waterEffectEnd.update()
+        enemy.switchSprite('takeHit')
+        
+        setTimeout(() => {
+            playerUsedSpecial1 = false
+        }
+        , 5000)
+    }
+    
+    if (playerUsedSpecial2 === true) {
+        //shooting attack
+
+        if (!moveable) {
+            waterBall.position = {...player.position}
+            moveable = true
+        }
+       
+        //close up attack 
+        //waterBall.position = player.position
+        if (waterBall.position.x < enemy.position.x) {
+            waterBall.update()
+            if(waterBall.framesCurrent === 21){
+                waterBall.framesCurrent = 5
+            }
+        
+            waterBall.position.x += 5
+        }
+        else {
+            waterBall.position.x = enemy.position.x
+            waterBallImpact.position = enemy.position
+            waterBallImpact.update()
+            enemy.switchSprite('takeHit')
+        }
+        
+        setTimeout(() => {
+            playerUsedSpecial2 = false
+        }
+        , 5000)
+    }
+    
+
+    if (enemyUsedSpecial2 === true) {
+        //shooting attack
+
+        if (!moveable2) {
+            fireBolt.position = {...enemy.position}
+            moveable2 = true
+        }
+       
+        //close up attack 
+        //fireBolt.position = enemy.position
+        if (fireBolt.position.x > player.position.x) {
+            fireBolt.update()
+            fireBolt.position.x -= 5
+        }
+        else {
+            //fireBolt.position.x = player.position.x
+            fireBolt.position = player.position
+            fireBolt.update()
+            fireBolt.framesCurrent = 0
+            fireBolt.update()
+            if(fireBolt.framesCurrent === 5){
+                fireBolt.framesCurrent = 0
+            }
+            player.switchSprite('takeHit')
+        }
+        
+        setTimeout(() => {
+            enemyUsedSpecial2 = false
+        }
+        , 5000)
+    }
+    
+    if(player.isUsingMagic ) {
         player.isUsingMagic = false
         if (player.health < 50) {
             player.health += 50
@@ -331,6 +289,51 @@ function animate(){
         document.querySelector('#playerHealth').style.width = player.health + "%"
         
         
+    }
+
+    if (player.isUsingSpecial1) {
+    
+        player.isUsingSpecial1 = false
+        player.magic -= 50
+        if (enemy.health < 40) {
+            enemy.health = 0
+        }
+        else {
+            enemy.health -= 40
+        }
+
+        document.querySelector('#playerMagic').style.width = player.magic + "%"
+        document.querySelector('#enemyHealth').style.width = enemy.health + "%"
+    }
+
+    if (player.isUsingSpecial2) {
+    
+        player.isUsingSpecial2 = false
+        player.magic -= 40
+        if (enemy.health < 35) {
+            enemy.health = 0
+        }
+        else {
+            enemy.health -= 35
+        }
+
+        document.querySelector('#playerMagic').style.width = player.magic + "%"
+        document.querySelector('#enemyHealth').style.width = enemy.health + "%"
+    }
+
+    if (enemy.isUsingSpecial2) {
+    
+        enemy.isUsingSpecial2 = false
+        enemy.magic -= 40
+        if (player.health < 35) {
+            player.health = 0
+        }
+        else {
+            player.health -= 35
+        }
+
+        document.querySelector('#enemyMagic').style.width = enemy.magic + "%"
+        document.querySelector('#playerHealth').style.width = player.health + "%"
     }
 
     if(enemy.isUsingMagic && enemy.magic >= 20) {
@@ -410,6 +413,20 @@ window.addEventListener('keydown', (event) => {
         case 'x':
             player.useMagic()
             break
+
+        case 'z':
+            player.useSpecial1()
+            if (player.isUsingSpecial1) {
+                playerUsedSpecial1 = true
+            }
+            break
+        case 'c':
+            player.useSpecial2()
+            if (player.isUsingSpecial2) {
+                moveable = false
+                playerUsedSpecial2 = true
+            }
+            break
     }   
     }
         // These are the enemies keys
@@ -432,6 +449,13 @@ window.addEventListener('keydown', (event) => {
             break
         case 'ArrowDown':
             enemy.useMagic()
+            break
+        case 'p':
+            enemy.useSpecial2()
+            if (enemy.isUsingSpecial2) {
+                moveable2 = false
+                enemyUsedSpecial2 = true
+            }
             break
     }    
     }

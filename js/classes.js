@@ -1,6 +1,6 @@
 class Sprite {
     // basic parameters for the character
-    constructor({position, imageSrc, scale = 1, framesMax = 1, offset = {x:0, y: 0}}){
+    constructor({position, imageSrc, scale = 1, framesMax = 1, offset = {x:0, y: 0}, is2dFrame = false, xFrames = 0}){
         this.position = position
         this.width = 50
         this.height = 150 //change to 100?
@@ -13,23 +13,42 @@ class Sprite {
         // adjust framesHold to adjust speed of sprite. 
         // if necessary pass argument for different sprite speeds
         // The lower the value the faster it goes
-        this.framesHold = 20
+        this.framesHold =10
         this.offset = offset
+        this.is2dFrame = is2dFrame
+        this.xFrames = xFrames
     }
 
     // display the character
     draw(){
-       c.drawImage(
-        this.image, 
-        this.framesCurrent * (this.image.width / this.framesMax),
-        0,
-        this.image.width / this.framesMax,
-        this.image.height,
-        this.position.x - this.offset.x, 
-        this.position.y - this.offset.y, 
-        (this.image.width / this.framesMax) * this.scale, 
-        this.image.height * this.scale
-        )
+        if (!this.is2dFrame) {
+            c.drawImage(
+                this.image, 
+                this.framesCurrent * (this.image.width / this.framesMax),
+                0,
+                this.image.width / this.framesMax,
+                this.image.height,
+                this.position.x - this.offset.x, 
+                this.position.y - this.offset.y, 
+                (this.image.width / this.framesMax) * this.scale, 
+                this.image.height * this.scale
+            )
+        }
+        else {
+            const yFrames = Math.floor(this.framesMax / this.xFrames)
+            c.drawImage(
+                this.image,
+                this.framesCurrent % this.xFrames * (this.image.width / this.xFrames),
+                Math.floor(this.framesCurrent / this.xFrames) * (this.image.height / yFrames),
+                this.image.width / this.xFrames,
+                this.image.height / yFrames,
+                this.position.x - this.offset.x,
+                this.position.y - this.offset.y,
+                (this.image.width / this.xFrames) * this.scale,
+                this.image.height / yFrames * this.scale
+            )
+        }
+       
     }
 
     animateFrames() {
@@ -94,6 +113,8 @@ class Fighter extends Sprite {
         this.color = color
         this.isAttacking
         this.isUsingMagic
+        this.isUsingSpecial1
+        this.isUsingSpecial2
         this.health = 100
         this.magic = 100
         this.framesCurrent = 0
@@ -170,13 +191,23 @@ class Fighter extends Sprite {
     }
 
     useMagic() {
-        this.isUsingMagic = true
-        //attack for only a small period of time (100ms)
-        setTimeout(() => {
-            this.isUsingMagic = false
-        }, 200)
-
+        if (this.magic >=20) {
+            this.isUsingMagic = true
+        }
     }
+
+    useSpecial1() {
+        if (this.magic >= 50) {
+            this.isUsingSpecial1 = true
+        }
+    }
+
+    useSpecial2() {
+        if (this.magic >= 40) {
+            this.isUsingSpecial2 = true
+        }
+    }
+
     switchSprite(sprite){
         if (this.image === this.sprites.death.image) {
             if (this.framesCurrent === this.sprites.death.framesMax - 1) {
