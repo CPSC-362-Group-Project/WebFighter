@@ -1,0 +1,14 @@
+h1 {
+    font-size: 120px;
+    font-family: 'Road Rage', cursive;
+    margin-bottom: 0;
+    /* adjust this later*/
+    margin-top: 10rem;
+}
+
+body {
+    text-align: center;
+    position: relative;
+    padding-bottom: 274px;
+    min-height: 100vh;
+}
