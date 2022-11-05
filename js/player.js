@@ -4,66 +4,7 @@ let playerUsedSpecial2 = false
 let moveable = false
 
 // create the main player sprite instance
-const player = new Fighter({
-  position: {
-    x: 120,
-    y: 100
-  },
-  velocity: {
-    x: 0,
-    y: 0
-  },
-  offset: {
-    x: 0,
-    y: 0
-  },
-  imageSrc: './img/Martial-Hero/Sprites/Idle.png',
-  framesMax: 8,
-  scale: 2.5,
-  offset: {
-    x: 215,
-    y: 160
-  },
-  sprites: {
-    idle: {
-      imageSrc: './img/Martial-Hero/Sprites/Idle.png',
-      framesMax: 8
-    },
-    run: {
-      imageSrc: './img/Martial-Hero/Sprites/Run.png',
-      framesMax: 8
-    },
-    jump: {
-      imageSrc: './img/Martial-Hero/Sprites/Jump.png',
-      framesMax: 2
-    },
-    fall: {
-      imageSrc: './img/Martial-Hero/Sprites/Fall.png',
-      framesMax: 2
-    },
-    attack1: {
-      imageSrc: './img/Martial-Hero/Sprites/Attack1.png',
-      framesMax: 6
-    },
-    takeHit: {
-      imageSrc: './img/Martial-Hero/Sprites/Take Hit - white silhouette.png',
-      framesMax: 4
-    },
-    death: {
-      imageSrc: './img/Martial-Hero/Sprites/Death.png',
-      framesMax: 6
-    }
-  },
-  attackBox: {
-    offset: {
-      x: 100,
-      y: 50
-    },
-    width: 160,
-    height: 50
-  }
-
-})
+const player = new Fighter(Matt)
 
 const heal_eff1 = new Sprite({
   position: player.position,
