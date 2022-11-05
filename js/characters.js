@@ -328,7 +328,7 @@ let Nat = {
     scale: 2.5,
     offset: {
       x: 215,
-      y: 160
+      y: 140
     },
     sprites: {
       idle: {
