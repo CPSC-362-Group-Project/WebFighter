@@ -4,7 +4,7 @@ let playerUsedSpecial2 = false
 let moveable = false
 
 // create the main player sprite instance
-const player = new Fighter(Pyro)
+const player = new Fighter(Nat)
 
 const heal_eff1 = new Sprite({
   position: player.position,

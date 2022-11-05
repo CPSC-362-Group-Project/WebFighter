@@ -310,3 +310,124 @@ let Pyro = {
 
 
 // new character
+let Nat = {
+    position: {
+      x: 120,
+      y: 100
+    },
+    velocity: {
+      x: 0,
+      y: 0
+    },
+    offset: {
+      x: 0,
+      y: 0
+    },
+    imageSrc: './assets/characters/Hero-Knight/Sprites/Idle.png',
+    framesMax: 11,
+    scale: 2.5,
+    offset: {
+      x: 215,
+      y: 160
+    },
+    sprites: {
+      idle: {
+        imageSrc: './assets/characters/Hero-Knight/Sprites/Idle.png',
+        framesMax: 11
+      },
+      run: {
+        imageSrc: './assets/characters/Hero-Knight/Sprites/Run.png',
+        framesMax: 8
+      },
+      jump: {
+        imageSrc: './assets/characters/Hero-Knight/Sprites/Jump.png',
+        framesMax: 3
+      },
+      fall: {
+        imageSrc: './assets/characters/Hero-Knight/Sprites/Fall.png',
+        framesMax: 3
+      },
+      attack1: {
+        imageSrc: './assets/characters/Hero-Knight/Sprites/Attack1.png',
+        framesMax: 7
+      },
+      takeHit: {
+        imageSrc: './assets/characters/Hero-Knight/Sprites/Take-Hit.png',
+        framesMax: 4
+      },
+      death: {
+        imageSrc: './assets/characters/Hero-Knight/Sprites/Death.png',
+        framesMax: 11
+      }
+    },
+    attackBox: {
+      offset: {
+        x: 10,
+        y: -10
+      },
+      width: 105,
+      height: 100
+    }
+}
+
+
+// new character
+let King = {
+    position: {
+      x: 120,
+      y: 100
+    },
+    velocity: {
+      x: 0,
+      y: 0
+    },
+    offset: {
+      x: 0,
+      y: 0
+    },
+    imageSrc: './assets/characters/Medieval-King-Pack/Idle.png',
+    framesMax: 6,
+    scale: 1.8,
+    offset: {
+      x: 130,
+      y: 63
+    },
+    sprites: {
+      idle: {
+        imageSrc: './assets/characters/Medieval-King-Pack/Idle.png',
+        framesMax: 6
+      },
+      run: {
+        imageSrc: './assets/characters/Medieval-King-Pack/Run.png',
+        framesMax: 8
+      },
+      jump: {
+        imageSrc: './assets/characters/Medieval-King-Pack/Jump.png',
+        framesMax: 2
+      },
+      fall: {
+        imageSrc: './assets/characters/Medieval-King-Pack/Fall.png',
+        framesMax: 2
+      },
+      attack1: {
+        imageSrc: './assets/characters/Medieval-King-Pack/Attack_1.png',
+        framesMax: 6
+      },
+      takeHit: {
+        imageSrc: './assets/characters/Medieval-King-Pack/Hit.png',
+        framesMax: 4
+      },
+      death: {
+        imageSrc: './assets/characters/Medieval-King-Pack/Death.png',
+        framesMax: 11
+      }
+    },
+    attackBox: {
+      offset: {
+        x: -50,
+        y: 50
+      },
+      width: 100,
+      height: 70
+    }
+}
