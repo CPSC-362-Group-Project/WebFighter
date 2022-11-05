@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="./css/canvas.css" type="text/css">
+    <link rel="stylesheet" href="./css/pause.css" type="text/css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -92,6 +93,25 @@
         </div>
 
     <!-- <a href="index.html"><button id="back">Go back</button></a> -->
+    <!-- Pause button code  -->
+    <div style="position: absolute;left:970px">
+        <div id="pause" onclick="pauseHandler(event)">
+          <img id="imgPausePlay" src="https://cdn4.iconfinder.com/data/icons/media-controls-4/100/pause-64.png">
+        </div>
+      </div>
+      <div id="popup" class="popup-wrapper hide">
+        <div class="popup-content">
+            <div class="popup-title">
+                <button type="button" class="popup-close" onclick="hidePopUp()">&times;</button>
+                <h3>Game Paused</h3>
+            </div>
+            <div class="popup-body">
+                <p>Game has been paused.</p>
+            </div>
+        </div>
+      </div>
+
+
     <!-- The Order of imported scripts is important -->
     <script src="./js/classes.js"></script>
     <script src="./js/enemy.js"></script>
