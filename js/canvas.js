@@ -16,30 +16,24 @@ c.fillRect(0, 0, canvas.width, canvas.height)
 
 const gravity = 0.2
 
-// class Asset {
-//     constructor({position, imageSrc}) {
-//         this.position = position
-//         this.width = 50
-//         this.height = 100
-//         this.image = new Image()
-//         this.image.src = imageSrc
-//     }
-
-//     draw() {
-//         c.drawImage(this.image, this.position.x, this.position.y)
-//     }
-
-//     update() {
-//         this.draw()
-//     }
-// }
-
 const background = new Sprite({
   position: {
     x: 0,
     y: 0
   },
-  imageSrc: './assets/background.jpg'
+  imageSrc: './assets/backgrounds.jpg',
+  framesMax: 3
+  //sprites: {
+  //  background_1: {
+  //    imageSrc: './assets/background_1.jpg'
+  //  },
+  //  background_2: {
+  //    imageSrc: './assets/background_2.jpg'
+  //  },
+  //  background_3: {
+  //    imageSrc: './assets/background_3.jpg'
+  //  }
+  //}
 })
 
 const fire = new Sprite({
@@ -103,6 +97,8 @@ function animate () {
 
   player.update()
   enemy.update()
+
+  // arena selection
 
   // player movement
   player.velocity.x = 0
