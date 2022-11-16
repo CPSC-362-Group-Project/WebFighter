@@ -426,3 +426,65 @@ let King = {
 		height: 70,
 	},
 };
+
+// new character
+
+let Wiz = {
+	position: {
+		x: 120,
+		y: 100,
+	},
+	velocity: {
+		x: 0,
+		y: 0,
+	},
+	offset: {
+		x: 0,
+		y: 0,
+	},
+	imageSrc: "./assets/characters/Wizard-Pack/Idle.png",
+	framesMax: 6,
+	scale: 1.6,
+	offset: {
+		x: 215,
+		y: 80,
+	},
+	sprites: {
+		idle: {
+			imageSrc: "./assets/characters/Wizard-Pack/Idle.png",
+			framesMax: 6,
+		},
+		run: {
+			imageSrc: "./assets/characters/Wizard-Pack/Run.png",
+			framesMax: 8,
+		},
+		jump: {
+			imageSrc: "./assets/characters/Wizard-Pack/Jump.png",
+			framesMax: 2,
+		},
+		fall: {
+			imageSrc: "./assets/characters/Wizard-Pack/Fall.png",
+			framesMax: 2,
+		},
+		attack1: {
+			imageSrc: "./assets/characters/Wizard-Pack/Attack2.png",
+			framesMax: 8,
+		},
+		takeHit: {
+			imageSrc: "./assets/characters/Wizard-Pack/Hit.png",
+			framesMax: 4,
+		},
+		death: {
+			imageSrc: "./assets/characters/Wizard-Pack/Death.png",
+			framesMax: 7,
+		},
+	},
+	attackBox: {
+		offset: {
+			x: 20,
+			y: -0,
+		},
+		width: 123,
+		height: 80,
+	},
+};

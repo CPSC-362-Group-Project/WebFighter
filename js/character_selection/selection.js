@@ -270,7 +270,7 @@ const player = new Fighter(Nat);
 
 function animate() {
 	window.requestAnimationFrame(animate);
-	c.fillStyle = "black";
+	c.fillStyle = "grey";
 	c.fillRect(0, 0, canvas.width, canvas.height);
 	// background.update();
 	// fire.update();
