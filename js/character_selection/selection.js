@@ -1,14 +1,18 @@
-const canvas = document.querySelector(".matt");
-const c = canvas.getContext("2d");
+const playerMatt = document.querySelector("canvas");
+const c = playerMatt.getContext("2d");
 
-// variables for the width and height of the canvas
-canvas.width = 1024;
-canvas.height = 576;
+// test adding a second playerMatt
+const playerNat = document.querySelector(".nat");
+const n = playerNat.getContext("2d");
 
-// fill the canvas and delimit its size
-c.fillRect(0, 0, canvas.width, canvas.height);
+// variables for the width and height of the playerMatt
+playerMatt.width = 200;
+playerMatt.height = 300;
 
-const gravity = 0.2;
+// fill the playerMatt and delimit its size
+c.fillRect(0, 0, playerMatt.width, playerMatt.height);
+
+const gravity = 0.5;
 // code for sprite here
 class Sprite {
 	// basic parameters for the character
@@ -21,12 +25,14 @@ class Sprite {
 		is2dFrame = false,
 		xFrames = 0,
 	}) {
-		this.position = position;
+		// adjust all these values and pass them from other file for all characters
+		// adjust position with gravity to make this work nicely
+		this.position = { x: -240, y: -150 };
 		this.width = 50;
 		this.height = 150; // change to 100?
 		this.image = new Image();
 		this.image.src = imageSrc;
-		this.scale = scale;
+		this.scale = 3.5;
 		this.framesMax = framesMax;
 		this.framesCurrent = 0;
 		this.framesElapsed = 0;
@@ -41,16 +47,17 @@ class Sprite {
 
 	// display the character
 	draw() {
+		// instead of c use a parameter on draw(c)
 		c.drawImage(
 			this.image,
 			this.framesCurrent * (this.image.width / this.framesMax),
 			0,
 			this.image.width / this.framesMax,
 			this.image.height,
-			this.position.x - 450,
-			this.position.y - 870,
-			(this.image.width / this.framesMax) * 9,
-			this.image.height * 9
+			this.position.x,
+			this.position.y,
+			(this.image.width / this.framesMax) * this.scale,
+			this.image.height * this.scale
 		);
 	}
 
@@ -111,20 +118,13 @@ class Fighter extends Sprite {
 		};
 
 		this.color = color;
-		this.isAttacking;
-		this.isUsingMagic;
-		this.isUsingSpecial1;
-		this.isUsingSpecial2;
-		this.health = 100;
-		this.magic = 100;
 		this.framesCurrent = 0;
 		this.framesElapsed = 0;
 		// adjust framesHold to adjust speed of sprite.
 		// if necessary pass argument for different sprite speeds
 		// The lower the value the faster it goes
-		this.framesHold = 10;
+		this.framesHold = 2;
 		this.sprites = sprites;
-		this.dead = false;
 
 		for (const sprite in this.sprites) {
 			sprites[sprite].image = new Image();
@@ -135,9 +135,7 @@ class Fighter extends Sprite {
 	// update the player's position
 	update() {
 		this.draw();
-		if (!this.dead) {
-			this.animateFrames();
-		}
+		this.animateFrames();
 
 		// Temporarily removing because is messing up the code
 		// // update the attackBox position to follow the character
@@ -154,12 +152,9 @@ class Fighter extends Sprite {
 		this.position.x += this.velocity.x;
 		this.position.y += this.velocity.y;
 
-		// update the scabbard position to follow the character
-		//  this.scabbard.position.x = this.position.x + this.scabbard.offset.x
-		//  this.scabbard.position.y = this.position.y + 50
-
-		// note that canvas.height determines the limit for the players.
-		if (this.position.y + this.height + this.velocity.y >= canvas.height - 50) {
+		// note that playerMatt.height determines the limit for the players.
+		// check original to see if this is working properly
+		if (this.position.y >= -180) {
 			this.velocity.y = 0;
 			// might not need the next sentence
 			// this.position.y = 376
@@ -171,24 +166,10 @@ class Fighter extends Sprite {
 	}
 
 	switchSprite(sprite) {
-		if (this.image === this.sprites.death.image) {
-			if (this.framesCurrent === this.sprites.death.framesMax - 1) {
-				this.dead = true;
-			}
-			return;
-		}
-
 		// overriding all other animations with the attack animation
 		if (
 			this.image === this.sprites.attack1.image &&
 			this.framesCurrent < this.sprites.attack1.framesMax - 1
-		)
-			return;
-
-		// override when fighter gets hit
-		if (
-			this.image === this.sprites.takeHit.image &&
-			this.framesCurrent < this.sprites.takeHit.framesMax - 1
 		)
 			return;
 
@@ -271,7 +252,8 @@ const player = new Fighter(Nat);
 function animate() {
 	window.requestAnimationFrame(animate);
 	c.fillStyle = "grey";
-	c.fillRect(0, 0, canvas.width, canvas.height);
+	n.fillStyle = "red";
+	c.fillRect(0, 0, playerMatt.width, playerMatt.height);
 	// background.update();
 	// fire.update();
 	// white_fire.update();
