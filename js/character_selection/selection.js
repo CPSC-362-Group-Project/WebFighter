@@ -322,7 +322,7 @@ function animate() {
 	playerMatt.addEventListener("click", () => {
 		// add some code here to move to game
 		localStorage.setItem("selection", "1");
-		document.location.href = "./canvas.html";
+		document.location.href = "./stage_select.html";
 	});
 
 	// second player
@@ -336,7 +336,7 @@ function animate() {
 	playerNat.addEventListener("click", () => {
 		// add some code here to move to game
 		localStorage.setItem("selection", "2");
-		document.location.href = "./canvas.html";
+		document.location.href = "./stage_select.html";
 	});
 
 	// third player
@@ -350,7 +350,7 @@ function animate() {
 	playerKenji.addEventListener("click", () => {
 		// add some code here to move to game
 		localStorage.setItem("selection", "3");
-		document.location.href = "./canvas.html";
+		document.location.href = "./stage_select.html";
 	});
 
 	//  fourth player
@@ -364,7 +364,7 @@ function animate() {
 	playerRiku.addEventListener("click", () => {
 		// add some code here to move to game
 		localStorage.setItem("selection", "4");
-		document.location.href = "./canvas.html";
+		document.location.href = "./stage_select.html";
 	});
 
 	// fifth player
@@ -378,7 +378,7 @@ function animate() {
 	playerPyro.addEventListener("click", () => {
 		// add some code here to move to game
 		localStorage.setItem("selection", "5");
-		document.location.href = "./canvas.html";
+		document.location.href = "./stage_select.html";
 	});
 
 	// sixth player
@@ -392,7 +392,7 @@ function animate() {
 	playerRay.addEventListener("click", () => {
 		// add some code here to move to game
 		localStorage.setItem("selection", "6");
-		document.location.href = "./canvas.html";
+		document.location.href = "./stage_select.html";
 	});
 
 	// seventh player
@@ -406,7 +406,7 @@ function animate() {
 	playerWiz.addEventListener("click", () => {
 		// add some code here to move to game
 		localStorage.setItem("selection", "7");
-		document.location.href = "./canvas.html";
+		document.location.href = "./stage_select.html";
 	});
 
 	// eighth player
@@ -420,7 +420,7 @@ function animate() {
 	playerKing.addEventListener("click", () => {
 		// add some code here to move to game
 		localStorage.setItem("selection", "8");
-		document.location.href = "./canvas.html";
+		document.location.href = "./stage_select.html";
 	});
 
 	// background.update();
