@@ -27,65 +27,11 @@ body {
 
 /* end of main body */
 
-/* nav bar */
-li, a {
-    font-weight: 500;
-    font-size: 16px;
-    color: white;
-    text-decoration: none;
-}
-
-header {
-    display: flex;
-    background-color: #818181;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 10%;
-}
-
-.logo {
-    cursor: pointer;
-    width: 281px;
-    height: 100px;
-
-}
-
-.navigation {
-    list-style: none;
-}
-
-.navigation li {
-    display: inline-block;
-    padding: 0px 20px;
-}
-
-.navigation li a {
-    transition: all 0.3s ease 0s;
-}
-
-.navigation li a:hover {
-    color: #0088a9;
-}
-
-.link {
-    padding: 9px 25px;
-    background-color: red;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-}
-
-.link:hover {
-    background-color: rgba(0, 136, 169, 0.8);
-    border: red;
-}
-
-/* end of nav bar */
-
 /* backgrounds */
 
 #background {
+    background: url("../assets/background.jpg");
+    background-size: cover;
     height: 189.75px;
     width: 337.92px;
     position: relative;
@@ -96,6 +42,8 @@ header {
 }
 
 #background_1 {
+    background: url("../assets/background_1.jpg");
+    background-size: cover;
     height: 189.75px;
     width: 337.92px;
     position: relative;
@@ -106,6 +54,8 @@ header {
 }
 
 #background_2 {
+    background: url("../assets/background_2.jpg");
+    background-size: cover;
     height: 189.75px;
     width: 337.92px;
     position: relative;
@@ -116,6 +66,8 @@ header {
 }
 
 #background_3 {
+    background: url("../assets/background_3.jpg");
+    background-size: cover;
     height: 189.75px;
     width: 337.92px;
     position: relative;
