@@ -3,8 +3,41 @@ let playerUsedSpecial1 = false;
 let playerUsedSpecial2 = false;
 let moveable = false;
 
+// adding code to select player
+function selectCharacter() {
+	switch (localStorage.getItem("selection")) {
+		case "1":
+			return Matt;
+			break;
+		case "2":
+			return Nat;
+			break;
+		case "3":
+			return Kenji;
+			break;
+		case "4":
+			return Riku;
+			break;
+		case "5":
+			return Pyro;
+			break;
+		case "6":
+			return Ray;
+			break;
+		case "7":
+			return Wiz;
+			break;
+		case "8":
+			return King;
+			break;
+	}
+}
+const selected = selectCharacter();
+
+console.log(localStorage.getItem("selection"));
+
 // create the main player sprite instance
-const player = new Fighter(Wiz);
+const player = new Fighter(selected);
 
 const heal_eff1 = new Sprite({
 	position: player.position,

@@ -321,7 +321,7 @@ function animate() {
 	// pass the character selection
 	playerMatt.addEventListener("click", () => {
 		// add some code here to move to game
-		select(Matt);
+		localStorage.setItem("selection", "1");
 		document.location.href = "./canvas.html";
 	});
 
@@ -335,6 +335,7 @@ function animate() {
 	});
 	playerNat.addEventListener("click", () => {
 		// add some code here to move to game
+		localStorage.setItem("selection", "2");
 		document.location.href = "./canvas.html";
 	});
 
@@ -348,6 +349,7 @@ function animate() {
 	});
 	playerKenji.addEventListener("click", () => {
 		// add some code here to move to game
+		localStorage.setItem("selection", "3");
 		document.location.href = "./canvas.html";
 	});
 
@@ -361,6 +363,7 @@ function animate() {
 	});
 	playerRiku.addEventListener("click", () => {
 		// add some code here to move to game
+		localStorage.setItem("selection", "4");
 		document.location.href = "./canvas.html";
 	});
 
@@ -374,6 +377,7 @@ function animate() {
 	});
 	playerPyro.addEventListener("click", () => {
 		// add some code here to move to game
+		localStorage.setItem("selection", "5");
 		document.location.href = "./canvas.html";
 	});
 
@@ -387,6 +391,7 @@ function animate() {
 	});
 	playerRay.addEventListener("click", () => {
 		// add some code here to move to game
+		localStorage.setItem("selection", "6");
 		document.location.href = "./canvas.html";
 	});
 
@@ -400,6 +405,7 @@ function animate() {
 	});
 	playerWiz.addEventListener("click", () => {
 		// add some code here to move to game
+		localStorage.setItem("selection", "7");
 		document.location.href = "./canvas.html";
 	});
 
@@ -413,6 +419,7 @@ function animate() {
 	});
 	playerKing.addEventListener("click", () => {
 		// add some code here to move to game
+		localStorage.setItem("selection", "8");
 		document.location.href = "./canvas.html";
 	});
 
