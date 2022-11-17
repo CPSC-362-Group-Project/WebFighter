@@ -1,8 +1,8 @@
 // new character
 let Kenji = {
 	position: {
-		x: 850,
-		y: 100,
+		x: -280,
+		y: -230,
 	},
 	velocity: {
 		x: 0,
@@ -14,7 +14,7 @@ let Kenji = {
 	},
 	imageSrc: "./assets/characters/Martial-Hero2/Sprites/Idle.png",
 	framesMax: 4,
-	scale: 2.5,
+	scale: 3.8,
 	offset: {
 		x: 215,
 		y: 175,
@@ -63,8 +63,8 @@ let Kenji = {
 // new character
 let Matt = {
 	position: {
-		x: 120,
-		y: 100,
+		x: -280,
+		y: -210,
 	},
 	velocity: {
 		x: 0,
@@ -76,7 +76,7 @@ let Matt = {
 	},
 	imageSrc: "./assets/characters/Martial-Hero/Sprites/Idle.png",
 	framesMax: 8,
-	scale: 2.5,
+	scale: 3.8,
 	offset: {
 		x: 215,
 		y: 160,
@@ -125,8 +125,8 @@ let Matt = {
 // new character
 let Riku = {
 	position: {
-		x: 120,
-		y: 100,
+		x: -140,
+		y: -60,
 	},
 	velocity: {
 		x: 0,
@@ -138,7 +138,7 @@ let Riku = {
 	},
 	imageSrc: "./assets/characters/Martial-Hero3/Sprite/Idle.png",
 	framesMax: 10,
-	scale: 2.5,
+	scale: 3.5,
 	offset: {
 		x: 215,
 		y: 60,
@@ -186,8 +186,8 @@ let Riku = {
 // new character
 let Ray = {
 	position: {
-		x: 120,
-		y: 100,
+		x: -240,
+		y: -160,
 	},
 	velocity: {
 		x: 0,
@@ -199,7 +199,7 @@ let Ray = {
 	},
 	imageSrc: "./assets/characters/Fantasy-Warrior/Sprites/Idle.png",
 	framesMax: 10,
-	scale: 2.5,
+	scale: 4,
 	offset: {
 		x: 215,
 		y: 108,
@@ -247,8 +247,8 @@ let Ray = {
 // new character
 let Pyro = {
 	position: {
-		x: 120,
-		y: 100,
+		x: -170,
+		y: -130,
 	},
 	velocity: {
 		x: 0,
@@ -260,7 +260,7 @@ let Pyro = {
 	},
 	imageSrc: "./assets/characters/Evil-Wizard/Sprites/Idle.png",
 	framesMax: 8,
-	scale: 2.5,
+	scale: 3.7,
 	offset: {
 		x: 215,
 		y: 110,
@@ -308,8 +308,8 @@ let Pyro = {
 // new character
 let Nat = {
 	position: {
-		x: 120,
-		y: 100,
+		x: -240,
+		y: -150,
 	},
 	velocity: {
 		x: 0,
@@ -321,7 +321,7 @@ let Nat = {
 	},
 	imageSrc: "./assets/characters/Hero-Knight/Sprites/Idle.png",
 	framesMax: 11,
-	scale: 2.5,
+	scale: 3.5,
 	offset: {
 		x: 215,
 		y: 140,
@@ -369,8 +369,8 @@ let Nat = {
 // new character
 let King = {
 	position: {
-		x: 120,
-		y: 100,
+		x: -70,
+		y: -40,
 	},
 	velocity: {
 		x: 0,
@@ -382,7 +382,7 @@ let King = {
 	},
 	imageSrc: "./assets/characters/Medieval-King-Pack/Idle.png",
 	framesMax: 6,
-	scale: 1.8,
+	scale: 2.5,
 	offset: {
 		x: 130,
 		y: 63,
@@ -431,8 +431,8 @@ let King = {
 
 let Wiz = {
 	position: {
-		x: 120,
-		y: 100,
+		x: -160,
+		y: -90,
 	},
 	velocity: {
 		x: 0,
@@ -444,7 +444,7 @@ let Wiz = {
 	},
 	imageSrc: "./assets/characters/Wizard-Pack/Idle.png",
 	framesMax: 6,
-	scale: 1.6,
+	scale: 2.4,
 	offset: {
 		x: 215,
 		y: 80,

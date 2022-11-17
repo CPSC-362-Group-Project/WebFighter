@@ -1,16 +1,66 @@
-const playerMatt = document.querySelector("canvas");
+const playerMatt = document.querySelector(".matt");
 const c = playerMatt.getContext("2d");
+
+// variables for the width and height of the playerMatt
+playerMatt.width = 200;
+playerMatt.height = 300;
+c.fillRect(0, 0, playerMatt.width, playerMatt.height);
 
 // test adding a second playerMatt
 const playerNat = document.querySelector(".nat");
 const n = playerNat.getContext("2d");
 
-// variables for the width and height of the playerMatt
-playerMatt.width = 200;
-playerMatt.height = 300;
+playerNat.width = 200;
+playerNat.height = 300;
+n.fillRect(0, 0, playerNat.width, playerNat.height);
 
-// fill the playerMatt and delimit its size
-c.fillRect(0, 0, playerMatt.width, playerMatt.height);
+//third player
+const playerKenji = document.querySelector(".kenji");
+const k = playerKenji.getContext("2d");
+
+playerKenji.width = 200;
+playerKenji.height = 300;
+k.fillRect(0, 0, playerKenji.width, playerKenji.height);
+
+//fourth player
+const playerRiku = document.querySelector(".riku");
+const r = playerRiku.getContext("2d");
+
+playerRiku.width = 200;
+playerRiku.height = 300;
+r.fillRect(0, 0, playerRiku.width, playerRiku.height);
+
+// fifth player
+const playerPyro = document.querySelector(".pyro");
+const p = playerPyro.getContext("2d");
+
+playerPyro.width = 200;
+playerPyro.height = 300;
+p.fillRect(0, 0, playerPyro.width, playerPyro.height);
+
+// sixth player
+const playerRay = document.querySelector(".ray");
+const ra = playerRay.getContext("2d");
+
+playerRay.width = 200;
+playerRay.height = 300;
+ra.fillRect(0, 0, playerRay.width, playerRay.height);
+
+// seventh player
+const playerWiz = document.querySelector(".wiz");
+const w = playerWiz.getContext("2d");
+
+playerWiz.width = 200;
+playerWiz.height = 300;
+w.fillRect(0, 0, playerWiz.width, playerWiz.height);
+
+// eight player
+const playerKing = document.querySelector(".king");
+const ki = playerKing.getContext("2d");
+
+playerKing.width = 200;
+playerKing.height = 300;
+ki.fillRect(0, 0, playerKing.width, playerKing.height);
 
 const gravity = 0.5;
 // code for sprite here
@@ -27,12 +77,12 @@ class Sprite {
 	}) {
 		// adjust all these values and pass them from other file for all characters
 		// adjust position with gravity to make this work nicely
-		this.position = { x: -240, y: -150 };
+		this.position = position;
 		this.width = 50;
 		this.height = 150; // change to 100?
 		this.image = new Image();
 		this.image.src = imageSrc;
-		this.scale = 3.5;
+		this.scale = scale;
 		this.framesMax = framesMax;
 		this.framesCurrent = 0;
 		this.framesElapsed = 0;
@@ -46,9 +96,9 @@ class Sprite {
 	}
 
 	// display the character
-	draw() {
+	draw(context) {
 		// instead of c use a parameter on draw(c)
-		c.drawImage(
+		context.drawImage(
 			this.image,
 			this.framesCurrent * (this.image.width / this.framesMax),
 			0,
@@ -75,7 +125,7 @@ class Sprite {
 
 	// update the player's position
 	update() {
-		this.draw();
+		this.draw(context);
 		this.animateFrames();
 	}
 }
@@ -123,7 +173,7 @@ class Fighter extends Sprite {
 		// adjust framesHold to adjust speed of sprite.
 		// if necessary pass argument for different sprite speeds
 		// The lower the value the faster it goes
-		this.framesHold = 2;
+		this.framesHold = 15;
 		this.sprites = sprites;
 
 		for (const sprite in this.sprites) {
@@ -133,8 +183,8 @@ class Fighter extends Sprite {
 	}
 
 	// update the player's position
-	update() {
-		this.draw();
+	update(context) {
+		this.draw(context);
 		this.animateFrames();
 
 		// Temporarily removing because is messing up the code
@@ -154,7 +204,7 @@ class Fighter extends Sprite {
 
 		// note that playerMatt.height determines the limit for the players.
 		// check original to see if this is working properly
-		if (this.position.y >= -180) {
+		if (this.position.y >= -220) {
 			this.velocity.y = 0;
 			// might not need the next sentence
 			// this.position.y = 376
@@ -227,7 +277,15 @@ class Fighter extends Sprite {
 	}
 }
 
-const player = new Fighter(Nat);
+// declare players here
+const player = new Fighter(Matt);
+const Natt = new Fighter(Nat);
+const ken = new Fighter(Kenji);
+const rik = new Fighter(Riku);
+const pyr = new Fighter(Pyro);
+const raya = new Fighter(Ray);
+const wizz = new Fighter(Wiz);
+const kingg = new Fighter(King);
 
 // const background = new Sprite({
 // 	position: {
@@ -251,17 +309,116 @@ const player = new Fighter(Nat);
 
 function animate() {
 	window.requestAnimationFrame(animate);
+	// first player
 	c.fillStyle = "grey";
-	n.fillStyle = "red";
 	c.fillRect(0, 0, playerMatt.width, playerMatt.height);
+	player.update(c);
+	player.switchSprite("idle");
+	// when player hovers over character, the character attacks
+	playerMatt.addEventListener("mouseover", () => {
+		player.switchSprite("attack1");
+	});
+	// pass the character selection
+	playerMatt.addEventListener("click", () => {
+		// add some code here to move to game
+		select(Matt);
+		document.location.href = "./canvas.html";
+	});
+
+	// second player
+	n.fillStyle = "grey";
+	n.fillRect(0, 0, playerNat.width, playerNat.height);
+	Natt.update(n);
+	Natt.switchSprite("idle");
+	playerNat.addEventListener("mouseover", () => {
+		Natt.switchSprite("attack1");
+	});
+	playerNat.addEventListener("click", () => {
+		// add some code here to move to game
+		document.location.href = "./canvas.html";
+	});
+
+	// third player
+	k.fillStyle = "grey";
+	k.fillRect(0, 0, playerKenji.width, playerKenji.height);
+	ken.update(k);
+	ken.switchSprite("idle");
+	playerKenji.addEventListener("mouseover", () => {
+		ken.switchSprite("attack1");
+	});
+	playerKenji.addEventListener("click", () => {
+		// add some code here to move to game
+		document.location.href = "./canvas.html";
+	});
+
+	//  fourth player
+	r.fillStyle = "grey";
+	r.fillRect(0, 0, playerRiku.width, playerRiku.height);
+	rik.update(r);
+	rik.switchSprite("idle");
+	playerRiku.addEventListener("mouseover", () => {
+		rik.switchSprite("attack1");
+	});
+	playerRiku.addEventListener("click", () => {
+		// add some code here to move to game
+		document.location.href = "./canvas.html";
+	});
+
+	// fifth player
+	p.fillStyle = "grey";
+	p.fillRect(0, 0, playerPyro.width, playerPyro.height);
+	pyr.update(p);
+	pyr.switchSprite("idle");
+	playerPyro.addEventListener("mouseover", () => {
+		pyr.switchSprite("attack1");
+	});
+	playerPyro.addEventListener("click", () => {
+		// add some code here to move to game
+		document.location.href = "./canvas.html";
+	});
+
+	// sixth player
+	ra.fillStyle = "grey";
+	ra.fillRect(0, 0, playerRay.width, playerRay.height);
+	raya.update(ra);
+	raya.switchSprite("idle");
+	playerRay.addEventListener("mouseover", () => {
+		raya.switchSprite("attack1");
+	});
+	playerRay.addEventListener("click", () => {
+		// add some code here to move to game
+		document.location.href = "./canvas.html";
+	});
+
+	// seventh player
+	w.fillStyle = "grey";
+	w.fillRect(0, 0, playerWiz.width, playerWiz.height);
+	wizz.update(w);
+	wizz.switchSprite("idle");
+	playerWiz.addEventListener("mouseover", () => {
+		wizz.switchSprite("attack1");
+	});
+	playerWiz.addEventListener("click", () => {
+		// add some code here to move to game
+		document.location.href = "./canvas.html";
+	});
+
+	// eighth player
+	ki.fillStyle = "grey";
+	ki.fillRect(0, 0, playerKing.width, playerKing.height);
+	kingg.update(ki);
+	kingg.switchSprite("idle");
+	playerKing.addEventListener("mouseover", () => {
+		kingg.switchSprite("attack1");
+	});
+	playerKing.addEventListener("click", () => {
+		// add some code here to move to game
+		document.location.href = "./canvas.html";
+	});
+
 	// background.update();
 	// fire.update();
 	// white_fire.update();
-
-	player.update();
-	// enemy.update();
-
-	player.switchSprite("idle");
 }
 
 animate();
