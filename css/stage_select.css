@@ -29,9 +29,20 @@ body {
 
 /* backgrounds */
 
+.backgrounds {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 40px;
+    padding: 20px;
+    border: 20px;
+    border-color: black;
+    align-items: center;
+    justify-items: center;
+    max-width: 100%;
+}
+
 #background {
-    background: url("../assets/background.jpg");
-    background-size: cover;
     height: 189.75px;
     width: 337.92px;
     position: relative;
@@ -42,8 +53,6 @@ body {
 }
 
 #background_1 {
-    background: url("../assets/background_1.jpg");
-    background-size: cover;
     height: 189.75px;
     width: 337.92px;
     position: relative;
@@ -54,8 +63,6 @@ body {
 }
 
 #background_2 {
-    background: url("../assets/background_2.jpg");
-    background-size: cover;
     height: 189.75px;
     width: 337.92px;
     position: relative;
@@ -66,8 +73,6 @@ body {
 }
 
 #background_3 {
-    background: url("../assets/background_3.jpg");
-    background-size: cover;
     height: 189.75px;
     width: 337.92px;
     position: relative;
@@ -88,7 +93,6 @@ footer {
     min-width: 100%;
     
 }
-
 
 .copyright {
     background: black;

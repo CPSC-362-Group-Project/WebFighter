@@ -17,12 +17,12 @@ c.fillRect(0, 0, canvas.width, canvas.height);
 const gravity = 0.2;
 
 const background = new Sprite({
-	/*position: {
+	position: {
 		x: 0,
 		y: 0,
 	},
 	imageSrc: "./assets/background.jpg",
-	framesMax: 3,
+	framesMax: 1,
 	sprites: {
 	  background_1: {
 	    imageSrc: './assets/background_1.jpg'
@@ -33,7 +33,7 @@ const background = new Sprite({
 	  background_3: {
 	    imageSrc: './assets/background_3.jpg'
 	  }
-	}*/
+	}
 });
 
 const fire = new Sprite({
@@ -96,7 +96,7 @@ function animate() {
 	window.requestAnimationFrame(animate);
 	c.fillStyle = "gray";
 	c.fillRect(0, 0, canvas.width, canvas.height);
-	// background.update();
+	background.update();
 	fire.update();
 	white_fire.update();
 
