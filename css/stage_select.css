@@ -9,11 +9,11 @@
 
 /* main body */
 h1 {
-    font-size: 100px;
-    font-family: 'Road Rage', cursive;
+    font-size: 25px;
+    /*(font-family: 'Road Rage', cursive;*/
     margin-bottom: 0;
     /* adjust this later*/
-    margin-top: -1rem;
+    margin-top: 1rem;
 }
 
 body {
@@ -82,6 +82,50 @@ header {
 }
 
 /* end of nav bar */
+
+/* backgrounds */
+
+#background {
+    height: 189.75px;
+    width: 337.92px;
+    position: relative;
+    cursor: pointer;
+    grid-column: 2;
+    grid-row: 1; 
+    border: 3px solid rgb(53, 56, 61);
+}
+
+#background_1 {
+    height: 189.75px;
+    width: 337.92px;
+    position: relative;
+    cursor: pointer; 
+    grid-column: 3;
+    grid-row: 1;
+    border: 3px solid rgb(53, 56, 61);
+}
+
+#background_2 {
+    height: 189.75px;
+    width: 337.92px;
+    position: relative;
+    cursor: pointer; 
+    grid-column: 2;
+    grid-row: 2;
+    border: 3px solid rgb(53, 56, 61);
+}
+
+#background_3 {
+    height: 189.75px;
+    width: 337.92px;
+    position: relative;
+    cursor: pointer; 
+    grid-column: 3;
+    grid-row: 2;
+    border: 3px solid rgb(53, 56, 61);
+}
+
+/* end of backgrounds */
 
 /* add footer to this page */
 footer {

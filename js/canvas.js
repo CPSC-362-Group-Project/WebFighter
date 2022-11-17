@@ -17,23 +17,23 @@ c.fillRect(0, 0, canvas.width, canvas.height);
 const gravity = 0.2;
 
 const background = new Sprite({
-	position: {
+	/*position: {
 		x: 0,
 		y: 0,
 	},
-	imageSrc: "./assets/backgrounds.jpg",
+	imageSrc: "./assets/background.jpg",
 	framesMax: 3,
-	//sprites: {
-	//  background_1: {
-	//    imageSrc: './assets/background_1.jpg'
-	//  },
-	//  background_2: {
-	//    imageSrc: './assets/background_2.jpg'
-	//  },
-	//  background_3: {
-	//    imageSrc: './assets/background_3.jpg'
-	//  }
-	//}
+	sprites: {
+	  background_1: {
+	    imageSrc: './assets/background_1.jpg'
+	  },
+	  background_2: {
+	    imageSrc: './assets/background_2.jpg'
+	  },
+	  background_3: {
+	    imageSrc: './assets/background_3.jpg'
+	  }
+	}*/
 });
 
 const fire = new Sprite({
