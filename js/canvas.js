@@ -16,7 +16,62 @@ c.fillRect(0, 0, canvas.width, canvas.height);
 
 const gravity = 0.2;
 
-const background = new Sprite({
+// Stages
+const Forest = {
+    position: {
+        x: 0,
+        y: 0,
+    },
+    imageSrc: "./assets/background.png"
+};
+
+const Slum = {
+    position: {
+        x: 0,
+        y: 0,
+    },
+    imageSrc: "./assets/background_1.png"
+};
+
+const Hills = {
+    position: {
+        x: 0,
+        y: 0,
+    },
+    imageSrc: "./assets/background_2.png"
+};
+
+const City = {
+    position: {
+        x: 0,
+        y: 0,
+    },
+    imageSrc: "./assets/background_3.png"
+};
+
+// Code to select stage
+function selectStage() {
+	switch (localStorage.getItem("stage_selection")) {
+		case "1":
+			return Forest;
+			break;
+		case "2":
+			return Slum;
+			break;
+		case "3":
+			return Hills;
+			break;
+		case "4":
+			return City;
+			break;
+	}
+}
+
+const stageSelected = selectStage();
+
+const background = new Sprite(stageSelected);
+
+/*const background = new Sprite({
     position: {
         x: 0,
         y: 0,
@@ -37,7 +92,7 @@ const background = new Sprite({
     //    imageSrc: './assets/background_3.png'
     //  }
     //}
-});
+});*/
 
 //const fire = new Sprite({
 //    position: {
