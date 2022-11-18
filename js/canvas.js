@@ -79,6 +79,17 @@ const keys = {
     },
 };
 
+const camera = {
+    position: {
+        x: 0,
+        y: 0,
+    }
+}
+
+// const camera2 = {
+//     position: enemy.position,
+// }
+
 // decreaseTimer()
 
 function rectangularCollision({ rectangle1, rectangle2 }, magic=false, magicRange={x:0, y:0}) {
@@ -121,16 +132,22 @@ function animate() {
     window.requestAnimationFrame(animate);
     c.fillStyle = "gray";
     c.fillRect(0, 0, canvas.width, canvas.height);
+    //c.save();
+    //c.scale(1.5, 1.5);
+    //c.translate(camera.position.x, 0);
+
     background.update();
     //fire.update();
     //white_fire.update();
 
+    player.checkForHorizontalCollision()
+    enemy.checkForHorizontalCollision()
     player.update();
     enemy.update();
 
     playerAnimate();
     enemyAnimate();
-    
+    //c.restore();
     // TODO: framesCurrent is the frame where the animation occurs
     // we can use a variable to change this for multiple characters
     // if player misses
@@ -178,11 +195,13 @@ window.addEventListener("keydown", (event) => {
             case "D":
                 keys.d.pressed = true;
                 player.lastKey = "d";
+                player.shouldPanCameraToTheLeft({canvas, camera})
                 break;
             case "a":
             case "A":
                 keys.a.pressed = true;
                 player.lastKey = "a";
+                player.shouldPanCameraToTheRight({canvas, camera})
                 break;
             case "w":
             case "W":

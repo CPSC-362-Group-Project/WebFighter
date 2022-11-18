@@ -115,6 +115,16 @@ class Fighter extends Sprite {
 			height: attackBox.height,
 		};
 
+
+		this.camerabox = {
+			position: {
+				x: this.position.x,
+				y: this.position.y,
+			},
+			width: 100,
+			height: 100,
+		}
+
 		this.color = color;
 		this.isAttacking;
 		this.isUsingMagic;
@@ -137,12 +147,61 @@ class Fighter extends Sprite {
 		}
 	}
 
+	updateCamerabox() {
+		this.camerabox = {
+			position: {
+				x: this.position.x - 100,
+				y: this.position.y - 50,
+			},
+			width: 100,
+			height: 100,
+		}
+	}
+
+	checkForHorizontalCollision() {
+		if (this.position.x + this.width + this.velocity.x >= 1024||
+			this.position.x + this.velocity.x <= 40) {
+			this.velocity.x = 0
+		}
+	}
+
+	// shouldPanCameraToTheLeft({canvas, camera}) {
+	// 	const cameraboxRightSide = this.camerabox.position.x + this.camerabox.width;
+
+
+	//	// TODO: Will be updated for background larger than canvas to scroll
+	// 	if (cameraboxRightSide >= 1024) { return }
+
+	// 	if (cameraboxRightSide >= 576 + Math.abs(camera.position.x)) {
+	// 		camera.position.x -= this.velocity.x
+	// 	}
+	// }
+
+	// shouldPanCameraToTheRight({canvas, camera}) {
+	// 	if (this.camerabox.position.x <= 0) { return } 
+
+	// 	if (this.camerabox.position.x <= Math.abs(camera.position.x)) {
+	// 		camera.position.x -= this.velocity.x
+	// 	}
+
+	
+	// }
+
 	// update the player's position
 	update() {
 		this.draw();
 		if (!this.dead) {
 			this.animateFrames();
 		}
+
+		this.updateCamerabox();
+		// c.fillStyle = 'rgba(0, 0, 255, 0.2)';
+		// c.fillRect(
+		// 	this.camerabox.position.x,
+		// 	this.camerabox.position.y,
+		// 	this.camerabox.width,
+		// 	this.camerabox.height
+		// );
 
 		// Temporarily removing because is messing up the code
 		// // update the attackBox position to follow the character
