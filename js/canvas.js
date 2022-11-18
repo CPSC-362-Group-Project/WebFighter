@@ -21,40 +21,43 @@ const background = new Sprite({
         x: 0,
         y: 0,
     },
-    imageSrc: "./assets/backgrounds.jpg",
-    framesMax: 3,
+    imageSrc: "./assets/background.png",
+    //framesMax: 3,
     //sprites: {
+    //  background_0: {
+    //   imageSrc: './assests/background.png'
+    //  },
     //  background_1: {
-    //    imageSrc: './assets/background_1.jpg'
+    //    imageSrc: './assets/background_1.png'
     //  },
     //  background_2: {
-    //    imageSrc: './assets/background_2.jpg'
+    //    imageSrc: './assets/background_2.png'
     //  },
     //  background_3: {
-    //    imageSrc: './assets/background_3.jpg'
+    //    imageSrc: './assets/background_3.png'
     //  }
     //}
 });
 
-const fire = new Sprite({
-    position: {
-        x: 10,
-        y: 420,
-    },
-    imageSrc: "./assets/fire_fx_v1.0/png/orange/loops/burning_loop_1.png",
-    scale: 4,
-    framesMax: 8,
-});
+//const fire = new Sprite({
+//    position: {
+//        x: 10,
+//        y: 420,
+//    },
+//    imageSrc: "./assets/fire_fx_v1.0/png/orange/loops/burning_loop_1.png",
+//    scale: 4,
+//    framesMax: 8,
+//});
 
-const white_fire = new Sprite({
-    position: {
-        x: 920,
-        y: 420,
-    },
-    imageSrc: "./assets/fire_fx_v1.0/png/white/loops/burning_loop_1.png",
-    scale: 4,
-    framesMax: 8,
-});
+//const white_fire = new Sprite({
+//    position: {
+//        x: 920,
+//        y: 420,
+//    },
+//    imageSrc: "./assets/fire_fx_v1.0/png/white/loops/burning_loop_1.png",
+//    scale: 4,
+//    framesMax: 8,
+//});
 
 // player.draw()
 // enemy.draw()
@@ -118,9 +121,9 @@ function animate() {
     window.requestAnimationFrame(animate);
     c.fillStyle = "gray";
     c.fillRect(0, 0, canvas.width, canvas.height);
-    // background.update();
-    fire.update();
-    white_fire.update();
+    background.update();
+    //fire.update();
+    //white_fire.update();
 
     player.update();
     enemy.update();
