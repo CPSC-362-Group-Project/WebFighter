@@ -12,7 +12,7 @@ canvas.width = 1024;
 canvas.height = 576;
 
 // fill the canvas and delimit its size
-c.fillRect(0, 0, canvas.width, canvas.height);
+//c.fillRect(0, 0, canvas.width, canvas.height);
 
 const gravity = 0.2;
 
@@ -38,7 +38,12 @@ const Hills = {
         x: 0,
         y: 0,
     },
-    imageSrc: "./assets/background_2.png"
+    imageSrc: "./assets/background_2.png",
+    scale : 1,
+    offset: {
+        x: 0,
+        y: 30
+    }
 };
 
 const City = {
@@ -186,6 +191,9 @@ function collisionDetection({character1, character2}, currentFrame) {
 function animate() {
     window.requestAnimationFrame(animate);
     c.fillStyle = "gray";
+    if (stageSelected === Hills) {
+        c.fillStyle = 'rgba(35, 24, 5, 1)';
+    }
     c.fillRect(0, 0, canvas.width, canvas.height);
     //c.save();
     //c.scale(1.5, 1.5);

@@ -21,7 +21,7 @@ class Sprite {
 		// adjust framesHold to adjust speed of sprite.
 		// if necessary pass argument for different sprite speeds
 		// The lower the value the faster it goes
-		this.framesHold = 200;
+		this.framesHold = 5;
 		this.offset = offset;
 		this.is2dFrame = is2dFrame;
 		this.xFrames = xFrames;
