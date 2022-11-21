@@ -13,7 +13,7 @@ function selectCharacter() {
 			return Nat;
 			break;
 		case "3":
-			return Kenji;
+			return Huntress;
 			break;
 		case "4":
 			return Riku;

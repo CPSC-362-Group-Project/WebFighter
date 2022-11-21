@@ -1,7 +1,7 @@
 // make it so you cant scroll with space bar
 // we do this because we use space bar in game
 window.onkeydown = function (e) {
-    return !(e.keyCode == 32 && e.target == document.body);
+	return !(e.keyCode == 32 && e.target == document.body);
 };
 
 const canvas = document.querySelector("canvas");
@@ -18,40 +18,40 @@ const gravity = 0.2;
 
 // Stages
 const Forest = {
-    position: {
-        x: 0,
-        y: 0,
-    },
-    imageSrc: "./assets/background.png"
+	position: {
+		x: 0,
+		y: 0,
+	},
+	imageSrc: "./assets/background.png",
 };
 
 const Slum = {
-    position: {
-        x: 0,
-        y: 0,
-    },
-    imageSrc: "./assets/background_1.png"
+	position: {
+		x: 0,
+		y: 0,
+	},
+	imageSrc: "./assets/background_1.png",
 };
 
 const Hills = {
-    position: {
-        x: 0,
-        y: 0,
-    },
-    imageSrc: "./assets/background_2.png",
-    scale : 1,
-    offset: {
-        x: 0,
-        y: 30
-    }
+	position: {
+		x: 0,
+		y: 0,
+	},
+	imageSrc: "./assets/background_2.png",
+	scale: 1,
+	offset: {
+		x: 0,
+		y: 30,
+	},
 };
 
 const City = {
-    position: {
-        x: 0,
-        y: 0,
-    },
-    imageSrc: "./assets/background_3.png"
+	position: {
+		x: 0,
+		y: 0,
+	},
+	imageSrc: "./assets/background_3.png",
 };
 
 // Code to select stage
@@ -125,26 +125,26 @@ console.log(player);
 
 // constant to define the different input keys
 const keys = {
-    a: {
-        pressed: false,
-    },
-    d: {
-        pressed: false,
-    },
-    ArrowRight: {
-        pressed: false,
-    },
-    ArrowLeft: {
-        pressed: false,
-    },
+	a: {
+		pressed: false,
+	},
+	d: {
+		pressed: false,
+	},
+	ArrowRight: {
+		pressed: false,
+	},
+	ArrowLeft: {
+		pressed: false,
+	},
 };
 
 const camera = {
-    position: {
-        x: 0,
-        y: 0,
-    }
-}
+	position: {
+		x: 0,
+		y: 0,
+	},
+};
 
 // const camera2 = {
 //     position: enemy.position,
@@ -152,70 +152,71 @@ const camera = {
 
 // decreaseTimer()
 
-function rectangularCollision({ rectangle1, rectangle2 }, magic=false, magicRange={x:0, y:0}) {
-    // check if the two sprites are colliding
-    return (
-        rectangle1.attackBox.position.x + rectangle1.attackBox.width >=
-            rectangle2.position.x &&
-        rectangle1.attackBox.position.x <=
-            rectangle2.position.x + rectangle2.width &&
-        rectangle1.attackBox.position.y + rectangle1.attackBox.height >=
-            rectangle2.position.y &&
-        rectangle1.attackBox.position.y <= rectangle2.position.y + rectangle2.height
-    );
+function rectangularCollision(
+	{ rectangle1, rectangle2 },
+	magic = false,
+	magicRange = { x: 0, y: 0 }
+) {
+	// check if the two sprites are colliding
+	return (
+		rectangle1.attackBox.position.x + rectangle1.attackBox.width >=
+			rectangle2.position.x &&
+		rectangle1.attackBox.position.x <=
+			rectangle2.position.x + rectangle2.width &&
+		rectangle1.attackBox.position.y + rectangle1.attackBox.height >=
+			rectangle2.position.y &&
+		rectangle1.attackBox.position.y <= rectangle2.position.y + rectangle2.height
+	);
 }
 
-function collisionDetection({character1, character2}, currentFrame) {
-
-    if (
-        rectangularCollision({
-            rectangle1: character1,
-            rectangle2: character2,
-        }) &&
-        character1.isAttacking &&
-        character1.framesCurrent === currentFrame
-    ) {
-        character2.takeHit();
-        character1.isAttacking = false;
-         console.log('collision')
-        if (character1 === player) {
-            document.querySelector("#enemyHealth").style.width = enemy.health + "%";
-        }
-        else {
-            document.querySelector("#playerHealth").style.width = player.health + "%";
-        }
-    }
+function collisionDetection({ character1, character2 }, currentFrame) {
+	if (
+		rectangularCollision({
+			rectangle1: character1,
+			rectangle2: character2,
+		}) &&
+		character1.isAttacking &&
+		character1.framesCurrent === currentFrame
+	) {
+		character2.takeHit();
+		character1.isAttacking = false;
+		console.log("collision");
+		if (character1 === player) {
+			document.querySelector("#enemyHealth").style.width = enemy.health + "%";
+		} else {
+			document.querySelector("#playerHealth").style.width = player.health + "%";
+		}
+	}
 }
 
 // loop to run the program and refresh the position of the players
 function animate() {
-    window.requestAnimationFrame(animate);
-    c.fillStyle = "gray";
-    if (stageSelected === Hills) {
-        c.fillStyle = 'rgba(35, 24, 5, 1)';
-    }
-    c.fillRect(0, 0, canvas.width, canvas.height);
-    //c.save();
-    //c.scale(1.5, 1.5);
-    //c.translate(camera.position.x, 0);
+	window.requestAnimationFrame(animate);
+	c.fillStyle = "gray";
+	if (stageSelected === Hills) {
+		c.fillStyle = "rgba(35, 24, 5, 1)";
+	}
+	c.fillRect(0, 0, canvas.width, canvas.height);
+	//c.save();
+	//c.scale(1.5, 1.5);
+	//c.translate(camera.position.x, 0);
 
-    background.update();
-    //fire.update();
-    //white_fire.update();
+	background.update();
+	//fire.update();
+	//white_fire.update();
 
-    player.checkForHorizontalCollision()
-    enemy.checkForHorizontalCollision()
-    player.update();
-    enemy.update();
+	player.checkForHorizontalCollision();
+	enemy.checkForHorizontalCollision();
+	player.update();
+	enemy.update();
 
-    playerAnimate();
-    enemyAnimate();
-    //c.restore();
-    // TODO: framesCurrent is the frame where the animation occurs
-    // we can use a variable to change this for multiple characters
-    // if player misses
-    // NOTE: Code for player and enemy has been moved out to corresponding player and enemy files
-
+	playerAnimate();
+	enemyAnimate();
+	//c.restore();
+	// TODO: framesCurrent is the frame where the animation occurs
+	// we can use a variable to change this for multiple characters
+	// if player misses
+	// NOTE: Code for player and enemy has been moved out to corresponding player and enemy files
 }
 
 animate();
@@ -224,133 +225,137 @@ animate();
 // checks to see which health is lower and then choose the
 // appropriate winner in any case
 function determineWinner({ player, enemy, timerId }) {
-    clearTimeout(timerId);
-    document.querySelector("#displayText").style.display = "flex";
-    if (player.health === enemy.health) {
-        document.querySelector("#displayText").innerHTML = "Tie";
-    } else if (player.health > enemy.health) {
-        document.querySelector("#displayText").innerHTML = "Player 1 Wins";
-    } else if (player.health < enemy.health) {
-        document.querySelector("#displayText").innerHTML = "Player 2 Wins";
-    }
+	clearTimeout(timerId);
+	document.querySelector("#displayText").style.display = "flex";
+	if (player.health === enemy.health) {
+		document.querySelector("#displayText").innerHTML = "Tie";
+	} else if (player.health > enemy.health) {
+		document.querySelector("#displayText").innerHTML = "Player 1 Wins";
+	} else if (player.health < enemy.health) {
+		document.querySelector("#displayText").innerHTML = "Player 2 Wins";
+	}
 }
 
 let timer = 60;
 let timerId;
 function decreaseTimer() {
-    if (timer > 0) {
-        timerId = setTimeout(decreaseTimer, 1000);
-        timer--;
-        document.querySelector("#timer").innerHTML = timer;
-    }
+	if (timer > 0) {
+		timerId = setTimeout(decreaseTimer, 1000);
+		timer--;
+		document.querySelector("#timer").innerHTML = timer;
+	}
 
-    if (timer === 0) {
-        determineWinner({ player, enemy, timerId });
-    }
+	if (timer === 0) {
+		determineWinner({ player, enemy, timerId });
+	}
 }
 
 decreaseTimer();
 // event listener for when user press movement keys (WASD)
 window.addEventListener("keydown", (event) => {
-    if (!player.dead) {
-        switch (event.key) {
-            case "d":
-            case "D":
-                keys.d.pressed = true;
-                player.lastKey = "d";
-                player.shouldPanCameraToTheLeft({canvas, camera})
-                break;
-            case "a":
-            case "A":
-                keys.a.pressed = true;
-                player.lastKey = "a";
-                player.shouldPanCameraToTheRight({canvas, camera})
-                break;
-            case "w":
-            case "W":
-                player.velocity.y = -12;
-                break;
+	if (!player.dead) {
+		switch (event.key) {
+			case "d":
+			case "D":
+				keys.d.pressed = true;
+				player.lastKey = "d";
+				player.shouldPanCameraToTheLeft({ canvas, camera });
+				break;
+			case "a":
+			case "A":
+				keys.a.pressed = true;
+				player.lastKey = "a";
+				player.shouldPanCameraToTheRight({ canvas, camera });
+				break;
+			case "w":
+			case "W":
+				// add code here to not let player jump
+				if (player.velocity.y == 0) {
+					player.velocity.y = -12;
+				}
+				break;
 
-            case " ":
-                player.attack();
-                break;
-            case "x":
-                player.useMagic();
-                if (player.isUsingMagic) {
-                    playerUsedMagic = true;
-                }
-                break;
+			case " ":
+				player.attack();
+				break;
+			case "x":
+				player.useMagic();
+				if (player.isUsingMagic) {
+					playerUsedMagic = true;
+				}
+				break;
 
-            case "z":
-                player.useSpecial1();
-                if (player.isUsingSpecial1) {
-                    playerUsedSpecial1 = true;
-                }
-                break;
-            case "c":
-                player.useSpecial2();
-                if (player.isUsingSpecial2) {
-                    moveable = false;
-                    playerUsedSpecial2 = true;
-                }
-                break;
-        }
-    }
-    // These are the enemies keys
-    if (!enemy.dead) {
-        switch (event.key) {
-            case "ArrowRight":
-                keys.ArrowRight.pressed = true;
-                enemy.lastKey = "ArrowRight";
-                break;
-            case "ArrowLeft":
-                keys.ArrowLeft.pressed = true;
-                enemy.lastKey = "ArrowLeft";
-                break;
-            case "ArrowUp":
-                enemy.velocity.y = -12;
-                break;
+			case "z":
+				player.useSpecial1();
+				if (player.isUsingSpecial1) {
+					playerUsedSpecial1 = true;
+				}
+				break;
+			case "c":
+				player.useSpecial2();
+				if (player.isUsingSpecial2) {
+					moveable = false;
+					playerUsedSpecial2 = true;
+				}
+				break;
+		}
+	}
+	// These are the enemies keys
+	if (!enemy.dead) {
+		switch (event.key) {
+			case "ArrowRight":
+				keys.ArrowRight.pressed = true;
+				enemy.lastKey = "ArrowRight";
+				break;
+			case "ArrowLeft":
+				keys.ArrowLeft.pressed = true;
+				enemy.lastKey = "ArrowLeft";
+				break;
+			case "ArrowUp":
+				if (enemy.velocity.y == 0) {
+					enemy.velocity.y = -12;
+				}
+				break;
 
-            case "Enter":
-                enemy.attack();
-                break;
-            case "ArrowDown":
-                enemy.useMagic();
-                if (enemy.isUsingMagic) {
-                    enemyUsedMagic = true;
-                }
-                break;
-            case "p":
-                enemy.useSpecial2();
-                if (enemy.isUsingSpecial2) {
-                    moveable2 = false;
-                    enemyUsedSpecial2 = true;
-                }
-                break;
-        }
-    }
-    console.log(event.key);
+			case "Enter":
+				enemy.attack();
+				break;
+			case "ArrowDown":
+				enemy.useMagic();
+				if (enemy.isUsingMagic) {
+					enemyUsedMagic = true;
+				}
+				break;
+			case "p":
+				enemy.useSpecial2();
+				if (enemy.isUsingSpecial2) {
+					moveable2 = false;
+					enemyUsedSpecial2 = true;
+				}
+				break;
+		}
+	}
+	console.log(event.key);
 });
 
 // event listener for when user stops pressing movement key
 window.addEventListener("keyup", (event) => {
-    switch (event.key) {
-        case "d":
-        case "D":
-            keys.d.pressed = false;
-            break;
-        case "a":
-        case "A":
-            keys.a.pressed = false;
-            break;
-        // These are the enemies keys
-        case "ArrowRight":
-            keys.ArrowRight.pressed = false;
-            break;
-        case "ArrowLeft":
-            keys.ArrowLeft.pressed = false;
-            break;
-    }
-    console.log(event.key);
+	switch (event.key) {
+		case "d":
+		case "D":
+			keys.d.pressed = false;
+			break;
+		case "a":
+		case "A":
+			keys.a.pressed = false;
+			break;
+		// These are the enemies keys
+		case "ArrowRight":
+			keys.ArrowRight.pressed = false;
+			break;
+		case "ArrowLeft":
+			keys.ArrowLeft.pressed = false;
+			break;
+	}
+	console.log(event.key);
 });
-

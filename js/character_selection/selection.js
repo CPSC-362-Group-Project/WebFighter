@@ -280,7 +280,7 @@ class Fighter extends Sprite {
 // declare players here
 const player = new Fighter(Matt);
 const Natt = new Fighter(Nat);
-const ken = new Fighter(Kenji);
+const ken = new Fighter(Huntress);
 const rik = new Fighter(Riku);
 const pyr = new Fighter(Pyro);
 const raya = new Fighter(Ray);

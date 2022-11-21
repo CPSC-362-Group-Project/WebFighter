@@ -488,3 +488,63 @@ let Wiz = {
 		height: 80,
 	},
 };
+
+let Huntress = {
+	position: {
+		x: 120,
+		y: 100,
+	},
+	velocity: {
+		x: 0,
+		y: 0,
+	},
+	offset: {
+		x: 0,
+		y: 0,
+	},
+	imageSrc: "./assets/characters/Huntress/Sprites/Idle.png",
+	framesMax: 8,
+	scale: 3.2,
+	offset: {
+		x: 215,
+		y: 170,
+	},
+	sprites: {
+		idle: {
+			imageSrc: "./assets/characters/Huntress/Sprites/Idle.png",
+			framesMax: 8,
+		},
+		run: {
+			imageSrc: "./assets/characters/Huntress/Sprites/Run.png",
+			framesMax: 8,
+		},
+		jump: {
+			imageSrc: "./assets/characters/Huntress/Sprites/Jump.png",
+			framesMax: 2,
+		},
+		fall: {
+			imageSrc: "./assets/characters/Huntress/Sprites/Fall.png",
+			framesMax: 2,
+		},
+		attack1: {
+			imageSrc: "./assets/characters/Huntress/Sprites/Attack2.png",
+			framesMax: 5,
+		},
+		takeHit: {
+			imageSrc: "./assets/characters/Huntress/Sprites/Hit.png",
+			framesMax: 3,
+		},
+		death: {
+			imageSrc: "./assets/characters/WHuntress/Sprites/Death.png",
+			framesMax: 8,
+		},
+	},
+	attackBox: {
+		offset: {
+			x: 20,
+			y: 10,
+		},
+		width: 163,
+		height: 70,
+	},
+};
