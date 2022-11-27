@@ -1,8 +1,12 @@
 // make it so you cant scroll with space bar
 // we do this because we use space bar in game
+
 window.onkeydown = function (e) {
 	return !(e.keyCode == 32 && e.target == document.body);
 };
+
+let gameStopped = false;
+let alreadyReturned = false;
 
 const canvas = document.querySelector("canvas");
 const c = canvas.getContext("2d");
@@ -191,7 +195,18 @@ function collisionDetection({ character1, character2 }, currentFrame) {
 
 // loop to run the program and refresh the position of the players
 function animate() {
+	if(gameStopped) {
+		setTimeout(() => {
+			alreadyReturned = true;
+		}, 1000)
+	}
+
+	if(alreadyReturned) {
+		return
+	}
+
 	window.requestAnimationFrame(animate);
+	
 	c.fillStyle = "gray";
 	if (stageSelected === Hills) {
 		c.fillStyle = "rgba(35, 24, 5, 1)";
@@ -210,21 +225,31 @@ function animate() {
 	player.update();
 	enemy.update();
 
+	
 	playerAnimate();
 	enemyAnimate();
+
+	
 	//c.restore();
 	// TODO: framesCurrent is the frame where the animation occurs
 	// we can use a variable to change this for multiple characters
 	// if player misses
 	// NOTE: Code for player and enemy has been moved out to corresponding player and enemy files
+
+	
 }
 
 animate();
+
 
 // this function will calculate the winner state based on health bar
 // checks to see which health is lower and then choose the
 // appropriate winner in any case
 function determineWinner({ player, enemy, timerId }) {
+	if (gameStopped) {
+		return;
+	}
+	gameStopped = true;
 	clearTimeout(timerId);
 	document.querySelector("#displayText").style.display = "flex";
 	if (player.health === enemy.health) {
@@ -281,8 +306,10 @@ window.addEventListener("keydown", (event) => {
 				break;
 
 			case " ":
+				if (!playerMagicInProgress && !playerMagic2InProgress) {
 				player.attack();
 				break;
+				}
 			case "x":
 				player.useMagic();
 				if (player.isUsingMagic) {

@@ -35,15 +35,70 @@ const magic2bImpact = new Sprite({
   is2dFrame: enemyMagic2Impact.is2dFrame,
 	xFrames: enemyMagic2Impact.xFrames,
 })
+/*
+This function uses random number to generate random attack for the enemy
+*/
+let randomNum = 1;
+let activated = false;
+
+function simulateAttack() {
+  //generate random number between 1 and 5
+ 
+    randomNum = Math.floor(Math.random() * 1000) + 1;
+      if (randomNum <= 40 && (enemy.position.x - enemy.attackBox.width + 50 > player.position.x)) {
+        if (activated) {
+          return 
+        }
+        activated = true;
+        keys.ArrowLeft.pressed = true ;
+        enemy.lastKey = "ArrowLeft";
+        
+        setTimeout(() => {
+          keys.ArrowLeft.pressed = false;
+          activated = false;
+        }, 200);
+        
+        
+      } else if (randomNum >= 41 && randomNum <= 200 && (enemy.position.x < player.position.x)) {
+        if (activated) {
+          return
+        }
+        activated = true;
+        keys.ArrowRight.pressed = true ;
+        enemy.lastKey = "ArrowRight";
+
+        setTimeout(() => {
+          keys.ArrowRight.pressed = false;
+          activated = false;
+        }, 200);
+      }
+      else if (randomNum === 201 && enemy.health <= 70) {
+        enemy.useMagic();
+        if (enemy.isUsingMagic) {
+          enemyUsedMagic = true;
+        }
+      }
+      else if ( randomNum >= 202 && randomNum <= 210 ) {
+          enemy.attack();
+        
+        
+      }
+      else {
+       enemy.switchSprite("idle");
+      }
+}
 
 function enemyAnimate() {
   /************************************* 
   Enemy movements are defined below
   *************************************/
+
+  simulateAttack();
   enemy.velocity.x = 0;
   if (keys.ArrowLeft.pressed && enemy.lastKey === "ArrowLeft") {
     enemy.velocity.x = -3;
     enemy.switchSprite("run");
+    
   } else if (keys.ArrowRight.pressed && enemy.lastKey === "ArrowRight") {
     enemy.velocity.x = 3;
     enemy.switchSprite("run");
