@@ -5,28 +5,35 @@ let moveable2 = false
 // create an enemy sprite instance
 const enemy = new Fighter(Kenji)
 
+const enemyHealing = enemy.magicSprites.healing_effect
 const heal_eff2 = new Sprite({
   position: enemy.position,
-  imageSrc: './assets/magic_eff/healing_eff/Heal Gameboy Sprite Sheet.png',
-  scale: 2.0,
-  framesMax: 16,
-  offset: {
-    x: 80,
-    y: 80
-  },
-  is2dFrame: true,
-  xFrames: 4
+  imageSrc: enemyHealing.imageSrc,
+  scale: enemyHealing.scale,
+  framesMax: enemyHealing.framesMax,
+  offset: enemyHealing.offset,
+  is2dFrame: enemyHealing.is2dFrame,
+  xFrames: enemyHealing.xFrames
 })
 
-const fireBolt = new Sprite({
+const enemyMagic2 = enemy.magicSprites.magic2.effect
+const magic2b = new Sprite({
   position: { ...enemy.position },
-  imageSrc: './assets/magic_eff/fire_eff/firebolt-SpriteSheet.png',
-  scale: 2.0,
-  framesMax: 11,
-  offset: {
-    x: 0,
-    y: 0
-  }
+  imageSrc: enemyMagic2.imageSrc,
+  scale:  enemyMagic2.scale,
+  framesMax:  enemyMagic2.framesMax,
+  offset:  enemyMagic2.offset
+})
+
+const enemyMagic2Impact = enemy.magicSprites.magic2.impact
+const magic2bImpact = new Sprite({
+  position: { ...magic2b.position },
+  imageSrc: enemyMagic2Impact.imageSrc,
+  scale: enemyMagic2Impact.scale,
+  framesMax: enemyMagic2Impact.framesMax,
+  offset: enemyMagic2Impact.offset,
+  is2dFrame: enemyMagic2Impact.is2dFrame,
+	xFrames: enemyMagic2Impact.xFrames,
 })
 
 function enemyAnimate() {
@@ -78,39 +85,44 @@ function enemyAnimate() {
     // shooting attack
 
     if (!moveable2) {
-      fireBolt.position = { ...enemy.position };
+      magic2b.position = { ...enemy.position };
       moveable2 = true;
     }
 
     // close up attack
-    // fireBolt.position = enemy.position
-    if (fireBolt.position.x > player.position.x) {
-      fireBolt.update();
-      fireBolt.position.x -= 5;
+    // magic2b.position = enemy.position
+    if (magic2b.position.x > player.position.x) {
+      magic2b.update();
+      magic2bImpact.position = magic2b.position;
+			magic2bImpact.update();
+      magic2b.position.x -= 5;
     } else {
-      // fireBolt.position.x = player.position.x
-      fireBolt.position = player.position;
-      fireBolt.update();
-      fireBolt.framesCurrent = 0;
-      fireBolt.update();
-      if (fireBolt.framesCurrent === 5) {
-        fireBolt.framesCurrent = 0;
+      // magic2b.position.x = player.position.x
+      magic2b.position = player.position;
+      magic2b.update();
+      magic2bImpact.position = player.position;
+			magic2bImpact.update();
+      magic2b.framesCurrent = 0;
+      magic2b.update();
+      if (magic2b.framesCurrent === 5) {
+        magic2b.framesCurrent = 0;
       }
       player.switchSprite("takeHit");
+      setTimeout(() => {
+        enemyUsedSpecial2 = false;
+      }, 3000);
     }
 
-    setTimeout(() => {
-      enemyUsedSpecial2 = false;
-    }, 5000);
+    
   }
 
   if (enemy.isUsingSpecial2) {
     enemy.isUsingSpecial2 = false;
-    enemy.magic -= 40;
-    if (player.health < 35) {
+    enemy.magic -= 15;
+    if (player.health < 20) {
       player.health = 0;
     } else {
-      player.health -= 35;
+      player.health -= 20;
     }
 
     document.querySelector("#enemyMagic").style.width = enemy.magic + "%";
@@ -124,7 +136,7 @@ function enemyAnimate() {
     } else {
       enemy.health = 100;
     }
-    enemy.magic -= 20;
+    enemy.magic -= 10;
     document.querySelector("#enemyMagic").style.width = enemy.magic + "%";
     document.querySelector("#enemyHealth").style.width = enemy.health + "%";
   }

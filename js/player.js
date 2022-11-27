@@ -39,73 +39,59 @@ console.log(localStorage.getItem("selection"));
 // create the main player sprite instance
 const player = new Fighter(selected);
 
+const playerHealingEffect = player.magicSprites.healing_effect
 const heal_eff1 = new Sprite({
 	position: player.position,
-	imageSrc: "./assets/magic_eff/healing_eff/Heal Gameboy Sprite Sheet.png",
-	scale: 2.0,
-	framesMax: 16,
-	offset: {
-		x: 80,
-		y: 80,
-	},
-	is2dFrame: true,
-	xFrames: 4,
+	imageSrc: playerHealingEffect.imageSrc,
+	scale: playerHealingEffect.scale,
+	framesMax: playerHealingEffect.framesMax,
+	offset: playerHealingEffect.offset,
+	is2dFrame: playerHealingEffect.is2dFrame,
+	xFrames: playerHealingEffect.xFrames,
 });
 
-const waterEffect = new Sprite({
+const playerMagic1Effect = player.magicSprites.magic1.effect
+const magic1 = new Sprite({
 	position: enemy.position,
-	imageSrc:
-		"./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-Startup-and-Infinite.png",
-	scale: 2.0,
-	framesMax: 12,
-	offset: {
-		x: 80,
-		y: 80,
-	},
-	is2dFrame: true,
-	xFrames: 4,
+	imageSrc: playerMagic1Effect.imageSrc,
+	scale: playerMagic1Effect.scale,
+	framesMax: playerMagic1Effect.framesMax,
+	offset: playerMagic1Effect.offset,
+	is2dFrame: playerMagic1Effect.is2dFrame,
+	xFrames: playerMagic1Effect.xFrames,
 });
 
-const waterEffectEnd = new Sprite({
+const playerMagic1Impact = player.magicSprites.magic1.impact
+const magic1End = new Sprite({
 	position: enemy.position,
-	imageSrc:
-		"./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-End.png",
-	scale: 2.0,
-	framesMax: 9,
-	offset: {
-		x: 80,
-		y: 80,
-	},
-	is2dFrame: true,
-	xFrames: 3,
+	imageSrc: playerMagic1Impact.imageSrc,
+	scale: playerMagic1Impact.scale,
+	framesMax: playerMagic1Impact.framesMax,
+	offset: playerMagic1Impact.offset,
+	is2dFrame: playerMagic1Impact.is2dFrame,
+	xFrames: playerMagic1Impact.xFrames,
 });
 
-const waterBall = new Sprite({
+const playerMagic2Effect = player.magicSprites.magic2.effect
+const magic2 = new Sprite({
 	position: { ...player.position },
-	imageSrc:
-		"./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Startup-and-Infinite.png",
-	scale: 2.0,
-	framesMax: 25,
-	offset: {
-		x: 0,
-		y: 0,
-	},
-	is2dFrame: true,
-	xFrames: 5,
+	imageSrc: playerMagic2Effect.imageSrc,
+	scale: playerMagic2Effect.scale,
+	framesMax: playerMagic2Effect.framesMax,
+	offset: playerMagic2Effect.offset,
+	is2dFrame: playerMagic2Effect.is2dFrame,
+	xFrames: playerMagic2Effect.xFrames,
 });
 
-const waterBallImpact = new Sprite({
+const playerMagic2Impact = player.magicSprites.magic2.impact
+const magic2Impact = new Sprite({
 	position: { ...enemy.position },
-	imageSrc:
-		"./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Impact.png",
-	scale: 2.0,
-	framesMax: 16,
-	offset: {
-		x: 0,
-		y: 0,
-	},
-	is2dFrame: true,
-	xFrames: 4,
+	imageSrc: playerMagic2Impact.imageSrc,
+	scale: playerMagic2Impact.scale,
+	framesMax: playerMagic2Impact.framesMax,
+	offset: playerMagic2Impact.offset,
+	is2dFrame: playerMagic2Impact.is2dFrame,
+	xFrames: playerMagic2Impact.xFrames,
 });
 
 function playerAnimate() {
@@ -155,17 +141,18 @@ function playerAnimate() {
 	}
 
 	if (playerUsedSpecial1) {
-		waterEffect.position = enemy.position;
-		waterEffect.offset = { x: 80, y: 80 };
-		waterEffectEnd.position = enemy.position;
-		waterEffectEnd.offset = { x: 80, y: 80 };
-		waterEffect.update();
-		waterEffectEnd.update();
+		magic1.position = enemy.position;
+		magic1.offset = { x: 80, y: 80 };
+		magic1End.position = enemy.position;
+		magic1End.offset = { x: 80, y: 80 };
+		magic1.update();
+		magic1End.update();
+		player.switchSprite("attack1");
 		enemy.switchSprite("takeHit");
 
 		setTimeout(() => {
 			playerUsedSpecial1 = false;
-		}, 5000);
+		}, 3000);
 	}
 
 	if (playerUsedSpecial2) {
@@ -177,26 +164,41 @@ function playerAnimate() {
 		// }
 
 		// close up attack
-		waterBall.position = player.position;
+		magic2.position = player.position;
 
-		if (waterBall.position.x < enemy.position.x) {
-			waterBall.update();
-			if (waterBall.framesCurrent === 21) {
-				waterBall.framesCurrent = 5;
-			}
+		
 
-			waterBall.position.x += 5;
+		if (player.position.x < enemy.position.x) {
+			
+			magic2.position = player.position;
+			magic2.update();
+			magic2Impact.position = player.position;
+			magic2Impact.update();
+			keys.d.pressed = true;
+			player.lastKey = "d";
+		
+			
+			// if (magic2.framesCurrent === 21) {
+			// 	magic2.framesCurrent = 5;
+			// }
+
+			player.position.x += 4;
+			player.switchSprite("run")
 		} else {
-			waterBall.position.x = enemy.position.x;
-			waterBallImpact.position = enemy.position;
-			waterBallImpact.update();
+			keys.d.pressed = false;
+			player.lastKey = "";
+			magic2.position.x = enemy.position.x;
+			magic2Impact.position = enemy.position;
+			magic2Impact.update();
+			player.switchSprite("attack1");
 			enemy.switchSprite("takeHit");
+			setTimeout(() => {
+				playerUsedSpecial2 = false;
+				
+			}, 3000);
 		}
-
-		setTimeout(() => {
-			playerUsedSpecial2 = false;
-		}, 5000);
 	}
+	
 
 	if (player.isUsingMagic) {
 		player.isUsingMagic = false;
@@ -205,18 +207,18 @@ function playerAnimate() {
 		} else {
 			player.health = 100;
 		}
-		player.magic -= 20;
+		player.magic -= 10;
 		document.querySelector("#playerMagic").style.width = player.magic + "%";
 		document.querySelector("#playerHealth").style.width = player.health + "%";
 	}
 
 	if (player.isUsingSpecial1) {
 		player.isUsingSpecial1 = false;
-		player.magic -= 50;
-		if (enemy.health < 40) {
+		player.magic -= 30;
+		if (enemy.health < 20) {
 			enemy.health = 0;
 		} else {
-			enemy.health -= 40;
+			enemy.health -= 20;
 		}
 
 		document.querySelector("#playerMagic").style.width = player.magic + "%";
@@ -225,11 +227,11 @@ function playerAnimate() {
 
 	if (player.isUsingSpecial2) {
 		player.isUsingSpecial2 = false;
-		player.magic -= 40;
-		if (enemy.health < 35) {
+		player.magic -= 15;
+		if (enemy.health < 15) {
 			enemy.health = 0;
 		} else {
-			enemy.health -= 35;
+			enemy.health -= 15;
 		}
 
 		document.querySelector("#playerMagic").style.width = player.magic + "%";

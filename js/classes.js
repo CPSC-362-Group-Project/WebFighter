@@ -90,6 +90,7 @@ class Fighter extends Sprite {
 		offset = { x: 0, y: 0 },
 		sprites,
 		attackBox = { offset: {}, width: undefined, height: undefined },
+		magicSprites
 	}) {
 		super({
 			position,
@@ -139,6 +140,7 @@ class Fighter extends Sprite {
 		this.framesHold = 5;
 		this.sprites = sprites;
 		this.dead = false;
+		this.magicSprites = magicSprites;
 
 		for (const sprite in this.sprites) {
 			sprites[sprite].image = new Image();
@@ -250,19 +252,19 @@ class Fighter extends Sprite {
 	}
 
 	useMagic() {
-		if (this.magic >= 20) {
+		if (this.magic >= 10) {
 			this.isUsingMagic = true;
 		}
 	}
 
 	useSpecial1() {
-		if (this.magic >= 50) {
+		if (this.magic >= 30) {
 			this.isUsingSpecial1 = true;
 		}
 	}
 
 	useSpecial2() {
-		if (this.magic >= 40) {
+		if (this.magic >= 15) {
 			this.isUsingSpecial2 = true;
 		}
 	}

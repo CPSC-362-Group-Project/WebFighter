@@ -251,6 +251,11 @@ function decreaseTimer() {
 }
 
 decreaseTimer();
+
+let enemyMagicInProgress = false;
+let playerMagicInProgress = false;
+let playerMagic2InProgress = false;
+
 // event listener for when user press movement keys (WASD)
 window.addEventListener("keydown", (event) => {
 	if (!player.dead) {
@@ -286,13 +291,31 @@ window.addEventListener("keydown", (event) => {
 				break;
 
 			case "z":
+				if(playerMagicInProgress) {
+					break;
+				}
+
 				player.useSpecial1();
+				playerMagicInProgress = true;
+				setTimeout(() => {
+					playerMagicInProgress = false;
+				}, 8500);
+
 				if (player.isUsingSpecial1) {
 					playerUsedSpecial1 = true;
 				}
 				break;
 			case "c":
+				if(playerMagic2InProgress) {
+					break;
+				}
+				
 				player.useSpecial2();
+				playerMagic2InProgress = true;
+				setTimeout(() => {
+					playerMagic2InProgress = false;
+				}, 8500);
+
 				if (player.isUsingSpecial2) {
 					moveable = false;
 					playerUsedSpecial2 = true;
@@ -302,6 +325,7 @@ window.addEventListener("keydown", (event) => {
 	}
 	// These are the enemies keys
 	if (!enemy.dead) {
+		console.log("enemy magic in progress");
 		switch (event.key) {
 			case "ArrowRight":
 				keys.ArrowRight.pressed = true;
@@ -327,7 +351,15 @@ window.addEventListener("keydown", (event) => {
 				}
 				break;
 			case "p":
+				if(enemyMagicInProgress) {
+					break;
+				}
 				enemy.useSpecial2();
+				enemyMagicInProgress = true;
+				setTimeout(() => {
+					enemyMagicInProgress = false;
+				}, 8500);
+
 				if (enemy.isUsingSpecial2) {
 					moveable2 = false;
 					enemyUsedSpecial2 = true;
@@ -337,6 +369,7 @@ window.addEventListener("keydown", (event) => {
 	}
 	console.log(event.key);
 });
+
 
 // event listener for when user stops pressing movement key
 window.addEventListener("keyup", (event) => {

@@ -58,6 +58,41 @@ let Kenji = {
 		width: 171,
 		height: 50,
 	},
+	magicSprites: {
+		healing_effect: {
+			imageSrc: "./assets/magic_eff/healing_eff/Heal Gameboy Sprite Sheet.png",
+			scale: 2.0,
+			framesMax: 16,
+			offset: {
+				x: 80,
+				y: 80
+			},
+			is2dFrame: true,
+			xFrames: 4,
+		},
+		magic2: {
+			effect: {
+				imageSrc: "./assets/magic_eff/fire_eff/firebolt-SpriteSheet.png",
+				scale: 2.0,
+				framesMax: 11,
+				offset: {
+				  x: 0,
+				  y: 0
+				}
+			},
+			impact: {
+				imageSrc: "assets/magic_eff/fire_eff2/Explosion SpriteSheet.png",
+				scale: 2.0,
+				framesMax: 16,
+				offset: {
+					x: 0,
+					y: 0
+				},
+				is2dFrame: true,
+				xFrames: 4,
+			}
+		},
+	}
 };
 
 // new character
@@ -120,6 +155,68 @@ let Matt = {
 		width: 160,
 		height: 50,
 	},
+	magicSprites: {
+		healing_effect: {
+			imageSrc: "./assets/magic_eff/healing_eff/Heal Gameboy Sprite Sheet.png",
+			scale: 2.0,
+			framesMax: 16,
+			offset: {
+				x: 80,
+				y: 80
+			},
+			is2dFrame: true,
+			xFrames: 4,
+		
+		},
+		magic1: {
+			effect: {
+				imageSrc: "./assets/magic_eff/fire_eff2/Explosion 2 SpriteSheet.png",
+				scale: 5.5,
+				framesMax: 18,
+				offset: {
+					x: 0,
+					y: 20,
+				},
+				is2dFrame: false,
+				xFrames: 18,
+			},
+			impact: {
+				imageSrc: "./assets/magic_eff/fire_eff2/Explosion SpriteSheet.png",
+				scale: 4.0,
+				framesMax: 16,
+				offset: {
+					x: 0,
+					y: 0,
+				},
+				is2dFrame: true,
+				xFrames: 4,
+			}
+		},
+		magic2: {
+			effect: {
+				imageSrc: "./assets/magic_eff/fire_eff/fire-Breath-SpriteSheet.png",
+				scale: 4.0,
+				framesMax: 24,
+				offset: {
+					x: -45,
+					y: 80,
+				},
+				is2dFrame: true,
+				xFrames: 8,
+			},
+			impact: {
+				imageSrc: "./assets/magic_eff/fire_eff2/Explosion SpriteSheet.png",
+				scale: 3.0,
+				framesMax: 16,
+				offset: {
+					x: 10,
+					y: 50,
+				},
+				is2dFrame: true,
+				xFrames: 4,
+			}
+		}
+	}
 };
 
 // new character
@@ -181,6 +278,68 @@ let Riku = {
 		width: 85,
 		height: 50,
 	},
+	magicSprites: {
+		healing_effect: {
+			imageSrc: "./assets/magic_eff/healing_eff/Heal Gameboy Sprite Sheet.png",
+			scale: 2.0,
+			framesMax: 16,
+			offset: {
+				x: 80,
+				y: 80
+			},
+			is2dFrame: true,
+			xFrames: 4,
+		
+		},
+		magic1: {
+			effect: {
+				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-Startup-and-Infinite.png",
+				scale: 2.0,
+				framesMax: 12,
+				offset: {
+					x: 80,
+					y: 80,
+				},
+				is2dFrame: true,
+				xFrames: 4,
+			},
+			impact: {
+				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-End.png",
+				scale: 2.0,
+				framesMax: 9,
+				offset: {
+					x: 80,
+					y: 80,
+				},
+				is2dFrame: true,
+				xFrames: 3,
+			}
+		},
+		magic2: {
+			effect: {
+				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Startup-and-Infinite.png",
+				scale: 2.0,
+				framesMax: 25,
+				offset: {
+					x: 0,
+					y: 0,
+				},
+				is2dFrame: true,
+				xFrames: 5,
+			},
+			impact: {
+				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Impact.png",
+				scale: 2.0,
+				framesMax: 16,
+				offset: {
+					x: 0,
+					y: 0,
+				},
+				is2dFrame: true,
+				xFrames: 4,
+			}
+		}
+	}
 };
 
 // new character
@@ -242,6 +401,68 @@ let Ray = {
 		width: 105,
 		height: 50,
 	},
+	magicSprites: {
+		healing_effect: {
+			imageSrc: "./assets/magic_eff/healing_eff/Heal Gameboy Sprite Sheet.png",
+			scale: 2.0,
+			framesMax: 16,
+			offset: {
+				x: 80,
+				y: 80
+			},
+			is2dFrame: true,
+			xFrames: 4,
+		
+		},
+		magic1: {
+			effect: {
+				imageSrc: "./assets/magic_eff/thunder_eff/Thunder Strike/Thunderstrike w blur.png",
+				scale: 4.0,
+				framesMax: 13,
+				offset: {
+					x: 0,
+					y: 0,
+				},
+				is2dFrame: false,
+				xFrames: 13,
+			},
+			impact: {
+				imageSrc: "./assets/magic_eff/thunder_eff/Thunder Strike/Thunderstrike w blur.png",
+				scale: 4.0,
+				framesMax: 13,
+				offset: {
+					x: 0,
+					y: 0,
+				},
+				is2dFrame: false,
+				xFrames: 5,
+			}
+		},
+		magic2: {
+			effect: {
+				imageSrc: "./assets/magic_eff/thunder_eff/Thunder Splash/Thunder splash w blur.png",
+				scale: 3.0,
+				framesMax: 14,
+				offset: {
+					x: 0,
+					y: 0,
+				},
+				is2dFrame: false,
+				xFrames: 14,
+			},
+			impact: {
+				imageSrc: "./assets/magic_eff/thunder_eff/Thunder Splash/Thunder splash w blur.png",
+				scale: 3.0,
+				framesMax: 14,
+				offset: {
+					x: 0,
+					y: 0,
+				},
+				is2dFrame: false,
+				xFrames: 7,
+			}
+		}
+	}
 };
 
 // new character
@@ -303,6 +524,68 @@ let Pyro = {
 		width: 123,
 		height: 50,
 	},
+	magicSprites: {
+		healing_effect: {
+			imageSrc: "./assets/magic_eff/healing_eff/Heal Gameboy Sprite Sheet.png",
+			scale: 2.0,
+			framesMax: 16,
+			offset: {
+				x: 80,
+				y: 80
+			},
+			is2dFrame: true,
+			xFrames: 4,
+		
+		},
+		magic1: {
+			effect: {
+				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-Startup-and-Infinite.png",
+				scale: 2.0,
+				framesMax: 12,
+				offset: {
+					x: 80,
+					y: 80,
+				},
+				is2dFrame: true,
+				xFrames: 4,
+			},
+			impact: {
+				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-End.png",
+				scale: 2.0,
+				framesMax: 9,
+				offset: {
+					x: 80,
+					y: 80,
+				},
+				is2dFrame: true,
+				xFrames: 3,
+			}
+		},
+		magic2: {
+			effect: {
+				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Startup-and-Infinite.png",
+				scale: 2.0,
+				framesMax: 25,
+				offset: {
+					x: 0,
+					y: 0,
+				},
+				is2dFrame: true,
+				xFrames: 5,
+			},
+			impact: {
+				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Impact.png",
+				scale: 2.0,
+				framesMax: 16,
+				offset: {
+					x: 0,
+					y: 0,
+				},
+				is2dFrame: true,
+				xFrames: 4,
+			}
+		}
+	}
 };
 
 // new character
@@ -364,6 +647,68 @@ let Nat = {
 		width: 105,
 		height: 100,
 	},
+	magicSprites: {
+		healing_effect: {
+			imageSrc: "./assets/magic_eff/healing_eff/Heal Gameboy Sprite Sheet.png",
+			scale: 2.0,
+			framesMax: 16,
+			offset: {
+				x: 80,
+				y: 80
+			},
+			is2dFrame: true,
+			xFrames: 4,
+		
+		},
+		magic1: {
+			effect: {
+				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-Startup-and-Infinite.png",
+				scale: 2.0,
+				framesMax: 12,
+				offset: {
+					x: 80,
+					y: 80,
+				},
+				is2dFrame: true,
+				xFrames: 4,
+			},
+			impact: {
+				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-End.png",
+				scale: 2.0,
+				framesMax: 9,
+				offset: {
+					x: 80,
+					y: 80,
+				},
+				is2dFrame: true,
+				xFrames: 3,
+			}
+		},
+		magic2: {
+			effect: {
+				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Startup-and-Infinite.png",
+				scale: 2.0,
+				framesMax: 25,
+				offset: {
+					x: 0,
+					y: 0,
+				},
+				is2dFrame: true,
+				xFrames: 5,
+			},
+			impact: {
+				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Impact.png",
+				scale: 2.0,
+				framesMax: 16,
+				offset: {
+					x: 0,
+					y: 0,
+				},
+				is2dFrame: true,
+				xFrames: 4,
+			}
+		}
+	}
 };
 
 // new character
@@ -425,6 +770,68 @@ let King = {
 		width: 100,
 		height: 70,
 	},
+	magicSprites: {
+		healing_effect: {
+			imageSrc: "./assets/magic_eff/healing_eff/Heal Gameboy Sprite Sheet.png",
+			scale: 2.0,
+			framesMax: 16,
+			offset: {
+				x: 80,
+				y: 80
+			},
+			is2dFrame: true,
+			xFrames: 4,
+		
+		},
+		magic1: {
+			effect: {
+				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-Startup-and-Infinite.png",
+				scale: 2.0,
+				framesMax: 12,
+				offset: {
+					x: 80,
+					y: 80,
+				},
+				is2dFrame: true,
+				xFrames: 4,
+			},
+			impact: {
+				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-End.png",
+				scale: 2.0,
+				framesMax: 9,
+				offset: {
+					x: 80,
+					y: 80,
+				},
+				is2dFrame: true,
+				xFrames: 3,
+			}
+		},
+		magic2: {
+			effect: {
+				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Startup-and-Infinite.png",
+				scale: 2.0,
+				framesMax: 25,
+				offset: {
+					x: 0,
+					y: 0,
+				},
+				is2dFrame: true,
+				xFrames: 5,
+			},
+			impact: {
+				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Impact.png",
+				scale: 2.0,
+				framesMax: 16,
+				offset: {
+					x: 0,
+					y: 0,
+				},
+				is2dFrame: true,
+				xFrames: 4,
+			}
+		}
+	}
 };
 
 // new character
@@ -487,6 +894,68 @@ let Wiz = {
 		width: 123,
 		height: 80,
 	},
+	magicSprites: {
+		healing_effect: {
+			imageSrc: "./assets/magic_eff/healing_eff/Heal Gameboy Sprite Sheet.png",
+			scale: 2.0,
+			framesMax: 16,
+			offset: {
+				x: 80,
+				y: 80
+			},
+			is2dFrame: true,
+			xFrames: 4,
+		
+		},
+		magic1: {
+			effect: {
+				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-Startup-and-Infinite.png",
+				scale: 2.0,
+				framesMax: 12,
+				offset: {
+					x: 80,
+					y: 80,
+				},
+				is2dFrame: true,
+				xFrames: 4,
+			},
+			impact: {
+				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-End.png",
+				scale: 2.0,
+				framesMax: 9,
+				offset: {
+					x: 80,
+					y: 80,
+				},
+				is2dFrame: true,
+				xFrames: 3,
+			}
+		},
+		magic2: {
+			effect: {
+				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Startup-and-Infinite.png",
+				scale: 2.0,
+				framesMax: 25,
+				offset: {
+					x: 0,
+					y: 0,
+				},
+				is2dFrame: true,
+				xFrames: 5,
+			},
+			impact: {
+				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Impact.png",
+				scale: 2.0,
+				framesMax: 16,
+				offset: {
+					x: 0,
+					y: 0,
+				},
+				is2dFrame: true,
+				xFrames: 4,
+			}
+		}
+	}
 };
 
 let Huntress = {
@@ -547,4 +1016,66 @@ let Huntress = {
 		width: 163,
 		height: 70,
 	},
+	magicSprites: {
+		healing_effect: {
+			imageSrc: "./assets/magic_eff/healing_eff/Heal Gameboy Sprite Sheet.png",
+			scale: 2.0,
+			framesMax: 16,
+			offset: {
+				x: 80,
+				y: 80
+			},
+			is2dFrame: true,
+			xFrames: 4,
+		
+		},
+		magic1: {
+			effect: {
+				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-Startup-and-Infinite.png",
+				scale: 2.0,
+				framesMax: 12,
+				offset: {
+					x: 80,
+					y: 80,
+				},
+				is2dFrame: true,
+				xFrames: 4,
+			},
+			impact: {
+				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-End.png",
+				scale: 2.0,
+				framesMax: 9,
+				offset: {
+					x: 80,
+					y: 80,
+				},
+				is2dFrame: true,
+				xFrames: 3,
+			}
+		},
+		magic2: {
+			effect: {
+				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Startup-and-Infinite.png",
+				scale: 2.0,
+				framesMax: 25,
+				offset: {
+					x: 0,
+					y: 0,
+				},
+				is2dFrame: true,
+				xFrames: 5,
+			},
+			impact: {
+				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Impact.png",
+				scale: 2.0,
+				framesMax: 16,
+				offset: {
+					x: 0,
+					y: 0,
+				},
+				is2dFrame: true,
+				xFrames: 4,
+			}
+		}
+	}
 };
