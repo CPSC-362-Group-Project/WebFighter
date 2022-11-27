@@ -142,9 +142,7 @@ function playerAnimate() {
 
 	if (playerUsedSpecial1) {
 		magic1.position = enemy.position;
-		magic1.offset = { x: 80, y: 80 };
 		magic1End.position = enemy.position;
-		magic1End.offset = { x: 80, y: 80 };
 		magic1.update();
 		magic1End.update();
 		player.switchSprite("attack1");

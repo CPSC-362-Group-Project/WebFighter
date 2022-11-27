@@ -174,8 +174,8 @@ let Matt = {
 				scale: 5.5,
 				framesMax: 18,
 				offset: {
-					x: 0,
-					y: 20,
+					x: 100,
+					y: 80,
 				},
 				is2dFrame: false,
 				xFrames: 18,
@@ -185,8 +185,8 @@ let Matt = {
 				scale: 4.0,
 				framesMax: 16,
 				offset: {
-					x: 0,
-					y: 0,
+					x: 100,
+					y: 60,
 				},
 				is2dFrame: true,
 				xFrames: 4,
@@ -417,25 +417,25 @@ let Ray = {
 		magic1: {
 			effect: {
 				imageSrc: "./assets/magic_eff/thunder_eff/Thunder Strike/Thunderstrike w blur.png",
-				scale: 4.0,
+				scale: 3.0,
 				framesMax: 13,
 				offset: {
-					x: 0,
-					y: 0,
+					x: 50,
+					y: 40,
 				},
 				is2dFrame: false,
 				xFrames: 13,
 			},
 			impact: {
 				imageSrc: "./assets/magic_eff/thunder_eff/Thunder Strike/Thunderstrike w blur.png",
-				scale: 4.0,
+				scale: 3.0,
 				framesMax: 13,
 				offset: {
-					x: 0,
-					y: 0,
+					x: 50,
+					y: 200,
 				},
 				is2dFrame: false,
-				xFrames: 5,
+				xFrames: 9,
 			}
 		},
 		magic2: {
@@ -539,47 +539,47 @@ let Pyro = {
 		},
 		magic1: {
 			effect: {
-				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-Startup-and-Infinite.png",
-				scale: 2.0,
-				framesMax: 12,
+				imageSrc: "./assets/magic_eff/fire_eff2/Explosion 2 SpriteSheet.png",
+				scale: 5.5,
+				framesMax: 18,
 				offset: {
-					x: 80,
+					x: 100,
 					y: 80,
+				},
+				is2dFrame: false,
+				xFrames: 18,
+			},
+			impact: {
+				imageSrc: "./assets/magic_eff/fire_eff2/Explosion SpriteSheet.png",
+				scale: 4.0,
+				framesMax: 16,
+				offset: {
+					x: 100,
+					y: 60,
 				},
 				is2dFrame: true,
 				xFrames: 4,
-			},
-			impact: {
-				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-End.png",
-				scale: 2.0,
-				framesMax: 9,
-				offset: {
-					x: 80,
-					y: 80,
-				},
-				is2dFrame: true,
-				xFrames: 3,
 			}
 		},
 		magic2: {
 			effect: {
-				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Startup-and-Infinite.png",
-				scale: 2.0,
-				framesMax: 25,
+				imageSrc: "./assets/magic_eff/fire_eff/fire-Breath-SpriteSheet.png",
+				scale: 4.0,
+				framesMax: 24,
 				offset: {
-					x: 0,
-					y: 0,
+					x: -45,
+					y: 80,
 				},
 				is2dFrame: true,
-				xFrames: 5,
+				xFrames: 8,
 			},
 			impact: {
-				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Impact.png",
-				scale: 2.0,
+				imageSrc: "./assets/magic_eff/fire_eff2/Explosion SpriteSheet.png",
+				scale: 3.0,
 				framesMax: 16,
 				offset: {
-					x: 0,
-					y: 0,
+					x: 10,
+					y: 50,
 				},
 				is2dFrame: true,
 				xFrames: 4,
@@ -662,50 +662,50 @@ let Nat = {
 		},
 		magic1: {
 			effect: {
-				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-Startup-and-Infinite.png",
-				scale: 2.0,
-				framesMax: 12,
+				imageSrc: "./assets/magic_eff/Holy VFX 01-02/Holy VFX 02/Holy VFX 02.png",
+				scale: 3.0,
+				framesMax: 16,
 				offset: {
-					x: 80,
-					y: 80,
+					x: 40,
+					y: 0,
 				},
-				is2dFrame: true,
-				xFrames: 4,
+				is2dFrame: false,
+				xFrames: 10,
 			},
 			impact: {
-				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-End.png",
-				scale: 2.0,
-				framesMax: 9,
+				imageSrc: "./assets/magic_eff/ice_eff/Ice VFX 2/Ice VFX 2 Ending.png",
+				scale: 3.0,
+				framesMax: 18,
 				offset: {
-					x: 80,
-					y: 80,
+					x: 0,
+					y: 0,
 				},
-				is2dFrame: true,
-				xFrames: 3,
+				is2dFrame: false,
+				xFrames: 18,
 			}
 		},
 		magic2: {
 			effect: {
-				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Startup-and-Infinite.png",
-				scale: 2.0,
-				framesMax: 25,
+				imageSrc: "./assets/magic_eff/ice_eff/Ice VFX 1/IceVFX 1 Repeatable.png",
+				scale: 4.0,
+				framesMax: 10,
 				offset: {
 					x: 0,
 					y: 0,
 				},
-				is2dFrame: true,
-				xFrames: 5,
+				is2dFrame: false,
+				xFrames: 10,
 			},
 			impact: {
-				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Impact.png",
-				scale: 2.0,
-				framesMax: 16,
+				imageSrc: "./assets/magic_eff/ice_eff/Ice VFX 1/Ice VFX 1 Hit.png",
+				scale: 4.0,
+				framesMax: 8,
 				offset: {
-					x: 0,
+					x: 70,
 					y: 0,
 				},
-				is2dFrame: true,
-				xFrames: 4,
+				is2dFrame: false,
+				xFrames: 8,
 			}
 		}
 	}
@@ -785,23 +785,23 @@ let King = {
 		},
 		magic1: {
 			effect: {
-				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-Startup-and-Infinite.png",
-				scale: 2.0,
+				imageSrc: "./assets/magic_eff/wind_eff/Air Explosion.png",
+				scale: 4.0,
 				framesMax: 12,
 				offset: {
-					x: 80,
-					y: 80,
+					x: 40,
+					y: 0,
 				},
 				is2dFrame: true,
 				xFrames: 4,
 			},
 			impact: {
-				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-End.png",
-				scale: 2.0,
+				imageSrc: "./assets/magic_eff/wind_eff/Pull in.png",
+				scale: 4.0,
 				framesMax: 9,
 				offset: {
-					x: 80,
-					y: 80,
+					x: 0,
+					y: 0,
 				},
 				is2dFrame: true,
 				xFrames: 3,
@@ -809,23 +809,23 @@ let King = {
 		},
 		magic2: {
 			effect: {
-				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Startup-and-Infinite.png",
-				scale: 2.0,
-				framesMax: 25,
+				imageSrc: "./assets/magic_eff/wind_eff/Air Burst.png",
+				scale: 4.0,
+				framesMax: 9,
 				offset: {
 					x: 0,
-					y: 0,
+					y: 20,
 				},
 				is2dFrame: true,
-				xFrames: 5,
+				xFrames: 3,
 			},
 			impact: {
-				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Impact.png",
-				scale: 2.0,
-				framesMax: 16,
+				imageSrc: "./assets/magic_eff/wind_eff/Preparing Burst.png",
+				scale: 4.0,
+				framesMax: 12,
 				offset: {
 					x: 0,
-					y: 0,
+					y: 20,
 				},
 				is2dFrame: true,
 				xFrames: 4,
@@ -909,50 +909,50 @@ let Wiz = {
 		},
 		magic1: {
 			effect: {
-				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-Startup-and-Infinite.png",
-				scale: 2.0,
-				framesMax: 12,
+				imageSrc: "./assets/magic_eff/dark_eff/Dark VFX 2/Dark VFX 2 (48x64).png",
+				scale: 3.0,
+				framesMax: 16,
 				offset: {
-					x: 80,
-					y: 80,
+					x: 10,
+					y: 0,
 				},
-				is2dFrame: true,
-				xFrames: 4,
+				is2dFrame: false,
+				xFrames: 16,
 			},
 			impact: {
-				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-End.png",
-				scale: 2.0,
-				framesMax: 9,
+				imageSrc: "./assets/magic_eff/dark_eff/Dark VFX 2/Dark VFX 2 (48x64).png",
+				scale: 3.0,
+				framesMax: 16,
 				offset: {
-					x: 80,
+					x: 40,
 					y: 80,
 				},
-				is2dFrame: true,
-				xFrames: 3,
+				is2dFrame: false,
+				xFrames: 9,
 			}
 		},
 		magic2: {
 			effect: {
-				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Startup-and-Infinite.png",
-				scale: 2.0,
-				framesMax: 25,
+				imageSrc: "./assets/magic_eff/dark_eff/Dark VFX 1/Dark VFX 1 (40x32).png",
+				scale: 4.0,
+				framesMax: 20,
 				offset: {
 					x: 0,
 					y: 0,
 				},
 				is2dFrame: true,
-				xFrames: 5,
+				xFrames: 10,
 			},
 			impact: {
-				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Impact.png",
-				scale: 2.0,
-				framesMax: 16,
+				imageSrc: "./assets/magic_eff/dark_eff/Dark VFX 1/Dark VFX 1 (40x32).png",
+				scale: 4.0,
+				framesMax: 20,
 				offset: {
-					x: 0,
-					y: 0,
+					x: 40,
+					y: -20,
 				},
 				is2dFrame: true,
-				xFrames: 4,
+				xFrames: 10,
 			}
 		}
 	}
@@ -1031,47 +1031,47 @@ let Huntress = {
 		},
 		magic1: {
 			effect: {
-				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-Startup-and-Infinite.png",
-				scale: 2.0,
+				imageSrc: "./assets/magic_eff/Earth Effect 01/Irregular rock Spritesheet.png",
+				scale: 5.0,
 				framesMax: 12,
 				offset: {
-					x: 80,
-					y: 80,
+					x: 70,
+					y: 45,
+				},
+				is2dFrame: true,
+				xFrames: 6,
+			},
+			impact: {
+				imageSrc: "./assets/magic_eff/Earth Effect 01/Impact Spritesheet.png",
+				scale: 5.0,
+				framesMax: 7,
+				offset: {
+					x: 70,
+					y: 30,
+				},
+				is2dFrame: false,
+				xFrames: 7,
+			}
+		},
+		magic2: {
+			effect: {
+				imageSrc: "./assets/magic_eff/Earth Effect 02/Earth Bump.png",
+				scale: 4.0,
+				framesMax: 16,
+				offset: {
+					x: 0,
+					y: 0,
 				},
 				is2dFrame: true,
 				xFrames: 4,
 			},
 			impact: {
-				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-End.png",
-				scale: 2.0,
-				framesMax: 9,
-				offset: {
-					x: 80,
-					y: 80,
-				},
-				is2dFrame: true,
-				xFrames: 3,
-			}
-		},
-		magic2: {
-			effect: {
-				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Startup-and-Infinite.png",
-				scale: 2.0,
-				framesMax: 25,
-				offset: {
-					x: 0,
-					y: 0,
-				},
-				is2dFrame: true,
-				xFrames: 5,
-			},
-			impact: {
-				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Impact.png",
-				scale: 2.0,
+				imageSrc: "./assets/magic_eff/Earth Effect 02/Earth Wall.png",
+				scale: 4.0,
 				framesMax: 16,
 				offset: {
-					x: 0,
-					y: 0,
+					x: 50,
+					y: -5,
 				},
 				is2dFrame: true,
 				xFrames: 4,
