@@ -419,3 +419,13 @@ window.addEventListener("keyup", (event) => {
 	}
 	console.log(event.key);
 });
+
+function pauseHandlerHelper() {
+	if (!alreadyReturned) {
+		alreadyReturned = true;
+	}
+	else {
+		alreadyReturned = false;
+		animate();
+	}
+}
