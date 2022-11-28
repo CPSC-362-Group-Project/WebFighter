@@ -426,6 +426,9 @@ function pauseHandlerHelper() {
 		clearTimeout(timerId);
 	}
 	else {
+		if(gameStopped && alreadyReturned) {
+			return
+		}
 		alreadyReturned = false;
 		animate();
 		decreaseTimer();
