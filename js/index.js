@@ -72,7 +72,7 @@ let paused = false;
 
 function pauseHandler() {
     var imgPausePlay = document.getElementById("imgPausePlay");
-    // paused = !paused;
+    paused = !paused;
     // imgPausePlay.src = paused ? "https://cdn3.iconfinder.com/data/icons/basicsiconic/512/play_playbutton_resume_resumebutton_media_player_sound_-64.png" : "https://cdn4.iconfinder.com/data/icons/media-controls-4/100/pause-64.png";
     //paused ? pauseSong() : playSong();
     paused ? openPopUp() : hidePopUp();
@@ -81,16 +81,16 @@ function pauseHandler() {
 
 function hidePopUp() {
     var popup = document.getElementById("popup");
-    popup.style.display = 'block';
-    paused = !paused;
-    imgPausePlay.src = paused ? "https://cdn3.iconfinder.com/data/icons/basicsiconic/512/play_playbutton_resume_resumebutton_media_player_sound_-64.png" : "https://cdn4.iconfinder.com/data/icons/media-controls-4/100/pause-64.png";
+    popup.style.display = 'none';
+    imgPausePlay.src = "https://cdn4.iconfinder.com/data/icons/media-controls-4/100/pause-64.png";
     pauseHandlerHelper()
+    paused = false;
 }
 
 function openPopUp() {
     var popup = document.getElementById("popup");
-    popup.style.display = 'none';
-    paused = !paused;
-    imgPausePlay.src = paused ? "https://cdn3.iconfinder.com/data/icons/basicsiconic/512/play_playbutton_resume_resumebutton_media_player_sound_-64.png" : "https://cdn4.iconfinder.com/data/icons/media-controls-4/100/pause-64.png";
+    popup.style.display = 'block';
+    imgPausePlay.src = "https://cdn3.iconfinder.com/data/icons/basicsiconic/512/play_playbutton_resume_resumebutton_media_player_sound_-64.png";
     pauseHandlerHelper();
 }
+

@@ -423,9 +423,11 @@ window.addEventListener("keyup", (event) => {
 function pauseHandlerHelper() {
 	if (!alreadyReturned) {
 		alreadyReturned = true;
+		clearTimeout(timerId);
 	}
 	else {
 		alreadyReturned = false;
 		animate();
+		decreaseTimer();
 	}
 }
