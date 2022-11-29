@@ -186,9 +186,9 @@ function collisionDetection({ character1, character2 }, currentFrame) {
 		character1.isAttacking = false;
 		console.log("collision");
 		if (character1 === player) {
-			document.querySelector("#enemyHealth").style.width = enemy.health + "%";
+			document.querySelector("#enemyHealth").style.width = character2.health + "%";
 		} else {
-			document.querySelector("#playerHealth").style.width = player.health + "%";
+			document.querySelector("#playerHealth").style.width = character2.health + "%";
 		}
 	}
 }
@@ -198,7 +198,7 @@ function animate() {
 	if(gameStopped) {
 		setTimeout(() => {
 			alreadyReturned = true;
-		}, 1000)
+		}, 2000)
 	}
 
 	if(alreadyReturned) {
@@ -289,13 +289,13 @@ window.addEventListener("keydown", (event) => {
 			case "D":
 				keys.d.pressed = true;
 				player.lastKey = "d";
-				player.shouldPanCameraToTheLeft({ canvas, camera });
+				//player.shouldPanCameraToTheLeft({ canvas, camera });
 				break;
 			case "a":
 			case "A":
 				keys.a.pressed = true;
 				player.lastKey = "a";
-				player.shouldPanCameraToTheRight({ canvas, camera });
+				//player.shouldPanCameraToTheRight({ canvas, camera });
 				break;
 			case "w":
 			case "W":

@@ -40,52 +40,60 @@ This function uses random number to generate random attack for the enemy
 */
 let randomNum = 1;
 let activated = false;
-
 function simulateAttack() {
   //generate random number between 1 and 5
  
-    randomNum = Math.floor(Math.random() * 1000) + 1;
-      if (randomNum <= 40 && (enemy.position.x - enemy.attackBox.width + 50 > player.position.x)) {
-        if (activated) {
-          return 
-        }
-        activated = true;
-        keys.ArrowLeft.pressed = true ;
-        enemy.lastKey = "ArrowLeft";
-        
-        setTimeout(() => {
-          keys.ArrowLeft.pressed = false;
-          activated = false;
-        }, 200);
-        
-        
-      } else if (randomNum >= 41 && randomNum <= 200 && (enemy.position.x < player.position.x)) {
-        if (activated) {
-          return
-        }
-        activated = true;
-        keys.ArrowRight.pressed = true ;
-        enemy.lastKey = "ArrowRight";
+  randomNum = Math.floor(Math.random() * 1000) + 1;
+  if (randomNum <= 60 && (enemy.position.x - enemy.attackBox.width + 50 > player.position.x)) {
+    if (activated) {
+      return 
+    }
+    activated = true;
+    keys.ArrowLeft.pressed = true ;
+    enemy.lastKey = "ArrowLeft";
+    
+    setTimeout(() => {
+      keys.ArrowLeft.pressed = false;
+      activated = false;
+    }, 200);
+    
+    
+  } else if (randomNum >= 141 && randomNum <= 340 && (enemy.position.x < player.position.x + 50)) {
+    if (activated) {
+      return
+    }
+    activated = true;
+    keys.ArrowRight.pressed = true ;
+    enemy.lastKey = "ArrowRight";
 
-        setTimeout(() => {
-          keys.ArrowRight.pressed = false;
-          activated = false;
-        }, 200);
-      }
-      else if (randomNum === 201 && enemy.health <= 70) {
-        enemy.useMagic();
-        if (enemy.isUsingMagic) {
-          enemyUsedMagic = true;
-        }
-      }
-      else if ( randomNum >= 202 && randomNum <= 210 ) {
-          enemy.attack();
-        
-        
-      }
-      else {
-       enemy.switchSprite("idle");
-      }
+    setTimeout(() => {
+      keys.ArrowRight.pressed = false;
+      activated = false;
+    }, 200);
+  }
+  else if (randomNum >= 401 && randomNum <= 408 && enemy.health <= 70) {
+    enemy.useMagic();
+    if (enemy.isUsingMagic) {
+      enemyUsedMagic = true;
+    }
+  }
+  else if (randomNum === 501 && enemy.magic >= 50 && player.position.y <= enemy.position.y + 50 && player.position.y >= enemy.position.y - 50) {
+    enemy.useSpecial2();
+    if (enemy.isUsingSpecial2) {
+      enemyUsedSpecial2 = true;
+    }
+  }
+  else if (randomNum >= 601 && randomNum <= 620 && player.velocity.y < 0) {
+    if (enemy.velocity.y === 0) {
+      enemy.velocity.y = -12;
+    }
+  }
+  else if ( randomNum >= 701 && randomNum <= 720 && enemy.position.x - enemy.attackBox.width < player.position.x) {
+    enemy.attack();
+}
+  else {
+    enemy.switchSprite("idle");
+  }
 }
 
 function enemyAnimate() {
@@ -146,11 +154,14 @@ function enemyAnimate() {
 
     // close up attack
     // magic2b.position = enemy.position
+     // close up attack
+    // magic2b.position = enemy.position
     if (magic2b.position.x > player.position.x) {
       magic2b.update();
       magic2bImpact.position = magic2b.position;
 			magic2bImpact.update();
       magic2b.position.x -= 5;
+      magic2b.position.y = player.position.y;
     } else {
       // magic2b.position.x = player.position.x
       magic2b.position = player.position;
@@ -166,32 +177,30 @@ function enemyAnimate() {
       setTimeout(() => {
         enemyUsedSpecial2 = false;
       }, 3000);
+      // magic2b.position.x = player.position.x
     }
-
-    
   }
 
   if (enemy.isUsingSpecial2) {
     enemy.isUsingSpecial2 = false;
     enemy.magic -= 15;
-    if (player.health < 20) {
+    if (player.health < 20 ) {
       player.health = 0;
     } else {
       player.health -= 20;
     }
-
     document.querySelector("#enemyMagic").style.width = enemy.magic + "%";
     document.querySelector("#playerHealth").style.width = player.health + "%";
   }
 
-  if (enemy.isUsingMagic && enemy.magic >= 20) {
+  if (enemy.isUsingMagic && enemy.magic >= 5) {
     enemy.isUsingMagic = false;
-    if (enemy.health < 50) {
-      enemy.health += 50;
+    if (enemy.health < 80) {
+      enemy.health += 25;
     } else {
       enemy.health = 100;
     }
-    enemy.magic -= 10;
+    enemy.magic -= 5;
     document.querySelector("#enemyMagic").style.width = enemy.magic + "%";
     document.querySelector("#enemyHealth").style.width = enemy.health + "%";
   }

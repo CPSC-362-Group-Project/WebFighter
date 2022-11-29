@@ -163,6 +163,7 @@ function playerAnimate() {
 
 		// close up attack
 		magic2.position = player.position;
+		player.position.y = enemy.position.y;
 
 		
 

@@ -12,21 +12,36 @@ This app will allow users to play a browser based 2d fighting game.
 # Controls
 User will use a standard qwerty keyboard to control the movement and attacks of
 the characters. The 'W' 'A' 'S' 'D' keys will control the players movement in
-the arena. Currently,
-- For player (left),
-- [x] healing effect (key x)
-- [x] waterball (range)/ waterball (melee) (key c)
-- [x] whirpool (key z)
+the arena. ,
 
-- For enemy (right),
+### Player
+- For player (left),
+- [x] 'Space Bar' to attack, to be continued...
+
+- For playerspecial attacks
+- [x] healing effect (key x)
+- [x] melee attack (key c)
+- [x] ranged attack (key z)
+
+### Enemy
+- For enemy (right) (automatic by default),
+- [x] 'Enter' to attack
+- For special attacks
 - [x] healing effect (arrow down)
 - [x] fireball (key p)
 
-'Space Bar' to attack, to be continued...
+# Attack Simulation:
+- Currently in testing ...
+- Attack simulation function named simulateAttack() can be found in [click here](./js/enemy.js)
+- The function uses random number to simulate attack, it can be adjusted accordingly to make game harder.
+- The larger the range of the if conditions, the more probability the actions will happen
+Ex: increasing the range of number to make enemy launch more attacks
 
+# Preview
+- To be updated:
 ![Start_Image](./for-later/Start_Screen_White_BG.png)
-
-![Fight_Screen_Mockup](./for-later/Mockup_1.jpeg)
-
-![Fight_Screen_Notes](./for-later/Mockup_w-Notes.jpeg)
+![Character_Selections](./for-later/Character-selections.png)
+![Background_Selections](./for-later/Background-selections.png)
+![Fight_Scene_1](./for-later/Battle1.png)
+![Fight_Scene_2](./for-later/Battle2.png)
 
