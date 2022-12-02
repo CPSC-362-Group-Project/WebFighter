@@ -2,6 +2,9 @@ let enemyUsedMagic = false
 let enemyUsedSpecial2 = false
 let moveable2 = false
 
+//turn on simulator on single player mode
+let simulator = localStorage.getItem("isSinglePlayer") === "true" ? true : false;
+
 // create an enemy sprite instance
 const enemy = new Fighter(Kenji)
 
@@ -101,7 +104,8 @@ function enemyAnimate() {
   Enemy movements are defined below
   *************************************/
 
-  simulateAttack();
+  if(simulator) simulateAttack();
+
   enemy.velocity.x = 0;
   if (keys.ArrowLeft.pressed && enemy.lastKey === "ArrowLeft") {
     enemy.velocity.x = -3;

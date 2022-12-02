@@ -34,7 +34,7 @@ function selectCharacter() {
 }
 const selected = selectCharacter();
 
-console.log(localStorage.getItem("selection"));
+//console.log(localStorage.getItem("selection"));
 
 // create the main player sprite instance
 const player = new Fighter(selected);

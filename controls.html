@@ -8,7 +8,7 @@
         
         <!-- Fonts -->
         <link href="https://fonts.cdnfonts.com/css/road-rage" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
         
         <title> Controls </title>
     </head>
@@ -29,17 +29,38 @@
                 </ul>
             </nav>
             <ul class="navigation">
-                <a href="canvas.html" class="link">Go back</a>
+                <a href="canvas.html" class="link" id="go-back-button">Go back</a>
             </ul>
         </header>
         <h1> Controls </h1>
-        <p></p>
+        <div> 
+            <p class="text">Select game mode: </p>
+
+            <button class="control-button" id="singlePlayer">Single Player</button>
+            <button class="control-button" id="multiPlayer">Multi Player</button>
+
+        </div>
+
+        <div> 
+            <p class="text">Set time in (seconds): </p>
+
+            <input type="number" onKeyDown="return false" id="set-time" name="time" min="30" max="120" value="60"> 
+
+        </div>
+
+        <div>
+            <p class="text">Toggle Pause Button: </p>
+            <button class="control-button" id="pause">Show Pause</button>
+        </div>
+        <footer>
+            <div class="copyright">
+                <P>copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                Hiken. designed by Spencer, Joji, Nghia, Ethan, and Edwin</P>
+            </div>
+        </footer>
     </body>
 
-    <footer>
-        <div class="copyright">
-            <P>copyright &copy;<script>document.write(new Date().getFullYear());</script>
-            Hiken. designed by Spencer, Joji, Nghia, Ethan, and Edwin</P>
-        </div>
-    </footer>
+    <script src="./js/controls.js"></script>
+    
+    
 </html>

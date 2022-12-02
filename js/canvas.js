@@ -18,7 +18,7 @@ canvas.height = 576;
 // fill the canvas and delimit its size
 //c.fillRect(0, 0, canvas.width, canvas.height);
 
-const gravity = 0.2;
+const gravity = 0.3;
 
 // Stages
 const Forest = {
@@ -125,7 +125,7 @@ const background = new Sprite(stageSelected);
 
 // player.draw()
 // enemy.draw()
-console.log(player);
+//console.log(player);
 
 // constant to define the different input keys
 const keys = {
@@ -184,7 +184,7 @@ function collisionDetection({ character1, character2 }, currentFrame) {
 	) {
 		character2.takeHit();
 		character1.isAttacking = false;
-		console.log("collision");
+		//console.log("collision");
 		if (character1 === player) {
 			document.querySelector("#enemyHealth").style.width = character2.health + "%";
 		} else {
@@ -261,7 +261,7 @@ function determineWinner({ player, enemy, timerId }) {
 	}
 }
 
-let timer = 60;
+let timer = localStorage.getItem("timer");
 let timerId;
 function decreaseTimer() {
 	if (timer > 0) {
@@ -308,8 +308,8 @@ window.addEventListener("keydown", (event) => {
 			case " ":
 				if (!playerMagicInProgress && !playerMagic2InProgress) {
 				player.attack();
-				break;
 				}
+				break;
 			case "x":
 				player.useMagic();
 				if (player.isUsingMagic) {
@@ -352,7 +352,7 @@ window.addEventListener("keydown", (event) => {
 	}
 	// These are the enemies keys
 	if (!enemy.dead) {
-		console.log("enemy magic in progress");
+		//console.log("enemy magic in progress");
 		switch (event.key) {
 			case "ArrowRight":
 				keys.ArrowRight.pressed = true;
@@ -394,7 +394,7 @@ window.addEventListener("keydown", (event) => {
 				break;
 		}
 	}
-	console.log(event.key);
+	//console.log(event.key);
 });
 
 
@@ -417,7 +417,7 @@ window.addEventListener("keyup", (event) => {
 			keys.ArrowLeft.pressed = false;
 			break;
 	}
-	console.log(event.key);
+	//console.log(event.key);
 });
 
 function pauseHandlerHelper() {
