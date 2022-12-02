@@ -124,7 +124,7 @@ class Sprite {
 	}
 
 	// update the player's position
-	update() {
+	update(context) {
 		this.draw(context);
 		this.animateFrames();
 	}
@@ -287,6 +287,17 @@ const raya = new Fighter(Ray);
 const wizz = new Fighter(Wiz);
 const kingg = new Fighter(King);
 
+const first = {
+	position: {
+		x: 0,
+		y: 0,
+	},
+	imageSrc: "./assets/character_background/test.png",
+};
+
+//create backgrounds
+const background = new Sprite(first);
+
 // const background = new Sprite({
 // 	position: {
 // 		x: 0,
@@ -312,6 +323,10 @@ function animate() {
 	// first player
 	c.fillStyle = "grey";
 	c.fillRect(0, 0, playerMatt.width, playerMatt.height);
+
+	// add code for background here
+	background.update(c);
+
 	player.update(c);
 	player.switchSprite("idle");
 	// when player hovers over character, the character attacks

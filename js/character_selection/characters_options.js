@@ -531,11 +531,11 @@ let Huntress = {
 			framesMax: 5,
 		},
 		takeHit: {
-			imageSrc: "./assets/characters/Huntress/Sprites/Hit.png",
+			imageSrc: "./assets/characters/Huntress/Sprites/Take Hit.png",
 			framesMax: 3,
 		},
 		death: {
-			imageSrc: "./assets/characters/WHuntress/Sprites/Death.png",
+			imageSrc: "./assets/characters/Huntress/Sprites/Death.png",
 			framesMax: 8,
 		},
 	},

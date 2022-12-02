@@ -65,7 +65,7 @@ let Kenji = {
 			framesMax: 16,
 			offset: {
 				x: 80,
-				y: 80
+				y: 80,
 			},
 			is2dFrame: true,
 			xFrames: 4,
@@ -76,9 +76,9 @@ let Kenji = {
 				scale: 2.0,
 				framesMax: 11,
 				offset: {
-				  x: 0,
-				  y: 0
-				}
+					x: 0,
+					y: 0,
+				},
 			},
 			impact: {
 				imageSrc: "assets/magic_eff/fire_eff2/Explosion SpriteSheet.png",
@@ -86,13 +86,13 @@ let Kenji = {
 				framesMax: 16,
 				offset: {
 					x: 0,
-					y: 0
+					y: 0,
 				},
 				is2dFrame: true,
 				xFrames: 4,
-			}
+			},
 		},
-	}
+	},
 };
 
 // new character
@@ -162,11 +162,10 @@ let Matt = {
 			framesMax: 16,
 			offset: {
 				x: 80,
-				y: 80
+				y: 80,
 			},
 			is2dFrame: true,
 			xFrames: 4,
-		
 		},
 		magic1: {
 			effect: {
@@ -190,7 +189,7 @@ let Matt = {
 				},
 				is2dFrame: true,
 				xFrames: 4,
-			}
+			},
 		},
 		magic2: {
 			effect: {
@@ -214,9 +213,9 @@ let Matt = {
 				},
 				is2dFrame: true,
 				xFrames: 4,
-			}
-		}
-	}
+			},
+		},
+	},
 };
 
 // new character
@@ -285,15 +284,15 @@ let Riku = {
 			framesMax: 16,
 			offset: {
 				x: 80,
-				y: 80
+				y: 80,
 			},
 			is2dFrame: true,
 			xFrames: 4,
-		
 		},
 		magic1: {
 			effect: {
-				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-Startup-and-Infinite.png",
+				imageSrc:
+					"./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-Startup-and-Infinite.png",
 				scale: 2.0,
 				framesMax: 12,
 				offset: {
@@ -304,7 +303,8 @@ let Riku = {
 				xFrames: 4,
 			},
 			impact: {
-				imageSrc: "./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-End.png",
+				imageSrc:
+					"./assets/magic_eff/water_eff/water_blast_spritesheet/waterBlast-End.png",
 				scale: 2.0,
 				framesMax: 9,
 				offset: {
@@ -313,11 +313,12 @@ let Riku = {
 				},
 				is2dFrame: true,
 				xFrames: 3,
-			}
+			},
 		},
 		magic2: {
 			effect: {
-				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Startup-and-Infinite.png",
+				imageSrc:
+					"./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Startup-and-Infinite.png",
 				scale: 2.0,
 				framesMax: 25,
 				offset: {
@@ -328,7 +329,8 @@ let Riku = {
 				xFrames: 5,
 			},
 			impact: {
-				imageSrc: "./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Impact.png",
+				imageSrc:
+					"./assets/magic_eff/water_eff/water_ball _spritesheet/waterBall-Impact.png",
 				scale: 2.0,
 				framesMax: 16,
 				offset: {
@@ -337,9 +339,9 @@ let Riku = {
 				},
 				is2dFrame: true,
 				xFrames: 4,
-			}
-		}
-	}
+			},
+		},
+	},
 };
 
 // new character
@@ -408,15 +410,15 @@ let Ray = {
 			framesMax: 16,
 			offset: {
 				x: 80,
-				y: 80
+				y: 80,
 			},
 			is2dFrame: true,
 			xFrames: 4,
-		
 		},
 		magic1: {
 			effect: {
-				imageSrc: "./assets/magic_eff/thunder_eff/Thunder Strike/Thunderstrike w blur.png",
+				imageSrc:
+					"./assets/magic_eff/thunder_eff/Thunder Strike/Thunderstrike w blur.png",
 				scale: 3.0,
 				framesMax: 13,
 				offset: {
@@ -427,7 +429,8 @@ let Ray = {
 				xFrames: 13,
 			},
 			impact: {
-				imageSrc: "./assets/magic_eff/thunder_eff/Thunder Strike/Thunderstrike w blur.png",
+				imageSrc:
+					"./assets/magic_eff/thunder_eff/Thunder Strike/Thunderstrike w blur.png",
 				scale: 3.0,
 				framesMax: 13,
 				offset: {
@@ -436,11 +439,12 @@ let Ray = {
 				},
 				is2dFrame: false,
 				xFrames: 9,
-			}
+			},
 		},
 		magic2: {
 			effect: {
-				imageSrc: "./assets/magic_eff/thunder_eff/Thunder Splash/Thunder splash w blur.png",
+				imageSrc:
+					"./assets/magic_eff/thunder_eff/Thunder Splash/Thunder splash w blur.png",
 				scale: 3.0,
 				framesMax: 14,
 				offset: {
@@ -451,7 +455,8 @@ let Ray = {
 				xFrames: 14,
 			},
 			impact: {
-				imageSrc: "./assets/magic_eff/thunder_eff/Thunder Splash/Thunder splash w blur.png",
+				imageSrc:
+					"./assets/magic_eff/thunder_eff/Thunder Splash/Thunder splash w blur.png",
 				scale: 3.0,
 				framesMax: 14,
 				offset: {
@@ -460,9 +465,9 @@ let Ray = {
 				},
 				is2dFrame: false,
 				xFrames: 7,
-			}
-		}
-	}
+			},
+		},
+	},
 };
 
 // new character
@@ -531,11 +536,10 @@ let Pyro = {
 			framesMax: 16,
 			offset: {
 				x: 80,
-				y: 80
+				y: 80,
 			},
 			is2dFrame: true,
 			xFrames: 4,
-		
 		},
 		magic1: {
 			effect: {
@@ -559,7 +563,7 @@ let Pyro = {
 				},
 				is2dFrame: true,
 				xFrames: 4,
-			}
+			},
 		},
 		magic2: {
 			effect: {
@@ -583,9 +587,9 @@ let Pyro = {
 				},
 				is2dFrame: true,
 				xFrames: 4,
-			}
-		}
-	}
+			},
+		},
+	},
 };
 
 // new character
@@ -654,15 +658,15 @@ let Nat = {
 			framesMax: 16,
 			offset: {
 				x: 80,
-				y: 80
+				y: 80,
 			},
 			is2dFrame: true,
 			xFrames: 4,
-		
 		},
 		magic1: {
 			effect: {
-				imageSrc: "./assets/magic_eff/Holy VFX 01-02/Holy VFX 02/Holy VFX 02.png",
+				imageSrc:
+					"./assets/magic_eff/Holy VFX 01-02/Holy VFX 02/Holy VFX 02.png",
 				scale: 3.0,
 				framesMax: 16,
 				offset: {
@@ -682,11 +686,12 @@ let Nat = {
 				},
 				is2dFrame: false,
 				xFrames: 18,
-			}
+			},
 		},
 		magic2: {
 			effect: {
-				imageSrc: "./assets/magic_eff/ice_eff/Ice VFX 1/IceVFX 1 Repeatable.png",
+				imageSrc:
+					"./assets/magic_eff/ice_eff/Ice VFX 1/IceVFX 1 Repeatable.png",
 				scale: 4.0,
 				framesMax: 10,
 				offset: {
@@ -706,9 +711,9 @@ let Nat = {
 				},
 				is2dFrame: false,
 				xFrames: 8,
-			}
-		}
-	}
+			},
+		},
+	},
 };
 
 // new character
@@ -777,11 +782,10 @@ let King = {
 			framesMax: 16,
 			offset: {
 				x: 80,
-				y: 80
+				y: 80,
 			},
 			is2dFrame: true,
 			xFrames: 4,
-		
 		},
 		magic1: {
 			effect: {
@@ -805,7 +809,7 @@ let King = {
 				},
 				is2dFrame: true,
 				xFrames: 3,
-			}
+			},
 		},
 		magic2: {
 			effect: {
@@ -829,9 +833,9 @@ let King = {
 				},
 				is2dFrame: true,
 				xFrames: 4,
-			}
-		}
-	}
+			},
+		},
+	},
 };
 
 // new character
@@ -901,15 +905,15 @@ let Wiz = {
 			framesMax: 16,
 			offset: {
 				x: 80,
-				y: 80
+				y: 80,
 			},
 			is2dFrame: true,
 			xFrames: 4,
-		
 		},
 		magic1: {
 			effect: {
-				imageSrc: "./assets/magic_eff/dark_eff/Dark VFX 2/Dark VFX 2 (48x64).png",
+				imageSrc:
+					"./assets/magic_eff/dark_eff/Dark VFX 2/Dark VFX 2 (48x64).png",
 				scale: 3.0,
 				framesMax: 16,
 				offset: {
@@ -920,7 +924,8 @@ let Wiz = {
 				xFrames: 16,
 			},
 			impact: {
-				imageSrc: "./assets/magic_eff/dark_eff/Dark VFX 2/Dark VFX 2 (48x64).png",
+				imageSrc:
+					"./assets/magic_eff/dark_eff/Dark VFX 2/Dark VFX 2 (48x64).png",
 				scale: 3.0,
 				framesMax: 16,
 				offset: {
@@ -929,11 +934,12 @@ let Wiz = {
 				},
 				is2dFrame: false,
 				xFrames: 9,
-			}
+			},
 		},
 		magic2: {
 			effect: {
-				imageSrc: "./assets/magic_eff/dark_eff/Dark VFX 1/Dark VFX 1 (40x32).png",
+				imageSrc:
+					"./assets/magic_eff/dark_eff/Dark VFX 1/Dark VFX 1 (40x32).png",
 				scale: 4.0,
 				framesMax: 20,
 				offset: {
@@ -944,7 +950,8 @@ let Wiz = {
 				xFrames: 10,
 			},
 			impact: {
-				imageSrc: "./assets/magic_eff/dark_eff/Dark VFX 1/Dark VFX 1 (40x32).png",
+				imageSrc:
+					"./assets/magic_eff/dark_eff/Dark VFX 1/Dark VFX 1 (40x32).png",
 				scale: 4.0,
 				framesMax: 20,
 				offset: {
@@ -953,9 +960,9 @@ let Wiz = {
 				},
 				is2dFrame: true,
 				xFrames: 10,
-			}
-		}
-	}
+			},
+		},
+	},
 };
 
 let Huntress = {
@@ -1000,11 +1007,11 @@ let Huntress = {
 			framesMax: 5,
 		},
 		takeHit: {
-			imageSrc: "./assets/characters/Huntress/Sprites/Hit.png",
+			imageSrc: "./assets/characters/Huntress/Sprites/Take Hit.png",
 			framesMax: 3,
 		},
 		death: {
-			imageSrc: "./assets/characters/WHuntress/Sprites/Death.png",
+			imageSrc: "./assets/characters/Huntress/Sprites/Death.png",
 			framesMax: 8,
 		},
 	},
@@ -1023,15 +1030,15 @@ let Huntress = {
 			framesMax: 16,
 			offset: {
 				x: 80,
-				y: 80
+				y: 80,
 			},
 			is2dFrame: true,
 			xFrames: 4,
-		
 		},
 		magic1: {
 			effect: {
-				imageSrc: "./assets/magic_eff/Earth Effect 01/Irregular rock Spritesheet.png",
+				imageSrc:
+					"./assets/magic_eff/Earth Effect 01/Irregular rock Spritesheet.png",
 				scale: 5.0,
 				framesMax: 12,
 				offset: {
@@ -1051,7 +1058,7 @@ let Huntress = {
 				},
 				is2dFrame: false,
 				xFrames: 7,
-			}
+			},
 		},
 		magic2: {
 			effect: {
@@ -1075,7 +1082,7 @@ let Huntress = {
 				},
 				is2dFrame: true,
 				xFrames: 4,
-			}
-		}
-	}
+			},
+		},
+	},
 };
