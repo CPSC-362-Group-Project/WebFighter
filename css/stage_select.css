@@ -1,109 +1,90 @@
-*
-{
-    margin: 0;
-    padding: 0;
-    /*background: #25252a;*/
-    box-sizing: border-box;
-    font-family: 'Press Start 2P', cursive;
+* {
+	margin: 0;
+	padding: 0;
+	/*background: #25252a;*/
+	box-sizing: border-box;
+	font-family: "Press Start 2P", cursive;
 }
 
 /* main body */
 h1 {
-    font-size: 25px;
-    /*(font-family: 'Road Rage', cursive;*/
-    margin-bottom: 0;
-    /* adjust this later*/
-    margin-top: 1rem;
+	padding: 30px;
 }
 
+/* note this helps fix the bottom of the footer */
 body {
-    text-align: center;
-    position: relative;
-    padding-bottom: 274px;
-    min-height: 100vh;
-    background-color: #4e4e4e;
+	text-align: center;
+	position: relative;
+	/* padding-bottom: 274px; */
+	min-height: 100vh;
+	background-color: #4e4e4e;
+	padding-bottom: 56px;
 }
-
 
 /* end of main body */
 
 /* backgrounds */
 
+img {
+	height: 300px;
+	width: 550px;
+}
+
 .backgrounds {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    height: 40px;
-    padding: 20px;
-    border: 20px;
-    border-color: black;
-    align-items: center;
-    justify-items: center;
-    max-width: 100%;
+	/* position: relative; */
+	padding-left: 300px;
+	padding-right: 300px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	/* height: 40px; */
+	/* padding-top: 20px; */
+	/* border: 20px; */
+	/* border-color: black; */
+	/* align-items: center; */
+	justify-items: center;
+	max-width: 100%;
+	row-gap: 1.4em;
+	column-gap: 1em;
 }
 
 #background {
-    height: 189.75px;
-    width: 337.92px;
-    position: relative;
-    cursor: pointer;
-    grid-column: 2;
-    grid-row: 1; 
-    border: 3px solid rgb(53, 56, 61);
+	/* height: 189.75px;
+	width: 337.92px; */
+	position: relative;
+	cursor: pointer;
+	/* grid-column: 2; */
+	/* grid-row: 1; */
+	border: 3px solid rgb(53, 56, 61);
 }
 
 #background_1 {
-    height: 189.75px;
-    width: 337.92px;
-    position: relative;
-    cursor: pointer; 
-    grid-column: 3;
-    grid-row: 1;
-    border: 3px solid rgb(53, 56, 61);
+	/* height: 189.75px;
+	width: 337.92px; */
+	position: relative;
+	cursor: pointer;
+	/* grid-column: 3;
+	grid-row: 1; */
+	border: 3px solid rgb(53, 56, 61);
 }
 
 #background_2 {
-    height: 189.75px;
-    width: 337.92px;
-    position: relative;
-    cursor: pointer; 
-    grid-column: 2;
-    grid-row: 2;
-    border: 3px solid rgb(53, 56, 61);
+	/* height: 189.75px;
+	width: 337.92px; */
+	position: relative;
+	cursor: pointer;
+	/* grid-column: 2;
+	grid-row: 2; */
+	border: 3px solid rgb(53, 56, 61);
 }
 
 #background_3 {
-    height: 189.75px;
-    width: 337.92px;
-    position: relative;
-    cursor: pointer; 
-    grid-column: 3;
-    grid-row: 2;
-    border: 3px solid rgb(53, 56, 61);
+	/* height: 189.75px;
+	width: 337.92px; */
+	position: relative;
+	cursor: pointer;
+	/* grid-column: 3;
+	grid-row: 2; */
+	border: 3px solid rgb(53, 56, 61);
 }
 
 /* end of backgrounds */
-
-/* add footer to this page */
-footer {
-    background-color: #111;
-    color: white;
-    position: absolute;
-    bottom: 0;
-    min-width: 100%;
-    
-}
-
-.copyright {
-    background: black;
-    min-width: 100%;
-    padding: 20px 0;
-    text-align: center;
-}
-
-.copyright p {
-    font-size: 10px;
-    word-spacing: 2px;
-    text-transform: capitalize;
-}
-/* end of footer */

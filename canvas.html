@@ -1,99 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="./css/canvas.css" type="text/css">
-    <link rel="stylesheet" href="./css/pause.css" type="text/css">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hiken | Web Brawler</title>
-    <!-- Ask what are these two for -->
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
-    <link
-    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-    rel="stylesheet"
-    />
-</head>
-<body>
-    <header>
-        <img class="logo" src="./for-later/Start_Screen_White_BG_png.png" alt="logo">
-        <nav>
-            <ul class="navigation">
-                <li><a href="characters.html">Characters</a></li>
-                <li><a href="https://www.youtube.com/playlist?list=PLPWWCtCQd2PbFNNH1onjy_3HjNCNyqqZa">Soundtrack</a></li>
-                <li><a href="controls.html">Controls</a></li>
-            </ul>
-        </nav>
-        <a href="index.html" class="link">Go back</a>
-    </header>
-    
-    <main>
-        <div class="everything">
-        <div id="outer">
-            <!-- smaller red container div -->
-            <div id ="container">
-                <!-- player health -->
-                <div class="player_health_bar">
-                    <div class="health_background"></div>
-                    <div id="playerHealth"></div>
-                    <div class="magic_background"></div>
-                    <div id="playerMagic"></div>
-                </div>
-    
-                <!-- timer -->
-                <div id="timer">10</div>
-                
-                <!-- enemy health -->
-                <div class="enemy_health_bar">
-                    <div class="health_background"></div>
-                    <div id="enemyHealth"></div>
-                    <div class="magic_background"></div>
-                    <div id="enemyMagic"></div>
-                </div>
-          
-            </div>
+	<head>
+		<link rel="stylesheet" href="./css/canvas.css" type="text/css" />
+		<!-- <link rel="stylesheet" href="./css/pause.css" type="text/css" /> -->
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Hiken | Web Brawler</title>
+		<!-- Ask what are these two for -->
+		<!-- <link rel="preconnect" href="https://fonts.googleapis.com" /> -->
+		<!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- testing scripts at the head -->
+		<script src="./js/characters.js" defer></script>
+		<script src="./js/classes.js" defer></script>
+		<script src="./js/enemy.js" defer></script>
+		<script src="./js/player.js" defer></script>
+		<script src="./js/canvas.js" defer></script>
+		<script src="./js/index.js" defer></script>
+	</head>
+	<body>
+		<header>
+			<img
+				class="logo"
+				src="./for-later/Start_Screen_White_BG_png.png"
+				alt="logo"
+			/>
+			<nav>
+				<ul class="navigation">
+					<li><a href="characters.html">Characters</a></li>
+					<li>
+						<a
+							href="https://www.youtube.com/playlist?list=PLPWWCtCQd2PbFNNH1onjy_3HjNCNyqqZa"
+							>Soundtrack</a
+						>
+					</li>
+					<li><a href="controls.html">Controls</a></li>
+				</ul>
+			</nav>
+			<a href="index.html" class="link">Go back</a>
+		</header>
 
-        <div id="displayText"> Tie </div>
-   
-        <canvas>
-        </canvas>
-        <!-- Youtube video -->
-        <iframe title="sometitle" id="youtube-video" width="0" height="0" src="https://www.youtube.com/embed/p56XUPetIAQ?enablejsapi=1&
+		<main>
+			<div class="everything">
+				<div id="outer">
+					<!-- smaller red container div -->
+					<div id="container">
+						<!-- player health -->
+						<div class="player_health_bar">
+							<div class="health_background"></div>
+							<div id="playerHealth"></div>
+							<div class="magic_background"></div>
+							<div id="playerMagic"></div>
+						</div>
+
+						<!-- timer -->
+						<div id="timer">10</div>
+
+						<!-- enemy health -->
+						<div class="enemy_health_bar">
+							<div class="health_background"></div>
+							<div id="enemyHealth"></div>
+							<div class="magic_background"></div>
+							<div id="enemyMagic"></div>
+						</div>
+					</div>
+
+					<div id="displayText">Tie</div>
+
+					<canvas> </canvas>
+					<!-- Youtube video -->
+					<iframe
+						title="sometitle"
+						id="youtube-video"
+						width="0"
+						height="0"
+						src="https://www.youtube.com/embed/p56XUPetIAQ?enablejsapi=1&
             autoplay=1
             &disablekb=1
             &enablejsapi=1
             &loop=1
             &controls=0
-            &mute=0" frameborder="0"  allow="autoplay" allowfullscreen >
-            </iframe>
+            &mute=0"
+						frameborder="0"
+						allow="autoplay"
+						allowfullscreen
+					>
+					</iframe>
+				</div>
+				<aside class="left-aside"></aside>
+				<aside class="right-aside"></aside>
+			</div>
 
-        </div>
-        <aside class="left-aside">
-            
-        </aside>
-        <aside class="right-aside">
+			<!-- removing mute button since we have music player-->
+			<!-- <div id="mute"> <img src="https://www.pngitem.com/pimgs/m/81-811082_mute-and-unmute-icon-png-transparent-png.png" height=40 width=50/></div> -->
 
-        </aside>
-        </div>
-   
-        <!-- removing mute button since we have music player-->
-        <!-- <div id="mute"> <img src="https://www.pngitem.com/pimgs/m/81-811082_mute-and-unmute-icon-png-transparent-png.png" height=40 width=50/></div> -->
-        
-        <!-- Music controller graphics -->
-        <div class="music-player">
+			<!-- Music controller graphics -->
+			<div class="music-player">
+				<div id="prevSong">
+					<img
+						src="https://cdn2.iconfinder.com/data/icons/music-player-black/32/music_player_black-06-512.png"
+						height="40"
+						width="50"
+						alt="prev"
+					/>
+				</div>
 
-            <div id="prevSong"><img src="https://cdn2.iconfinder.com/data/icons/music-player-black/32/music_player_black-06-512.png" height=40 width=50 alt="prev"/></div>
+				<div id="playSong">
+					<img
+						src="https://cdn2.iconfinder.com/data/icons/music-player-black/32/music_player_black-01-512.png"
+						height="40"
+						width="50"
+						alt="play"
+					/>
+				</div>
 
-            <div id="playSong"><img src="https://cdn2.iconfinder.com/data/icons/music-player-black/32/music_player_black-01-512.png" height=40 width=50 alt="play"/></div>
+				<div id="pauseSong">
+					<img
+						src="https://cdn2.iconfinder.com/data/icons/music-player-black/32/music_player_black-03-512.png"
+						height="40"
+						width="50"
+						alt="pause"
+					/>
+				</div>
 
-            <div id="pauseSong"><img src="https://cdn2.iconfinder.com/data/icons/music-player-black/32/music_player_black-03-512.png" height=40 width=50 alt="pause"/></div>
+				<div id="nextSong">
+					<img
+						src="https://cdn2.iconfinder.com/data/icons/music-player-black/32/music_player_black-05-512.png"
+						height="40"
+						width="50"
+						alt="next"
+					/>
+				</div>
+			</div>
 
-            <div id="nextSong"><img src="https://cdn2.iconfinder.com/data/icons/music-player-black/32/music_player_black-05-512.png" height=40 width=50 alt="next"/></div>
-        </div>
-
-    <!-- <a href="index.html"><button id="back">Go back</button></a> -->
-    <!-- Pause button code  -->
+			<!-- <a href="index.html"><button id="back">Go back</button></a> -->
+			<!-- Pause button code  -->
+			<!-- temporarily removing pause button
     <div style="position: absolute;left:970px">
         <div id="pause" onclick="pauseHandler()">
           <img id="imgPausePlay" src="https://cdn4.iconfinder.com/data/icons/media-controls-4/100/pause-64.png">
@@ -109,25 +155,27 @@
                 <p>Game has been paused.</p>
             </div>
         </div>
-    </div>
+    </div> -->
 
-
-    <!-- The Order of imported scripts is important -->
-    <script src="./js/characters.js"></script>
-    <script src="./js/classes.js"></script>
-    <script src="./js/enemy.js"></script>
-    <script src="./js/player.js"></script>
-    <script src="./js/canvas.js"></script>
-    <script src="./js/index.js"></script>
-
-    </main>
-    <footer>
-        <div class="copyright">
-            <P>copyright &copy;<script>document.write(new Date().getFullYear());</script>
-            Hiken. designed by Spencer, Joji, Nghia, Ethan, and Edwin</P>
-        </div>
-    </footer>
-</body>
+			<!-- The Order of imported scripts is important -->
+			<!-- try putting scripts on the head -->
+			<!-- <script src="./js/characters.js"></script>
+			<script src="./js/classes.js"></script>
+			<script src="./js/enemy.js"></script>
+			<script src="./js/player.js"></script>
+			<script src="./js/canvas.js"></script>
+			<script src="./js/index.js"></script> -->
+		</main>
+		<footer>
+			<div class="copyright">
+				<p>
+					copyright &copy;
+					<script>
+						document.write(new Date().getFullYear());
+					</script>
+					Hiken. designed by Spencer, Joji, Nghia, Ethan, and Edwin
+				</p>
+			</div>
+		</footer>
+	</body>
 </html>
-
- 

@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="./css/canvas.css" type="text/css">
-        <link rel="stylesheet" href="./css/stage_select.css" type="text/css">
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <!-- Fonts -->
-        <link href="https://fonts.cdnfonts.com/css/road-rage" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"/>
-        
-        <title> Stage Select </title>
-    </head>
+	<head>
+		<link rel="stylesheet" href="./css/canvas.css" type="text/css" />
+		<link rel="stylesheet" href="./css/stage_select.css" type="text/css" />
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <body>
-        <header>
-            <img class="logo" src="./for-later/Start_Screen_White_BG_png.png" alt="logo">
-            <nav>
+		<!-- Fonts -->
+		<link href="https://fonts.cdnfonts.com/css/road-rage" rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+			rel="stylesheet"
+		/>
+
+		<title>Stage Select</title>
+		<!-- testing to add scripts in the head -->
+		<script src="./js/stage_selection/stage_selection.js" defer></script>
+		<script src="./js/stage_selection/stages.js" defer></script>
+	</head>
+
+	<body>
+		<header>
+			<img
+				class="logo"
+				src="./for-later/Start_Screen_White_BG_png.png"
+				alt="logo"
+			/>
+			<nav>
 				<ul class="navigation">
 					<li><a href="characters.html">Characters</a></li>
 					<li>
@@ -29,32 +39,45 @@
 					<li><a href="controls.html">Controls</a></li>
 				</ul>
 			</nav>
-            <ul class="navigation">
-                <a href="index.html" class="link">Go back</a>
-            </ul>
-        </header>
-        <h1> Select Your Stage </h1>
-        <p></p>
-    </body>
-    
-    <!-- Music controller graphics -->
-    <div class="backgrounds">
-        <div id="background" onClick="window.location.href='canvas.html';"><img src="./assets/background.png" height=189.75 width=337.92/></div>
+			<ul class="navigation">
+				<a href="index.html" class="link">Go back</a>
+			</ul>
+		</header>
+		<h1>Select Your Stage</h1>
+		<p></p>
+	</body>
 
-        <div id="background_1" onClick="window.location.href='canvas.html';"><img src="./assets/background_1.png" height=189.75 width=337.92/></div>
+	<!-- Music controller graphics -->
+	<div class="backgrounds">
+		<div id="background_1" onClick="window.location.href='canvas.html';">
+			<img src="./assets/background_1.png" height="189.75" width="337.92" />
+		</div>
 
-        <div id="background_2" onClick="window.location.href='canvas.html';"><img src="./assets/background_2.png" height=189.75 width=337.92/></div>
+		<div id="background" onClick="window.location.href='canvas.html';">
+			<img src="./assets/background.png" height="189.75" width="337.92" />
+		</div>
 
-        <div id="background_3" onClick="window.location.href='canvas.html';"><img src="./assets/background_3.png" height=189.75 width=337.92/></div>
-    </div>
+		<div id="background_2" onClick="window.location.href='canvas.html';">
+			<img src="./assets/background_2.png" height="189.75" width="337.92" />
+		</div>
 
-    <script src="./js/stage_selection/stage_selection.js"></script>
-    <script src="./js/stage_selection/stages.js"></script>
-    
-    <footer>
-        <div class="copyright">
-            <P>copyright &copy;<script>document.write(new Date().getFullYear());</script>
-            Hiken. designed by Spencer, Joji, Nghia, Ethan, and Edwin</P>
-        </div>
-    </footer>
+		<div id="background_3" onClick="window.location.href='canvas.html';">
+			<img src="./assets/background_3.png" height="189.75" width="337.92" />
+		</div>
+	</div>
+
+	<!-- <script src="./js/stage_selection/stage_selection.js"></script>
+	<script src="./js/stage_selection/stages.js"></script> -->
+
+	<footer>
+		<div class="copyright">
+			<p>
+				copyright &copy;
+				<script>
+					document.write(new Date().getFullYear());
+				</script>
+				Hiken. designed by Spencer, Joji, Nghia, Ethan, and Edwin
+			</p>
+		</div>
+	</footer>
 </html>

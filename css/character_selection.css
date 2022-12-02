@@ -1,25 +1,20 @@
 h1 {
-	padding: 20px;
+	padding: 30px;
 }
 
 .container {
 	display: flex;
 	gap: 50px;
-	padding: 20px;
+	/* padding: 20px; */
 	justify-content: center;
-	padding-bottom: 50px;
+	padding-bottom: 30px;
 }
 
 canvas {
-	border: 2px solid aquamarine;
-	border-radius: 2px;
+	border: 1px solid white;
+	border-radius: 5px;
 	height: 300px;
 	width: 200px;
-}
-
-.player,
-.enemy {
-	border: 2px solid green;
 }
 
 .characters {
@@ -27,4 +22,8 @@ canvas {
 	gap: 50px;
 	justify-content: center;
 	flex-wrap: wrap;
+	padding-bottom: 23px;
+}
+body {
+	padding-bottom: 56px;
 }
