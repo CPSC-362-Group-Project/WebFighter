@@ -1,29 +1,28 @@
-*
-{
-    margin: 0;
-    padding: 0;
-    /*background: #25252a;*/
-    box-sizing: border-box;
-    font-family: 'Press Start 2P', cursive;
+* {
+	margin: 0;
+	padding: 0;
+	/*background: #25252a;*/
+	box-sizing: border-box;
+	font-family: "Press Start 2P", sans-serif;
 }
 
 /* main body */
 h1 {
-    font-size: 100px;
-    font-family: 'Road Rage', cursive;
-    margin-bottom: 0;
-    /* adjust this later*/
-    margin-top: -1rem;
+	font-size: 100px;
+	font-family: "Road Rage", sans-serif;
+	margin-bottom: 0;
+	color: white;
+	/* adjust this later*/
+	margin-top: -1rem;
 }
 
 body {
-    text-align: center;
-    position: relative;
-    padding-bottom: 274px;
-    min-height: 100vh;
-    background-color: #4e4e4e;
+	text-align: center;
+	position: relative;
+	padding-bottom: 274px;
+	min-height: 100vh;
+	background-color: #4e4e4e;
 }
-
 
 /* end of main body */
 
@@ -95,48 +94,46 @@ header {
 
 /* add footer to this page */
 footer {
-    background-color: #111;
-    color: white;
-    position: absolute;
-    bottom: 0;
-    min-width: 100%;
-    
+	background-color: #111;
+	color: white;
+	position: absolute;
+	bottom: 0;
+	min-width: 100%;
 }
 
-
 .copyright {
-    background: black;
-    min-width: 100%;
-    padding: 20px 0;
-    text-align: center;
+	background: black;
+	min-width: 100%;
+	padding: 20px 0;
+	text-align: center;
 }
 
 .copyright p {
-    font-size: 10px;
-    word-spacing: 2px;
-    text-transform: capitalize;
+	font-size: 10px;
+	word-spacing: 2px;
+	text-transform: capitalize;
 }
 
 .text {
-    font-size: 20px;
-    font-weight: 500;
-    color: white;
-    text-align: center;
-    margin-top: 20px;
+	font-size: 20px;
+	font-weight: 500;
+	color: white;
+	text-align: center;
+	margin-top: 20px;
 }
 
 /* end of footer */
 button {
-    margin: 10px;
-    width: 120px;
-    height: 30px;
-    color: black;
-    background-color: white;
-    font-size: 12px;
-    font-weight: 700;
-    border-radius: 4px;
+	margin: 10px;
+	width: 120px;
+	height: 30px;
+	color: black;
+	background-color: white;
+	font-size: 12px;
+	font-weight: 700;
+	border-radius: 4px;
 }
 
- button:hover {
-        background-color: #0088a9;
-    }
+button:hover {
+	background-color: #0088a9;
+}
