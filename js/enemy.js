@@ -4,7 +4,7 @@ let moveable2 = false
 
 //turn on simulator on single player mode
 let simulator = localStorage.getItem("isSinglePlayer") === "true" ? true : false;
-
+let mode = localStorage.getItem("difficulty");
 // create an enemy sprite instance
 const enemy = new Fighter(Kenji)
 
@@ -40,14 +40,90 @@ const magic2bImpact = new Sprite({
 })
 /*
 This function uses random number to generate random attack for the enemy
+Generate number between 1 and 1000, with larger range meaning more likely to happen
 */
 let randomNum = 1;
 let activated = false;
+let magicIsRegenerating = false;
+
+const easy = {
+  leftRunRange : {max: 20},
+  rightRunRange : {min: 301, max: 400},
+  healingRange: {min: 601, max: 601},
+  specialAttackRange: {min: -1, max: -1},
+  jumpRange: {min: 801, max: 801},
+  attackRange: {min: 901, max: 902},
+  magicRegeneratedAmount: 0,
+}
+
+const medium = {
+  leftRunRange : {max: 40},
+  rightRunRange : {min: 301, max: 429},
+  healingRange: {min: 601, max: 603},
+  specialAttackRange: {min: 701, max: 701},
+  jumpRange: {min: 801, max: 810},
+  attackRange: {min: 901, max: 905},
+  magicRegeneratedAmount: 1,
+}
+
+const hard = {
+  leftRunRange : {max: 80},
+  rightRunRange : {min: 301, max: 529},
+  healingRange: {min: 601, max: 610},
+  specialAttackRange: {min: 701, max: 702},
+  jumpRange: {min: 801, max: 820},
+  attackRange: {min: 901, max: 910},
+  magicRegeneratedAmount: 3,
+}
+
+const insane = {
+  leftRunRange : {max: 150},
+  rightRunRange : {min: 301, max: 559},
+  healingRange: {min: 601, max: 630},
+  specialAttackRange: {min: 701, max: 704},
+  jumpRange: {min: 801, max: 850},
+  attackRange: {min: 901, max: 935},
+  magicRegeneratedAmount: 5,
+}
+
+const impossible = {
+  leftRunRange : {max: 299},
+  rightRunRange : {min: 301, max: 599},
+  healingRange: {min: 601, max: 650},
+  specialAttackRange: {min: 651, max: 657},
+  jumpRange: {min: 701, max: 799},
+  attackRange: {min: 801, max: 999},
+  magicRegeneratedAmount: 10,
+}
+
+
+let simulatorStat
+//simulator mode difficulty is medium by default
+switch(mode) {
+  case "easy":
+    simulatorStat = easy;
+    break;
+  case "medium":
+    simulatorStat = medium;
+    break;
+  case "hard":
+    simulatorStat = hard;
+    break;
+  case "insane":
+    simulatorStat = insane;
+    break;
+  case "impossible":
+    simulatorStat = impossible;
+    break;
+  default:
+    simulatorStat = medium;
+}
+
+
 function simulateAttack() {
-  //generate random number between 1 and 5
- 
+  
   randomNum = Math.floor(Math.random() * 1000) + 1;
-  if (randomNum <= 60 && (enemy.position.x - enemy.attackBox.width + 50 > player.position.x)) {
+  if (randomNum <= simulatorStat.leftRunRange.max && (enemy.position.x - enemy.attackBox.width + 50 > player.position.x)) {
     if (activated) {
       return 
     }
@@ -61,7 +137,7 @@ function simulateAttack() {
     }, 200);
     
     
-  } else if (randomNum >= 141 && randomNum <= 340 && (enemy.position.x < player.position.x + 50)) {
+  } else if (randomNum >= simulatorStat.rightRunRange.min && randomNum <= simulatorStat.rightRunRange.max && (enemy.position.x < player.position.x + 50)) {
     if (activated) {
       return
     }
@@ -74,29 +150,40 @@ function simulateAttack() {
       activated = false;
     }, 200);
   }
-  else if (randomNum >= 401 && randomNum <= 408 && enemy.health <= 70) {
+  else if (randomNum >= simulatorStat.healingRange.min && randomNum <= simulatorStat.healingRange.max && enemy.health <= 70) {
     enemy.useMagic();
     if (enemy.isUsingMagic) {
       enemyUsedMagic = true;
     }
   }
-  else if (randomNum === 501 && enemy.magic >= 50 && player.position.y <= enemy.position.y + 50 && player.position.y >= enemy.position.y - 50) {
+  else if (randomNum >= simulatorStat.specialAttackRange.min && randomNum <= simulatorStat.specialAttackRange.max && enemy.magic >= 50 && player.position.y <= enemy.position.y + 50 && player.position.y >= enemy.position.y - 50) {
     enemy.useSpecial2();
     if (enemy.isUsingSpecial2) {
       enemyUsedSpecial2 = true;
     }
   }
-  else if (randomNum >= 601 && randomNum <= 620 && player.velocity.y < 0) {
+  else if (randomNum >= simulatorStat.jumpRange.min && randomNum <= simulatorStat.jumpRange.max && player.velocity.y < 0) {
     if (enemy.velocity.y === 0) {
       enemy.velocity.y = -12;
     }
   }
-  else if ( randomNum >= 701 && randomNum <= 720 && enemy.position.x - enemy.attackBox.width < player.position.x) {
+  else if ( randomNum >= simulatorStat.attackRange.min && randomNum <= simulatorStat.attackRange.max && enemy.position.x - enemy.attackBox.width < player.position.x) {
     enemy.attack();
 }
   else {
     enemy.switchSprite("idle");
   }
+
+  if (magicIsRegenerating) {
+    return
+  }
+  if (enemy.magic <= 100) {
+    enemy.magic += simulatorStat.magicRegeneratedAmount;
+    magicIsRegenerating = true;
+  }
+  setTimeout(() => {
+    magicIsRegenerating = false;
+  }, 1500);
 }
 
 function enemyAnimate() {
