@@ -531,7 +531,7 @@ let Huntress = {
 			framesMax: 5,
 		},
 		takeHit: {
-			imageSrc: "./assets/characters/Huntress/Sprites/Take Hit.png",
+			imageSrc: "./assets/characters/Huntress/Sprites/Take hit.png",
 			framesMax: 3,
 		},
 		death: {
