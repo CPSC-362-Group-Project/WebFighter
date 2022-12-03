@@ -292,7 +292,7 @@ const first = {
 		x: 0,
 		y: 0,
 	},
-	imageSrc: "./assets/character_background/test.png",
+	imageSrc: "./assets/character_background/samurai.png",
 };
 
 const second = {
@@ -300,13 +300,73 @@ const second = {
 		x: 0,
 		y: 0,
 	},
-	imageSrc: "./assets/character_background/wiztest.png",
+	imageSrc: "./assets/character_background/wizard.png",
+};
+
+const third = {
+	position: {
+		x: 0,
+		y: 0,
+	},
+	imageSrc: "./assets/character_background/knight.png",
+};
+
+const fourth = {
+	position: {
+		x: 0,
+		y: 0,
+	},
+	imageSrc: "./assets/character_background/viking.png",
+};
+
+const fifth = {
+	position: {
+		x: 0,
+		y: 0,
+	},
+	imageSrc: "./assets/character_background/sorcerer.png",
+};
+
+const sixth = {
+	position: {
+		x: 0,
+		y: 0,
+	},
+	imageSrc: "./assets/character_background/ranger.png",
+};
+
+const seventh = {
+	position: {
+		x: 0,
+		y: 0,
+	},
+	imageSrc: "./assets/character_background/king.png",
+};
+
+const eighth = {
+	position: {
+		x: 0,
+		y: 0,
+	},
+	imageSrc: "./assets/character_background/barbarian.png",
 };
 
 //create backgrounds
 const background = new Sprite(first);
 
 const background2 = new Sprite(second);
+
+const background3 = new Sprite(third);
+
+const background4 = new Sprite(fourth);
+
+const background5 = new Sprite(fifth);
+
+const background6 = new Sprite(sixth);
+
+const background7 = new Sprite(seventh);
+
+const background8 = new Sprite(eighth);
 
 // const background = new Sprite({
 // 	position: {
@@ -353,6 +413,9 @@ function animate() {
 	// second player
 	n.fillStyle = "grey";
 	n.fillRect(0, 0, playerNat.width, playerNat.height);
+
+	background3.update(n);
+	
 	Natt.update(n);
 	Natt.switchSprite("idle");
 	playerNat.addEventListener("mouseover", () => {
@@ -367,6 +430,9 @@ function animate() {
 	// third player
 	k.fillStyle = "grey";
 	k.fillRect(0, 0, playerKenji.width, playerKenji.height);
+
+	background6.update(k);
+
 	ken.update(k);
 	ken.switchSprite("idle");
 	playerKenji.addEventListener("mouseover", () => {
@@ -381,6 +447,9 @@ function animate() {
 	//  fourth player
 	r.fillStyle = "grey";
 	r.fillRect(0, 0, playerRiku.width, playerRiku.height);
+
+	background8.update(r);
+
 	rik.update(r);
 	rik.switchSprite("idle");
 	playerRiku.addEventListener("mouseover", () => {
@@ -395,6 +464,9 @@ function animate() {
 	// fifth player
 	p.fillStyle = "grey";
 	p.fillRect(0, 0, playerPyro.width, playerPyro.height);
+
+	background5.update(p);
+
 	pyr.update(p);
 	pyr.switchSprite("idle");
 	playerPyro.addEventListener("mouseover", () => {
@@ -409,6 +481,7 @@ function animate() {
 	// sixth player
 	ra.fillStyle = "grey";
 	ra.fillRect(0, 0, playerRay.width, playerRay.height);
+	background4.update(ra);
 	raya.update(ra);
 	raya.switchSprite("idle");
 	playerRay.addEventListener("mouseover", () => {
@@ -438,6 +511,7 @@ function animate() {
 	// eighth player
 	ki.fillStyle = "grey";
 	ki.fillRect(0, 0, playerKing.width, playerKing.height);
+	background7.update(ki);
 	kingg.update(ki);
 	kingg.switchSprite("idle");
 	playerKing.addEventListener("mouseover", () => {
