@@ -100,12 +100,12 @@ footer {
 	color: white;
 }
 
-.socials a i {
-	font-size: 1.1rem;
+.socials a svg {
+	font-size: 2.1rem;
 	transition: color 0.4s ease;
 }
 
-.socials a:hover i {
+.socials a:hover svg {
 	color: aqua;
 }
 
