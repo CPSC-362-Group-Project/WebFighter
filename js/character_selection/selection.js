@@ -295,8 +295,18 @@ const first = {
 	imageSrc: "./assets/character_background/test.png",
 };
 
+const second = {
+	position: {
+		x: 0,
+		y: 0,
+	},
+	imageSrc: "./assets/character_background/wiztest.png",
+};
+
 //create backgrounds
 const background = new Sprite(first);
+
+const background2 = new Sprite(second);
 
 // const background = new Sprite({
 // 	position: {
@@ -413,6 +423,7 @@ function animate() {
 	// seventh player
 	w.fillStyle = "grey";
 	w.fillRect(0, 0, playerWiz.width, playerWiz.height);
+	background2.update(w);
 	wizz.update(w);
 	wizz.switchSprite("idle");
 	playerWiz.addEventListener("mouseover", () => {
